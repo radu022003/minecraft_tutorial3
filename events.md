@@ -3,7 +3,7 @@
 # Aktivität: Gelber Ziegelweg
 
 ## Schritt 1 
-Hören auf das Ereignis "Gehen". Ziehe ``||Player: on player walk||`` den Block in den Programmierbereich.
+Hören auf das Ereignis "Gehen". Ziehe ``||Player: Beim Spieler gehen||`` den Block in den Programmierbereich.
 
 ### ~ tutorialhint
 ``` blocks
@@ -13,7 +13,7 @@ Hören auf das Ereignis "Gehen". Ziehe ``||Player: on player walk||`` den Block 
 ```
 
 ## Schritt 2 
-Platziere etwas Gras. Ziehe den ``||Blocks: Place at||`` Block unter den ``||Player:On player walk||`` Block, bis du ein Einrasten hörst und siehst.
+Platziere etwas Gras. Ziehe den ``||Blocks:Platziere bei||`` Block unter den ``||Player:Beim Spieler gehen||`` Block, bis du ein Einrasten hörst und siehst.
 
 ### ~ tutorialhint      
 ``` blocks
@@ -23,7 +23,7 @@ Platziere etwas Gras. Ziehe den ``||Blocks: Place at||`` Block unter den ``||Pla
 ```
 
 ## Schritt 3
-Setze eine Blume. Wähle den Löwenzahn (gelbe Blume) aus dem Dropdown-Menü ``||Blocks: place at||``, um den **Grass-Block** zu ersetzen. 
+Setze eine Blume. Wähle den Löwenzahn (gelbe Blume) aus dem Dropdown-Menü ``||Blocks: Platziere bei||``, um den **Grass-Block** zu ersetzen. 
 
 ### ~ tutorialhint
         ```blocks
@@ -38,7 +38,7 @@ Gehe zu Minecraft und laufe für eine Sekunde oder zwei. Drehe dich um und schau
 
 ## Schritt 5: Try with Gold!
 
-Füge Gold hinzu. Ziehe den Block ``||Spieler: Beim Spieler gehen||`` in den Programmierbereich. Füge den Block ``||Blöcke: Platziere an||`` hinzu und platziere Gold anstelle einer Blume.
+Füge Gold hinzu. Ziehe den Block ``||Player: Beim Spieler gehen||`` in den Programmierbereich. Füge den Block ``||Blocks: Platziere bei||`` hinzu und platziere Gold anstelle einer Blume.
 
 ### ~ tutorialhint
 ``` blocks
@@ -61,7 +61,7 @@ blocks.place(GOLD_BLOCK, pos(0, -1, 0))
 ```
 
 ## Schritt 8 
-Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: Blocks||`` **hinzu**!
+Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: Fühle Mit||`` **hinzu**!
 
 ### ~ tutorialhint
 ``` blocks
