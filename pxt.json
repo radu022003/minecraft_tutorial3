@@ -1,5 +1,5 @@
 {
-    "name": "Conditionals Tutorial",
+    "name": "Events Tutorial",
     "version": "0.0.1",
     "dependencies": {
         "core": "*",
