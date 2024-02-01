@@ -6,7 +6,8 @@
         "builder": "*"
     },
     "files": [
-        "events.md"
+        "unit_2/lesson_A_de.md",
+        "unit_2/lesson_C_de.md"
     ],
     "targetVersions": {
         "target": "1.6.8",
