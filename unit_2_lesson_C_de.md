@@ -127,6 +127,6 @@ player.onChat("position", function () {
     )
 })
 ```
-## Schritt 13
+## Schritt 14
 Probiere es jetzt in Minecraft aus.
 Ruff erstmal die Befehl "position" im Chat aus und dann ruff die Befehl "wall" im Chat
