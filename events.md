@@ -61,7 +61,7 @@ blocks.place(GOLD_BLOCK, pos(0, -1, 0))
 ```
 
 ## Schritt 8 
-Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blöcke: Blöcke||`` **hinzu**!
+Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: Blöcke||`` **hinzu**!
 
 ### ~ tutorialhint
 ``` blocks
