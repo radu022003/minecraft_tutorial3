@@ -86,7 +86,7 @@ blocks.onBlockBroken(GLASS, function () {
 Dupliziere den Block ``||Blocks:wenn abgebaut Glas||``und ändere einige Dinge. Ersetze **Glas** durch **Diamant**.
 
 ## Schritt 13
-Ändere dann ``||Blocks:platziere Diamant||`` to ``||Blocks:platziere orange Wolle||``. Probiere es jetzt in Minecraft aus. 
+Ändere dann ``||Blocks:platziere Diamant||`` to ``||Blocks:platziere orange Wolle||``.  
 
 ### ~ tutorialhint
 
@@ -127,3 +127,6 @@ player.onChat("position", function () {
     )
 })
 ```
+## Schritt 13
+Probiere es jetzt in Minecraft aus.
+Ruff erstmal die Befehl "position" im Chat aus und dann ruff die Befehl "wall" im Chat
