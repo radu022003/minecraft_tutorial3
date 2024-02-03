@@ -32,7 +32,7 @@ Passe einige Dinge an: Ändere **Gras** zu **Glas** innerhalb des Blocks ``||Blo
 Ziehe aus ``||Variables:VARIABLEN||`` den Block ``||Variables:from_position||``  in den **von** Block ``||Blocks:fülle mit||``.
 
 ## Schritt 5
-Als nächstes ziehe ``||Variables:to_position||`` iin den **nach**-Teil des Blocks ``||Blocks:fülle mit||``. Probiere den Befehl in Minecraft aus.
+Als nächstes ziehe ``||Variables:to_position||`` in den **nach**-Teil des Blocks ``||Blocks:fülle mit||``. Probiere den Befehl in Minecraft aus.
 
 ### ~ tutorialhint
  ```blocks
@@ -70,7 +70,7 @@ Behebe den Positionscode. Platziere den Block ``||Positions:wähle zufällige Po
 ## Schritt 11
 Setze ``||Variables:from_position||`` in den **von**-Teil in diesem Block.
 
-Setze ``||Variables:to_position||`` in den **zu**-Teil in diesem Block.  
+Setze ``||Variables:to_position||`` in den **bis**-Teil in diesem Block.  
 
 ### ~ tutorialhint
 ```blocks
