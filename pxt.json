@@ -9,7 +9,10 @@
         "unit_2_lesson_A_de.md",
         "unit_2_lesson_B1_de.md",
         "unit_2_lesson_B2_de.md",
-        "unit_2_lesson_C_de.md"
+        "unit_2_lesson_C_de.md",
+        "unit_3_lesson_A_de.md",
+        "unit_3_lesson_B_de.md",
+        "unit_3_lesson_C_de.md"
     ],
     "targetVersions": {
         "target": "1.6.8",
