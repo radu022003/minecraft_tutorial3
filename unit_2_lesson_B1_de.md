@@ -30,7 +30,6 @@ blocks.onBlockBroken(CAKE, function () {
 Machen Sie es zu einem Papagei. Wählen Sie aus dem Dropdown-Menü im ``||Mobs:spawne bei||``-Block **Papagei** aus und ändern Sie die **Y**-Koordinate auf **1**.
 
 ## Schritt 5
-Add more parrots. From loops, place a ``||Blocks:Schleifen||`` loop around ``||Mobs:spawne bei||``. In the ``||Blocks:Schleifen||`` loop, enter the number **24**.
 Fügen Sie mehr Papageien hinzu. Platzieren Sie eine ``||Blocks:Schleifen||`` um ``||Mobs:spawne bei||``. Geben Sie in der ``||Blocks:Schleifen||`` die Zahl **24** ein.
 
 ### ~ tutorialhint
