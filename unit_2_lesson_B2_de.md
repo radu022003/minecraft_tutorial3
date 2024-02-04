@@ -52,7 +52,7 @@ mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
 Wo sollen die Zombies erscheinen? Ersetzen Sie die Standardposition **(~0 ~0 ~0)** durch einen ``||Positions:Wähle zufällige Position||``-Block.
 
 ## Schritt 7
-Stellen Sie den Bereich für die zufällige Position ein: Geben Sie im ``||Blocks:Wähle zufällige Position||``-Block die **von**-Koordinaten als **(~10 ~0 ~10)** und die **bis**-Koordinaten als **(~-10 ~0 ~-10)** ein.
+Stellen Sie den Bereich für die zufällige Position ein: Geben Sie im ``||Positions:Wähle zufällige Position||``-Block die **von**-Koordinaten als **(~10 ~0 ~10)** und die **bis**-Koordinaten als **(~-10 ~0 ~-10)** ein.
 
 ### ~ tutorialhint
 ```blocks
