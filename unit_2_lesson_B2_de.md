@@ -1,9 +1,9 @@
 ### @explicitHints 1
 
-# Last Stand at the Alamo 
+# Letzte Schlacht am Alamo. 
 
-## Step 1
-Respond to a mob killed event: From the ``||Mobs:KREATUREN||`` Toolbox drawer, drag a ``||Mobs:wenn getötet||`` block into the coding Workspace.
+## Schritt 1
+Reaktion auf ein Ereignis, bei dem eine Menge ``||Mobs:KREATUREN||`` getötet wurde: Ziehen Sie aus dem Werkzeugkasten für Mobs einen ``||Mobs:wenn getötet||`` in die Codierungsarbeitsfläche.
 
 ### ~ tutorialhint
 ```blocks
@@ -11,11 +11,11 @@ mobs.onMobKilled(CHICKEN, function () {
 })
 ```
 
-## Step 2
-See whether it was a monster: from the ``||Mobs:KREATUREN||`` Toolbox drawer, drag a ``||Mobs:Monster||`` drop-down block out to replace the default, **animal**. Using the drop-down menu in the ``||Mobs:Monster||`` block, select the **zombie** spawn egg.
+## Schritt 2
+Überprüfen Sie, ob es sich um ein Monster handelt: Ziehen Sie aus dem ``||Mobs:KREATUREN||`` einen ``||Mobs:Monster||`` heraus, um den Standardwert Tier zu ersetzen. Verwenden Sie das Dropdown-Menü im ``||Mobs:Monster||``, um das **Zombie**-Spawn-Ei auszuwählen.
 
-## Step 3
-Get set up to spawn new zombies! From the ``||Mobs:KREATUREN||`` Toolbox drawer, drag a ``||Mobs:spawne||`` block under the ``||Mobs:wenn getötet||`` event handler block.
+## Schritt 3
+Richten Sie sich ein, um neue Zombies erscheinen zu lassen! Ziehen Sie aus dem ``||Mobs:KREATUREN||`` ein ``||Mobs:spawne||``-Block unter den ``||Mobs:wenn getötet||`` Ereignis-Handler-Block.
 
 ### ~ tutorialhint
 ```blocks
@@ -24,8 +24,8 @@ mobs.spawn(CHICKEN, pos(0, 0, 0))
 })
 ```
 
-## Step 4
-Select the zombie egg. Similar to what you did in step 2, here you need to replace the default **animal** setting with zombie in the spawn block.
+## Schritt 4
+Wählen Sie das Zombie-Ei aus. Ähnlich wie im Schritt 2 müssen Sie hier die Standard-Einstellung **Tier** im Spawn-Block durch Zombie ersetzen.
 
 ### ~ tutorialhint
 ```blocks
@@ -34,10 +34,10 @@ mobs.spawn(mobs.monster(ZOMBIE), pos(0, 0, 0))
 })
 ```
 
-## Step 5
-Two zombies are better than one. You want to spawn two zombies for every one you kill, so from the ``||Loops:Schleifen||`` Toolbox drawer, drag a ``||Loops:Schleifen||`` loop onto the work area. This ``||Loops:wiederholen||`` loop should be inside the ``||Mobs:wenn getötet||`` event, and your ``||Mobs:spawne||`` block should be inside the ``||Loops:wiederholen||`` loop.
+## Schritt 5
+Zwei Zombies sind besser als einer. Sie möchten für jeden getöteten Zombie zwei neue erscheinen lassen. Ziehen Sie aus dem ||Loops:Schleifen||-Werkzeugkasten eine ``||Loops:Schleifen||``-Schleife in die Arbeitsfläche. Diese ``||Loops:wiederholen||``-Schleife sollte innerhalb des ``||Mobs:wenn getötet||`` Ereignisses sein, und Ihr ``||Mobs:spawne||``-Block sollte innerhalb der ``||Loops:wiederholen||``-Schleife liegen.
 
-In the ``||Blocks:wiederholen||`` loop, enter the number **2**. 
+Geben Sie in der ``||Blocks:wiederholen||``-Schleife die Zahl **2** ein.
 
 ### ~ tutorialhint
 ```blocks
@@ -48,11 +48,11 @@ mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
 })
 ```
 
-## Step 6
-Where to spawn the zombies? Replace the default **(~0 ~0 ~0)** with a ``||Positions:Wähle zufällige Position||`` block.
+## Schritt 6
+Wo sollen die Zombies erscheinen? Ersetzen Sie die Standardposition **(~0 ~0 ~0)** durch einen ``||Positions:Wähle zufällige Position||``-Block.
 
-## Step 7
-Set the random position range: in the ``||Blocks:Wähle zufällige Position||`` block, enter the **from** coordinates as **(~10 ~0 ~10)** and the **to** coordinates as **(~-10 ~0 ~-10)**.
+## Schritt 7
+Stellen Sie den Bereich für die zufällige Position ein: Geben Sie im ``||Blocks:Wähle zufällige Position||``-Block die **von**-Koordinaten als **(~10 ~0 ~10)** und die **bis**-Koordinaten als **(~-10 ~0 ~-10)** ein.
 
 ### ~ tutorialhint
 ```blocks
@@ -66,6 +66,6 @@ mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
 })
 ```
 
-## Step 8
+## Schritt 8
 
-Try it out in game!
+Probierst du es im Spiel aus!

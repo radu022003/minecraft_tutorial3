@@ -1,9 +1,9 @@
 ### @explicitHints 1
 
-# Sing a Song of Sixpence
+# Singen Sie ein Lied von Sixpence
 
-## Step 1
-Check for Broken Blocks. Drag the ``|| Blocks: wenn abgebaut||`` coding command from ``||Blocks: Blöcke||`` into the workspace. 
+## Schritt 1
+Überprüfen Sie auf zerstörte Blöcke. Ziehen Sie den ``||Blocks: wenn abgebaut||``-Befehl aus ``||Blocks: Blöcke||`` in die Arbeitsfläche.
 
 ### ~ tutorialhint
 ```blocks
@@ -12,11 +12,11 @@ blocks.onBlockBroken(GRASS, function () {
 })
 ```
 
-## Step 2
-Select the **Kuchen**. Using the drop-down menu, select the **Kuchen** item. 
+## Schritt 2
+Wählen Sie den **Kuchen** aus. Verwenden Sie das Dropdown-Menü und wählen Sie das **Kuchen**-Element aus.
         
-## Step 3
-Spawn an animal. From ``||Mobs:Kreaturen||``, place ``||Mobs:spawne bei||`` under the ``||Blocks:wenn abgebaut||`` block until you see it snap into place.
+## Schritt 3
+Spawne ein Tier. Ziehen Sie aus ``||Mobs:Kreaturen||`` den ``||Mobs:spawne bei||``-Block unter den ``||Blocks:wenn abgebaut||``-Block, bis er an Ort und Stelle einrastet.
 
 ### ~ tutorialhint     
 
@@ -26,11 +26,12 @@ blocks.onBlockBroken(CAKE, function () {
 })
 ```
 
-## Step 4
-Make it a parrot. From the drop-down menu in the ``||Mobs:spawne bei||`` block, select a **Papagei** and change **Y** coordinate to **1**.
+## Schritt 4
+Machen Sie es zu einem Papagei. Wählen Sie aus dem Dropdown-Menü im ``||Mobs:spawne bei||``-Block **Papagei** aus und ändern Sie die **Y**-Koordinate auf **1**.
 
-## Step 5
+## Schritt 5
 Add more parrots. From loops, place a ``||Blocks:Schleifen||`` loop around ``||Mobs:spawne bei||``. In the ``||Blocks:Schleifen||`` loop, enter the number **24**.
+Fügen Sie mehr Papageien hinzu. Platzieren Sie eine ``||Blocks:Schleifen||`` um ``||Mobs:spawne bei||``. Geben Sie in der ``||Blocks:Schleifen||`` die Zahl **24** ein.
 
 ### ~ tutorialhint
 ```blocks
@@ -41,7 +42,5 @@ blocks.onBlockBroken(CAKE, function () {
 })
 ```
 
-## Step 6
-Run the code. To run this in the game, add a cake to your player inventory (press E to open your inventory), select the cake in your toolbar (use the mouse wheel or the number keys), and right-click to place the cake on the ground. Then change back to your hands and use the left mouse button to hit the cake to destroy it – you should see a flock of parrots appear!
-
-
+## Schritt 6
+Führen Sie den Code aus. Um dies im Spiel auszuführen, fügen Sie einen Kuchen zu Ihrem Inventar hinzu (drücken Sie E, um Ihr Inventar zu öffnen), wählen Sie den Kuchen in Ihrer Symbolleiste aus (verwenden Sie das Mausrad oder die Nummerntasten) und klicken Sie mit der rechten Maustaste, um den Kuchen auf den Boden zu legen. Wechseln Sie dann wieder zu Ihren Händen und verwenden Sie die linke Maustaste, um den Kuchen zu zerstören - Sie sollten eine Gruppe von Papageien erscheinen sehen!
