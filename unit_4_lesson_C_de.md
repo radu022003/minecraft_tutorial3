@@ -34,8 +34,8 @@ Ersetzen Sie das leere **" "** durch Text für **Wort2**. Hier ist ein Beispiel:
 ``` blocks
 let Wort2 = ""
 let Wort1 = ""
-Wort1 = "rail"
-Wort2 = "road"
+Wort1 = "Schiene"
+Wort2 = "Strasse""
 ```
 
 ## Schritt 6
@@ -44,7 +44,7 @@ Schreiben Sie Wort1. Ziehen Sie ``||Player:bei Chat-Befehl||`` in die Arbeitsfl�
 Ziehen Sie den Block ``||Blocks:schreibe||`` in den ``||Player:bei Chat-Befehl mix||``-Block, um ihn einzurasten.
 
 ## Schritt 7
-Platzieren Sie ``||Variables: Wort1 ||`` innerhalb von ``||Blocks: print ||``.
+Platzieren Sie ``||Variables: Wort1 ||`` innerhalb von ``||Blocks: schreibe ||``.
 
 Ändern Sie das Gras zu **Redstone-Erz**.
 
@@ -60,8 +60,8 @@ player.onChat("mix", function () {
     WEST
     )
 })
-Wort1 = "rail"
-Wort2 = "road"
+Wort1 = "Schiene"
+Wort2 = "Strasse""
 ```
 
 ##  Step 8
@@ -85,8 +85,8 @@ player.onChat("mix", function () {
     SOUTH
     )
 })
-Wort1 = "rail"
-Wort2 = "road"
+Wort1 = "Schiene"
+Wort2 = "Strasse""
 ```
 
 ## Schritt 10
@@ -98,15 +98,15 @@ Um das zu beheben, speichern Sie die Weltposition Ihres Spielers. Klicken Sie au
 Fügen Sie ``||Variables:setze auf||`` oben in ``||Player:bei Chat-Befehl mix||`` ein. Ändern Sie diesen Block so, dass er **Setze Startposition_Welt** liest.
 
 ## Schritt 12
-Platzieren Sie ``||Player:Spieler-Weltposition||`` in ``||Variables:setze Startposition_Welt||``.
+Platzieren Sie ``||Player:Position des Spieler in der Welt||`` in ``||Variables:setze Startposition_Welt||``.
 
 ### ~ tutorialhint
 ``` blocks
 let Wort2 = ""
-let Starting_World_Position: Position = null
+let Startposition_Welt: Position = null
 let Wort1 = ""
 player.onChat("mix", function () {
-    Starting_World_Position = player.position()
+    Startposition_Welt = player.position()
     blocks.print(
     Wort1,
     REDSTONE_ORE,
@@ -120,8 +120,8 @@ player.onChat("mix", function () {
     SOUTH
     )
 })
-Wort1 = "rail"
-Wort2 = "road"
+Wort1 = "Schiene"
+Wort2 = "Strasse""
 ```
 
 ## Schritt 13
@@ -130,15 +130,15 @@ Korrigieren Sie die Position des Schreibblocks.
 ### ~ tutorialhint
 ``` blocks
 let Wort2 = ""
-let Starting_World_Position: Position = null
+let Startposition_Welt: Position = null
 let Wort1 = ""
 player.onChat("mix", function () {
-    Starting_World_Position = player.position()
+    Startposition_Welt = player.position()
     blocks.print(
     Wort1,
     REDSTONE_ORE,
     positions.add(
-    Starting_World_Position,
+    Startposition_Welt,
     pos(0, 30, 0)
     ),
     SOUTH
@@ -147,14 +147,14 @@ player.onChat("mix", function () {
     Wort2,
     REDSTONE_LAMP,
     positions.add(
-    Starting_World_Position,
+    Startposition_Welt,
     pos(0, 20, 0)
     ),
     SOUTH
     )
 })
-Wort1 = "rail"
-Wort2 = "road"
+Wort1 = "Schiene"
+Wort2 = "Strasse""
 ```
 
 ## Schritt 14
@@ -172,14 +172,14 @@ Suchen Sie nach "verbinde". Platzieren Sie diesen ``||Text:TEXT||``-Block, damit
 ``` blocks
 let Wort2 = ""
 let Wort1 = ""
-let Starting_World_Position: Position = null
+let Startposition_Welt: Position = null
 player.onChat("mix", function () {
-    Starting_World_Position = player.position()
+    Startposition_Welt = player.position()
     blocks.print(
     Wort1,
     REDSTONE_ORE,
     positions.add(
-    Starting_World_Position,
+    Startposition_Welt,
     pos(0, 30, 0)
     ),
     SOUTH
@@ -188,7 +188,7 @@ player.onChat("mix", function () {
     Wort2,
     REDSTONE_LAMP,
     positions.add(
-    Starting_World_Position,
+    Startposition_Welt,
     pos(0, 20, 0)
     ),
     SOUTH
@@ -197,12 +197,12 @@ player.onChat("mix", function () {
     Wort1 + Wort2,
     REDSTONE_BLOCK,
     positions.add(
-    Starting_World_Position,
+    Startposition_Welt,
     pos(0, 5, 0)
     ),
     SOUTH
     )
 })
-Wort1 = "rail"
-Wort2 = "road"
+Wort1 = "Schiene"
+Wort2 = "Strasse""
 ```
