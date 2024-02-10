@@ -58,7 +58,7 @@ player.onChat("cr", function () {
 Einfach überleben. Ziehen Sie den Block ``||Gameplay:ändere Spielmodus zu||`` heraus und legen Sie ihn innerhalb des Chat-Befehls "su" ab.
 
 ## Schritt 10
-In ``||Gameplay:ändere Spielmodus zu||`` änderen Sie ``||Mobs:Ziel||`` als **yourself @s**.
+In ``||Gameplay:ändere Spielmodus zu||`` änderen Sie ``||Mobs:Ziel||`` als **du selbst @s**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -71,7 +71,6 @@ player.onChat("su", function () {
 ```
 
 ## Schritt 11
-In ``||Variables:VARIABLE||``, click **Make a Variable**, and name the new variable ``||Variable:fallen||``. This variable will start incrementing (adding up) each block, as the player falls.
 In ``||Variables:VARIABLE||``, klicken Sie auf **Erstelle eine Variable**, und benennen Sie die neue Variable ``||Variable:fallen||``. Diese Variable wird jedes Mal, wenn der Spieler fällt, um einen Block inkrementiert )(hinzugefügt).
 
 ## Schritt 12
@@ -123,15 +122,15 @@ Ziehen Sie ``||Text:verbinde||`` in ``||PLayer:sag||`` und ersetzen Sie **"Hi!"*
 ``` blocks
 let report = 0
 player.onChat("pm", function () {
-    player.say("Hello" + "World")
+    player.say("Hallo" + "Welt")
 })
 ```
 
 ## Schritt 21
-Verbinden Sie die Variable mit der Nachricht. Geben Sie in ``||Text:verbinde||`` **"Du hast gefallen"** im ersten Slot ein, um *"Hello"* zu ersetzen.
+Verbinden Sie die Variable mit der Nachricht. Geben Sie in ``||Text:verbinde||`` **"Du hast gefallen"** im ersten Slot ein, um *"Hallo"* zu ersetzen.
 
 ## Schritt 22
-Ziehen Sie ``||Variables:report||`` in den zweiten ``||Text:verbinde||``-Slot und ersetzen Sie *"World"*.
+Ziehen Sie ``||Variables:report||`` in den zweiten ``||Text:verbinde||``-Slot und ersetzen Sie *"Welt"*.
 
 ### ~ tutorialhint
 ```blocks
