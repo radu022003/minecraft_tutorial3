@@ -26,6 +26,7 @@ player.onChat("huehner", function () {
 Gehen Sie in Minecraft, drücken Sie **T**, um das Chat-Fenster zu öffnen, und geben Sie **huehner** im Chat-Fenster ein. Es regnet Hühner! Wenn Sie nun **huehner 15** im Chat-Fenster eingeben, wird die Variable **num1** den Wert **15** annehmen.
 
 ## Schritt 6
+Drücken Sie auf den **Plus** von ``||Player:Bei Chat-Befehl||`` um die neue Variable zu erstellen.
 Mehr Hühner! Ersetzen Sie die Zahl **4** in ``||Loops:mache -mal wiederholen||`` durch ``||Variables:num1||`` aus ``||Variables:VARIABLE||``.
 
 ### ~ tutorialhint
