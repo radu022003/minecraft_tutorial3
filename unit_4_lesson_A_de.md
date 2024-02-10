@@ -15,7 +15,7 @@ Fügen Sie einen ``||Mobs:spawne bei||``-Block innerhalb der ``||Loops:mache -ma
 
 ### ~ tutorialhint
 ``` blocks
-player.onChat("chickens", function () {
+player.onChat("huehner", function () {
     for (let index = 0; index < 4; index++) {
         mobs.spawn(CHICKEN, pos(0, 10, 0))
     }
@@ -30,7 +30,7 @@ Mehr Hühner! Ersetzen Sie die Zahl **4** in ``||Loops:mache -mal wiederholen||`
 
 ### ~ tutorialhint
 ``` blocks
-player.onChat("chickens", function (num1) {
+player.onChat("huehner", function (num1) {
     for (let i = 0; i < num1; i++) {
         mobs.spawn(CHICKEN, pos(0, 10, 0))
     }
