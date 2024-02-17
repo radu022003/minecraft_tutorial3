@@ -1,6 +1,6 @@
 {
     "name": "Minecraft Tutorials",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "dependencies": {
         "core": "*",
         "builder": "*"
@@ -16,7 +16,11 @@
         "unit_4_lesson_A_de.md",
         "unit_4_lesson_B1_de.md",
         "unit_4_lesson_B2_de.md",
-        "unit_4_lesson_C_de.md"
+        "unit_4_lesson_C_de.md",
+        "unit_5_lesson_A_de.md",
+        "unit_5_lesson_B1_de.md",
+        "unit_5_lesson_B2_de.md",
+        "unit_5_lesson_C_de.md"
     ],
     "targetVersions": {
         "target": "1.6.8",
