@@ -20,7 +20,10 @@
         "unit_5_lesson_A_de.md",
         "unit_5_lesson_B1_de.md",
         "unit_5_lesson_B2_de.md",
-        "unit_5_lesson_C_de.md"
+        "unit_5_lesson_C_de.md",
+        "unit_6_lesson_A_de.md",
+        "unit_6_lesson_B_de.md",
+        "unit_6_lesson_C_de.md"
     ],
     "targetVersions": {
         "target": "1.6.8",
