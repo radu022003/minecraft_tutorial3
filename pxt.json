@@ -1,6 +1,6 @@
 {
     "name": "Minecraft Tutorials",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "dependencies": {
         "core": "*",
         "builder": "*"
@@ -23,7 +23,17 @@
         "unit_5_lesson_C_de.md",
         "unit_6_lesson_A_de.md",
         "unit_6_lesson_B_de.md",
-        "unit_6_lesson_C_de.md"
+        "unit_6_lesson_C_de.md",
+        "unit_7_lesson_A_de.md",
+        "unit_7_lesson_B1_de.md",
+        "unit_7_lesson_B2_de.md",
+        "unit_7_lesson_C_de.md",
+        "unit_8_lesson_A_de.md",
+        "unit_8_lesson_B_de.md",
+        "unit_8_lesson_C_de.md",
+        "unit_9_lesson_A_de.md",
+        "unit_9_lesson_B_de.md",
+        "unit_9_lesson_C_de.md"
     ],
     "targetVersions": {
         "target": "1.6.8",
