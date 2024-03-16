@@ -64,15 +64,15 @@ player.onChat("runchopper", function(area) {
 ```
 
 ## Schritt 3
-Create the “search()” function. Let’s create the remaining function that will make up our program. Then at the end we will call all of our functions from ``||Player:Bei Chat-Befehl "runchopper"||``. 
+Create the “suchen()” function. Let’s create the remaining function that will make up our program. Then at the end we will call all of our functions from ``||Player:Bei Chat-Befehl "runchopper"||``. 
 
-Create a new function and name it: **search**.
+Create a new function and name it: **suchen**.
 
 ## Schritt 4
-Add logic to the search() function. The **search()** function, which will have the agent check to see if there are any trees around it. The agent will check to the right, the left, and in front for wood blocks indicating a tree. If it finds a wood block, it will call the *chop()* function to chop the tree down.
+Add logic to the suchen() function. The **suchen()** function, which will have the agent check to see if there are any trees around it. The agent will check to the right, the left, and in front for wood blocks indicating a tree. If it finds a wood block, it will call the *chop()* function to chop the tree down.
 
 ## Schritt 5
-Drag an ``||Logic:wenn dann ansonsten||`` into ``||Function:Funktion search||``.
+Drag an ``||Logic:wenn dann ansonsten||`` into ``||Function:Funktion suchen||``.
 
 In the ``||Logic:wenn dann ansonsten||``, click the plus sign **(+)** two times to create two additional ``||Logic:sonst wenn||`` clauses.
 
@@ -84,7 +84,7 @@ Drag out a ``||Logic:0 = 0||`` comparison block. Put this comparison into the fi
 ## Schritt 7
 Drag an ``||Agent:agent untersuche||`` block into the first slot of the ``||Logic:0 = 0||``.
 
-In ``||Agent:agent untersuche||``, use the drop-down menu to select **left** as the direction to inspect.
+In ``||Agent:agent untersuche||``, use the drop-down menu to select **links** as the direction to inspect.
 
 Drag out a ``||Blocks:block||`` and drop this in the second slot of the ``||Logic:0 = 0||``.
 
@@ -94,7 +94,7 @@ In ``||Blocks:block||``, use the drop-down menu to select an **Oak Wood** block 
 This tests to see if there is Oak Wood and if there is the agent will need to chop it!
 
 ``` blocks
-function search() {
+function suchen() {
     if (agent.inspect(AgentInspection.Block, LEFT) == LOG_OAK) {
 
     } else if (0 == 0) {

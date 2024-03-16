@@ -2,7 +2,7 @@
 # Aktivität: Maze Pathfinding
 
 ## Schritt 1
-Use the provided starter code from the **Introduction to the Agent** activity.
+Verwenden Sie den bereitgestellten Einstiegscode aus der **Einführung in die Agent**-Aktivität.
 
 ```template
 player.onChat("tp", function () {
@@ -23,22 +23,22 @@ player.onChat("rt", function () {
 ```
 
 ## Schritt 2
-Let’s use the basic agent controls to move the agent to the starting point of the maze. Move your player to the start of the maze. Type the command “tp” into the chat window. Your agent should teleport over there. Then you will need to turn the agent left(“lt”) or right(“rt”) to get it facing inwards.
+Lassen Sie uns die grundlegenden Agentensteuerungen verwenden, um den Agenten zum Startpunkt des Labyrinths zu bewegen. Bewegen Sie Ihren Spieler zum Anfang des Labyrinths. Geben Sie den Befehl "tp" in das Chatfenster ein. Ihr Agent sollte dorthin teleportieren. Dann müssen Sie den Agenten nach links ("lt") oder rechts ("rt") drehen, um ihn nach innen zu richten.
 
 ## Schritt 4
-Create an ``||Player:Bei Chat-Befehl||`` block and rename it to **"mr"** which stands for maze runner.
+Erstellen Sie einen ``||Player:Bei Chat-Befehl||`` Block und benennen Sie ihn in **"mr"** um, was für Labyrinthläufer steht.
 
-You’ll put the whole algorithm in a ``||Loops:während||`` loop, which will tell your agent to continue searching for the end of the maze as long as it isn’t standing on **redstone**. From ``||Loops:SCHLEIFEN||``, drag a ``||Loops:während||`` loop into ``||Player:Bei Chat-Befehl "mr"||``.
+Sie werden den gesamten Algorithmus in einer ``||Loops:während||`` Schleife platzieren, die Ihrem Agenten sagt, weiter nach dem Ende des Labyrinths zu suchen, solange er nicht auf **Redstone** steht. Ziehen Sie aus ``||Loops:SCHLEIFEN||`` eine ``||Loops:während||`` Schleife in ``||Player:Bei Chat-Befehl "mr"||``.
 
 ## Schritt 5
-Put a ``||Logic:nicht||`` block into the ``||Loops:während||`` loop replacing the true.
+Platzieren Sie einen ``||Logic:nicht||`` Block in die ``||Loops:während||`` Schleife und ersetzen Sie das "true".
 
 ## Schritt 6
-Drag an ``||Agent:Agent, erkenne||`` into the ``||Logic:nicht||``.
+Ziehen Sie einen ``||Agent:Agent, erkenne||`` Block in das ``||Logic:nicht||``.
 
-In the ``||Agent:Agent, erkenne||`` block, use the drop-down menu to select **redstone** as the type of block to detect.
+Im ``||Agent:Agent, erkenne||`` Block verwenden Sie das Dropdown-Menü, um **Redstone** als den zu erkennenden Blocktyp auszuwählen.
 
-In the ``||Agent:Agent, erkenne||`` block, use the drop-down menu to select **down** as the direction.
+Im ``||Agent:Agent, erkenne||`` Block verwenden Sie das Dropdown-Menü, um **nach unten** als die Richtung auszuwählen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -49,18 +49,18 @@ player.onChat("mr", function () {
 ```
 
 ## Schritt 7
-Check for a path to the left. Next, we’ll check to see if there is a path open to the left and if so, turn left and move forward.
+Überprüfen Sie einen Pfad nach links. Als nächstes werden wir überprüfen, ob ein Weg nach links offen ist, und wenn ja, nach links abbiegen und nach vorne bewegen.
 
-Drag an ``||Logic:wenn dann ansonsten||`` command into the ``||Loops:während||`` loop.
+Ziehen Sie ein ``||Logic:wenn dann ansonsten||`` Befehl in die ``||Loops:während||`` Schleife.
 
 ## Schritt 8
-Drag a ``||Logic:nicht||`` block into the ``||Logic:wenn dann||`` conditional slot replacing the **true** block.
+Ziehen Sie einen ``||Logic:nicht||`` Block in den bedingten Steckplatz von ``||Logic:wenn dann||`` und ersetzen Sie den **wahr** Block.
 
 ## Schritt 9
-Drag an ``||Agent:Agent, erkenne||`` into the ``||Logic:nicht||`` block.
+Ziehen Sie einen ``||Agent:Agent, erkenne||`` Block in den ``||Logic:nicht||`` Block.
 
 ## Schritt 10
-In the ``||Agent:Agent, erkenne||`` block, use the drop-down menu to select **left** as the direction to look.
+Im ``||Agent:Agent, erkenne||`` Block verwenden Sie das Dropdown-Menü, um **links** als die Richtung auszuwählen, in die geschaut werden soll.Im ``||Agent:Agent, erkenne||`` Block verwenden Sie das Dropdown-Menü, um **links** als die Richtung auszuwählen, in die geschaut werden soll.
 
 ### ~ tutorialhint
 ``` blocks
@@ -76,10 +76,10 @@ player.onChat("mr", function () {
 ```
 
 ## Schritt 11
-Turn and move forward. If the Agent doesn’t detect a block to its left, then we want the Agent to turn left and move forward. Drag an ``||Agent:Agent, drehe dich||``, and an ``||Agent:Agent, bewege dich||`` command into the first branch of your ``||Logic:wenn dann||``.
+Drehen Sie sich nach links und bewegen Sie sich vorwärts. Wenn der Agent keinen Block auf seiner linken Seite erkennt, möchten wir, dass der Agent nach links abbiegt und sich vorwärts bewegt. Ziehen Sie einen ``||Agent:Agent, drehe dich||`` und einen ``||Agent:Agent, bewege dich||`` Befehl in den ersten Ast Ihres ``||Logic:wenn dann||``.
 
 ## Schritt 12
-Check for a path forward or to the right. Now we need to add 2 more conditions to check forward and to the right of the Agent. Click the Plus **(+)** sign at the bottom of the If then else block twice, to add 2 more ``||Logic:sonst wenn dann||`` clauses.
+Überprüfen Sie einen Weg nach vorne oder rechts. Nun müssen wir zwei weitere Bedingungen hinzufügen, um nach vorne und nach rechts des Agenten zu überprüfen. Klicken Sie zweimal auf das Pluszeichen **(+)** unten im "Wenn dann sonst" Block, um 2 weitere ``||Logic:sonst wenn dann||`` Klauseln hinzuzufügen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -99,15 +99,15 @@ player.onChat("mr", function () {
 ```
 
 ## Schritt 13
-Duplicate Conditions for the Other Branches of Your If.  Right-click on the ``||Logic:nicht||`` block in the first If then conditional slot, and select Duplicate – do this twice to create two more ``||Logic:nicht||`` ``||Agent:Agent, erkenne||`` conditions.
+Duplizieren Sie Bedingungen für die anderen Zweige Ihres Falls. Klicken Sie mit der rechten Maustaste auf den ``||Logic:nicht||`` Block im ersten Wenn-dann-Bedingungsfeld und wählen Sie Duplizieren aus – tun Sie dies zweimal, um zwei weitere ``||Logic:nicht||`` ``||Agent:Agent, erkenne||`` Bedingungen zu erstellen.
 
-Drop these duplicated conditions into the two additional ``||Logic:sonst wenn dann||`` slots.
+Platzieren Sie diese duplizierten Bedingungen in die beiden zusätzlichen ``||Logic:sonst wenn dann||`` Steckplätze.
 
 ## Schritt 14
-In the second branch of the ``||Logic:sonst wenn dann||``, use the drop-down menu to select forward as the direction to check. Thus, we are checking left and then forward.
+Im zweiten Ast des ``||Logic:sonst wenn dann||`` verwenden Sie das Dropdown-Menü, um **vorwärts** als die Richtung auszuwählen, die überprüft werden soll. Damit überprüfen wir zuerst links und dann vorwärts.
 
 ## Schritt 15
-In the third branch of the ``||Logic:sonst wenn dann||``, use the drop-down menu to select right as the direction to check. Thus, we are checking left, forward, and then right.
+Im dritten Ast des ``||Logic:sonst wenn dann||`` verwenden Sie das Dropdown-Menü, um **rechts** als die Richtung auszuwählen, die überprüft werden soll. Damit überprüfen wir zuerst links, dann vorwärts und dann rechts.
 
 ### ~ tutorialhint
 ``` blocks
@@ -125,19 +125,19 @@ player.onChat("mr", function () {
 ```
 
 ## Schritt 16
-Move ahead forward. If the agent doesn’t detect a block in front of it, then it should simply move forward. From ``||Agent:AGENT||``, drag an ``||Agent:agent move||`` block into the second branch of the ``||Logic:else if ||``clause.
+Bewegen Sie sich vorwärts. Wenn der Agent keinen Block vor sich erkennt, sollte er einfach vorwärts gehen. Ziehen Sie aus ``||Agent:AGENT||`` einen ``||Agent:Agentenbewegung||`` Block in den zweiten Ast der ``||Logic:else if||`` Klausel.
 
 ## Schritt 17
-Move along to the right. If the agent doesn’t detect a block to its right, then the agent should turn right and move forward.
+Bewegen Sie sich nach rechts. Wenn der Agent keinen Block auf seiner rechten Seite erkennt, sollte der Agent nach rechts abbiegen und sich vorwärts bewegen.
 
 ## Schritt 18
-Drag an ``||Agent:agent turn||``, and an ``||Agent:agent move||`` block into the third branch of the ``||Logic:else if||`` clause.
+Ziehen Sie einen ``||Agent:Agent, drehe dich nach||`` und einen ``||Agent:Agent, drehe dich nach||`` Block in den dritten Ast der ``||Logic:else if||`` Klausel.
 
 ## Schritt 19
-In the ``||Agent:agent turn||`` block, use the drop-down menu to select **right** as the direction to turn.
+Im ``||Agent:Agent, drehe dich nach||`` Block verwenden Sie das Dropdown-Menü, um **rechts** als die Richtung auszuwählen, in die gedreht werden soll.
 
 ## Schritt 20
-You may also want to just duplicate these blocks. That is perfectly fine as well!
+Sie können auch einfach diese Blöcke duplizieren. Das ist vollkommen in Ordnung!
 
 ### ~ tutorialhint
 ``` blocks
@@ -158,7 +158,7 @@ player.onChat("mr", function () {
 ```
 
 ## Schritt 21
-Turn around and go backward. Finally, if the agent is at a dead-end (none of the three directions are open), you want the agent to turn around and head back in the opposite direction. From ``||Agent:AGENT||``, drag the following 3 blocks into the last ``||Logic:else||`` clause: 2 agent turn blocks, and an ``||Agent:agent move||`` block.
+Drehen Sie sich um und gehen Sie rückwärts. Schließlich, wenn der Agent an einer Sackgasse ist (keine der drei Richtungen ist offen), möchten Sie, dass der Agent sich umdreht und in die entgegengesetzte Richtung zurückkehrt. Ziehen Sie aus ``||Agent:AGENT||`` die folgenden 3 Blöcke in die letzte ``||Logic:ansonsten||`` Klausel: 2 Agentendrehungsblöcke und einen ``||Agent:Agent, drehe dich nach||`` Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -182,10 +182,11 @@ player.onChat("mr", function () {
 ```
 
 ## Schritt 22
-Found the redstone! If the Agent, erkennes Redstone, it will know it has reached the finish. You can have the agent do a happy dance at the end of the maze! Feel free to reuse the code from the **Dance Dance Agent** activity in **Lesson 5: Iteration**.
+Gefunden das Redstone! Wenn der Agent Redstone erkennt, wird er wissen, dass er das Ziel erreicht hat. Sie können den Agenten am Ende des Labyrinths einen Freudentanz machen lassen! Sie können gerne den Code aus der **Tanz Tanz Agent** Aktivität in **Lektion 7: Iteration** wiederverwenden.
 
 ## Schritt 23
-To run the code for ``||Player:Bei Chat-Befehl "dance"||``, place a ``||Player:run chat command ""||`` block from ``||Player:PLAYER||`` underneath and outside the ``||Loops:während||`` loop. It should read ``||Player:run chat command "dance"||`` when you are finished. **Using ``||Player:run chat command "dance"||`` is like making a function call. You could use a function here instead if you wanted to**.
+Um den Code für ``||Player:Bei Chat-Befehl "tanz"||`` auszuführen, platzieren Sie einen ``||Player:führe Chat-Befehl aus ""||`` Block von ``||Player:SPIELER||`` unterhalb und außerhalb der ``||Loops:während||`` Schleife. Es sollte ``||Player:führe Chat-Befehl aus "tanz"||`` lauten, wenn Sie fertig sind. **Die Verwendung von ``||Player:führe Chat-Befehl aus "tanz"||`` ist wie das Aufrufen einer Funktion. Sie könnten hier stattdessen eine Funktion verwenden, wenn Sie möchten**.
+
 
 ### ~ tutorialhint
 ``` blocks

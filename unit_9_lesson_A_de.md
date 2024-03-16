@@ -2,7 +2,7 @@
 # Aktivität: Maze Generation
 
 ## Schritt 1
-Use the starter code presented. 
+Verwenden Sie den präsentierten Einstiegscode. 
 
 ```template
 let dirs: number[] = []
@@ -98,29 +98,29 @@ right = 2
 ```
 
 ## Schritt 2
-The agent will need materials to patch holes it makes in the maze. Because the agent is “learning” as it goes, it may accidently break a block of the maze wall only to later realize we need that block. Thus, the agent then patches the hole it made by mistake. you can give the agent some wood to patch the holes. Give the agent some oak wood planks in its inventory, in the upper left inventory slot.
+Der Agent wird Materialien benötigen, um Löcher zu stopfen, die er im Labyrinth verursacht. Da der Agent beim Erkunden "lernt", kann es passieren, dass er versehentlich einen Block der Labyrinthwand bricht, nur um später festzustellen, dass wir diesen Block benötigen. Daher stopft der Agent dann das Loch, das er versehentlich gemacht hat. Sie können dem Agenten einige Eichenholzdielen geben, um die Löcher zu stopfen. Geben Sie dem Agenten einige Eichenholzdielen in seinem Inventar, im oberen linken Inventarplatz.
 
 ## Schritt 3
-Let’s try out the program! Type the command “maze” in the chat window to see the program run. Double tap the space bar and fly up to get.
+Lassen Sie uns das Programm ausprobieren! Geben Sie den Befehl "Labyrinth" im Chatfenster ein, um das Programm auszuführen. Tippen Sie zweimal auf die Leertaste und fliegen Sie nach oben, um einen Überblick zu bekommen.
 
 ## Schritt 4
-Build the starting and ending locations. For the next activity, the agent will need to know when it has successfully completed the maze. In activity 2, you will be creating some code to get the agent to navigate the maze successfully. To get set up for the next activity, you will need to prepare the starting and ending areas of the maze.
+Bauen Sie die Start- und Endpositionen. Für die nächste Aktivität muss der Agent wissen, wann er das Labyrinth erfolgreich durchquert hat. In Aktivität 2 werden Sie einige Codes erstellen, um den Agenten erfolgreich durch das Labyrinth zu navigieren. Um sich für die nächste Aktivität vorzubereiten, müssen Sie die Start- und Endbereiche des Labyrinths vorbereiten.
 
 ## Schritt 5
-You will need to equip the player with a diamond pickaxe and redstone block. The pickaxe is to destroy the stone for the starting point and ending point. The redstone will mark the ending point. Open Terminal using ‘/‘, then type the give command to equip the player with a diamond pickaxe and a block of redstone. 
+Sie müssen den Spieler mit einer Diamantspitzhacke und einem Redstone-Block ausstatten. Die Spitzhacke dient dazu, den Stein für den Startpunkt und den Endpunkt zu zerstören. Das Redstone wird den Endpunkt markieren. Öffnen Sie das Terminal mit '/', geben Sie dann den Befehl "give" ein, um den Spieler mit einer Diamantspitzhacke und einem Redstone-Block auszustatten.
 **/give @s diamond_pickaxe**
 **/give @s redstone_block**
 
 ## Schritt 6
-Now all you need to do is build a starting and ending point. Decide a starting point and an ending point. Most likely these will be on opposite ends of the maze.
+Jetzt müssen Sie nur noch einen Start- und einen Endpunkt bauen. Entscheiden Sie einen Startpunkt und einen Endpunkt. Wahrscheinlich werden diese sich an entgegengesetzten Enden des Labyrinths befinden.
 
 ## Schritt 7
-Destroy a block at the starting point.
+Zerstören Sie einen Block am Startpunkt.
 
-Destroy a block at the ending point. Place a redstone block underneath the ending point.
+Zerstören Sie einen Block am Endpunkt. Platzieren Sie einen Redstone-Block unter dem Endpunkt.
 
 ## Schritt 8
-After destroying the grass block that marks the ending location, place a redstone block in the dirt.
+Nachdem Sie den Grasblock, der den Endstandort markiert, zerstört haben, platzieren Sie einen Redstone-Block im Erdreich.
 
 ## Schritt 9
-In the next activity, Maze Pathfinding, you’ll have the agent stop when it detects redstone under its feet. This is how you will know it has completed the maze!
+In der nächsten Aktivität, Maze Pathfinding, wird der Agent anhalten, wenn er Redstone unter seinen Füßen entdeckt. So werden Sie wissen, dass er das Labyrinth abgeschlossen hat!
