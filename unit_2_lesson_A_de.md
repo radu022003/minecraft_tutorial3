@@ -3,7 +3,7 @@
 # Aktivität: Gelber Ziegelweg
 
 ## Schritt 1 
-Hören auf das Ereignis "Gehen". Ziehe ``||Player: Beim Spieler gehen||`` den Block in den Programmierbereich.
+Hören auf das Ereignis "Gehen". Ziehe den ``||Player: bei gehen Spieler||`` Block in den Programmierbereich.
 
 ### ~ tutorialhint
 ``` blocks
@@ -13,7 +13,7 @@ Hören auf das Ereignis "Gehen". Ziehe ``||Player: Beim Spieler gehen||`` den Bl
 ```
 
 ## Schritt 2 
-Platziere etwas Gras. Ziehe den ``||Blocks:Platziere bei||`` Block unter den ``||Player:Beim Spieler gehen||`` Block, bis du ein Einrasten hörst und siehst.
+Platziere etwas Gras. Ziehe den ``||Blocks:Platziere bei||`` Block unter den ``||Player:bei gehen Spieler||`` Block, bis du ein Einrasten hörst und siehst.
 
 ### ~ tutorialhint      
 ``` blocks
@@ -38,7 +38,7 @@ Gehe zu Minecraft und laufe für eine Sekunde oder zwei. Drehe dich um und schau
 
 ## Schritt 5: Try with Gold!
 
-Füge Gold hinzu. Ziehe den Block ``||Player: Beim Spieler gehen||`` in den Programmierbereich. Füge den Block ``||Blocks: Platziere bei||`` hinzu und platziere Gold anstelle einer Blume.
+Füge Gold hinzu. Ziehe den Block ``||Player: bei gehen Spieler||`` in den Programmierbereich. Füge den Block ``||Blocks: Platziere bei||`` hinzu und platziere Gold anstelle einer Blume.
 
 ### ~ tutorialhint
 ``` blocks
@@ -61,7 +61,7 @@ blocks.place(GOLD_BLOCK, pos(0, -1, 0))
 ```
 
 ## Schritt 8 
-Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: Fühle Mit||`` **hinzu**!
+Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: fülle Mit||`` **hinzu**!
 
 ### ~ tutorialhint
 ``` blocks
