@@ -6,7 +6,7 @@
 Kopiere den Startcode. Kopiere den Code aus dem Hinweis.
 
 ### ~ tutorialhint
-```javascript
+```blocks
 player.onChat("tp", function () {
         player.teleport(positions.create(3, 0, 3))
         agent.teleportToPlayer() 
@@ -39,7 +39,7 @@ In Ihrem Chatfenster geben Sie **tp** ein, um Ihren Agenten in Ihre Nähe zu tel
 Geben Sie **pyramide 5** in das Chatfenster ein und sehen Sie, was passiert. Ihr Agent sollte die Pyramide problemlos bauen, aber er hört nicht auf. Der Agent baut immer weiter und weiter, ohne anzuhalten. Ihr Code befindet sich in einer Endlosschleife! Dies geschieht, weil am Ende des Codes ein Block steht, der den Code immer wieder aufruft.
 
 ### ~ tutorialhint
-``` javascript
+``` blocks
 let BaseSize = 0
 player.runChatCommand("pyramide " + (BaseSize - 2))
 ```
@@ -54,7 +54,7 @@ Wenn Sie in einer Endlosschleife gefangen sind, müssen Sie Ihren Code aus dem C
 Stoppen Sie die Schleife. Um die Schleife zu stoppen, müssen Sie eine Variable überprüfen und dann Ihrem Code mitteilen, die Schleife zu stoppen. In einer solchen Situation ist die Verwendung einer if-Anweisung großartig. Ziehen Sie eine ``||Logic: wenn dann ansonsten||``-Anweisung in Ihren Code, sodass die **Falls-Anweisung** den gesamten Code innerhalb von ``||Player:Bei Chat-Befehl "pyramide"||`` umgibt.
 
 ### ~ tutorialhint
-``` javascript
+``` blocks
 player.onChat("pyramide", function (BaseSize) {
     if (true) {
         agent.setAssist(PLACE_ON_MOVE, true)
@@ -84,7 +84,7 @@ player.runChatCommand("pyramid " + (BaseSize - 2))
 Greifen Sie eine der Befehle ``||Logic:0 = 0"||`` oder ``||Logic:0 < 0"||`` und platzieren Sie diese innerhalb Ihres ``||Logic: wenn dann ansonsten||``.
 
 ### ~ tutorialhint
-``` javascript
+``` blocks
 let MadePyramid = false
 player.onChat("pyramide", function (BaseSize) {
     // Detect if we should continue building pyramid
@@ -111,7 +111,7 @@ player.onChat("pyramide", function (BaseSize) {
 Sie möchten Ihren Vergleich auf **'BaseSize > 0'** setzen. Wenn die Größe größer als null ist, möchten Sie etwas bauen. ABER wenn nicht, geben Sie dem Benutzer eine Nachricht.
 
 ### ~ tutorialhint
-``` javascript
+``` blocks
 let MadePyramid = false
 player.onChat("pyramide", function (BaseSize) {
     // Detect if we should continue building pyramid
@@ -140,7 +140,7 @@ player.onChat("pyramide", function (BaseSize) {
 Können Sie eine Möglichkeit finden, die beiden vorhergehenden Bedingungen (A und B) zu überprüfen? Sie würden dies in diesem else-Zweig überprüfen. Schauen Sie sich unseren endgültigen Code genau an, bevor Sie die Herausforderungen meistern. Es gibt einen Hinweis, wie man dieses Rätsel löst. Haben Sie den neuen Befehl bemerkt?
 
 ### ~ tutorialhint
-``` javascript
+``` blocks
 let MadePyramid = false
 // Teleports the agent near you but a little away so
 // you have time to get out of his way when he starts
