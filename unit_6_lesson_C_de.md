@@ -126,9 +126,9 @@ function tomate() {
 }
 ```
 ## Schritt 8
-Create the lettuce. Let's create a layer of lettuce. Drag a ``||Blocks:fühle mit||`` into the ``||Functions:lettuce||`` function.
+Erstelle den Salat. Lass uns eine Schicht Salat erstellen. Ziehe einen ``||Blocks:fühle mit||`` Block in die ``||Functions:lettuce||`` Funktion.
 
-Change the material selecting **Lime Concrete** from the drop-down menu. Then change the position in the coordinates to a starting position of **(~4, ~2, ~4)** and a finishing position of **(~7, ~2, ~7)**.
+Ändere das Material, indem du **Lime Concrete** aus dem Dropdown-Menü auswählst. Dann ändere die Position in den Koordinaten zu einer Startposition von **(~4, ~2, ~4)** und einer Endposition von **(~7, ~2, ~7)**.
 
 ### ~ tutorialhint
 ```blocks
