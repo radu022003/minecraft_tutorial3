@@ -2,8 +2,8 @@
 
 # Aktivität: Gelber Ziegelweg
 
-## Schritt 1 
-Hören auf das Ereignis "Gehen". Ziehe den ``||Player: bei gehen Spieler||`` Block in den Programmierbereich.
+## 1. Spieler-Bewegung erkennen
+Ziehe den ``||Player: bei gehen Spieler||`` Block in den Programmierbereich.
 
 ### ~ tutorialhint
 ``` blocks
@@ -12,8 +12,8 @@ Hören auf das Ereignis "Gehen". Ziehe den ``||Player: bei gehen Spieler||`` Blo
 })
 ```
 
-## Schritt 2 
-Platziere etwas Gras. Ziehe den ``||Blocks:Platziere bei||`` Block unter den ``||Player:bei gehen Spieler||`` Block, bis du ein Einrasten hörst und siehst.
+## 2. Gras platzieren 
+ Ziehe den ``||Blocks:platziere bei||`` Block in den ``||Player:bei gehen Spieler||`` Block.
 
 ### ~ tutorialhint      
 ``` blocks
@@ -22,8 +22,8 @@ Platziere etwas Gras. Ziehe den ``||Blocks:Platziere bei||`` Block unter den ``|
 })
 ```
 
-## Schritt 3
-Setze eine Blume. Wähle den Löwenzahn (gelbe Blume) aus dem Dropdown-Menü ``||Blocks: Platziere bei||``, um den **Grass-Block** zu ersetzen. 
+## 3. Blumen paltzieren
+Wähle den Löwenzahn (gelbe Blume) aus dem Dropdown-Menü im ``||Blocks: platziere bei||``, um den **Grass-Block** zu ersetzen. 
 
 ### ~ tutorialhint
         ```blocks
@@ -32,13 +32,13 @@ Setze eine Blume. Wähle den Löwenzahn (gelbe Blume) aus dem Dropdown-Menü ``|
 })
         ```
 
-## Schritt 4 
+## 4. Code testen
 Gehe zu Minecraft und laufe für eine Sekunde oder zwei. Drehe dich um und schaue auf deinen Blumenpfad. Wenn du rückwärts läufst, kannst du zusehen, wie die Blumen aus dem Boden sprießen, während du dich bewegst.
 
 
-## Schritt 5: Try with Gold!
+## 5. Teste es mit Gold!
 
-Füge Gold hinzu. Ziehe den Block ``||Player: bei gehen Spieler||`` in den Programmierbereich. Füge den Block ``||Blocks: Platziere bei||`` hinzu und platziere Gold anstelle einer Blume.
+Im  ``||Blocks: Platziere bei||`` ersetze die Blume im Dropdown-Menü mit einem Gold-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -47,11 +47,11 @@ blocks.place(GOLD_BLOCK, pos(0, 0, 0))
 })
 ```
 
-## Schritt 6
+## 6. Code testen
 Schau, was passiert. Das ist die richtige Idee, aber nicht genau das, was du erreichen möchtest. Tatsächlich hinterlässt du eine Goldwand, was ziemlich unpraktisch ist. Wie könntest du diese Blöcke im Boden versenken, sodass sie einen gelben Ziegelweg bilden?
 
-## Schritt 7  
-Ändere die Y-Koordinate. Modifiziere die **Y-Koordinate**, indem du 1 **subtrahierst**, damit die Unterteile der Ziegelsteine eine Ebene tiefer liegen.
+## 7. Koordinaten ändern   
+Ändere die **Y-Koordinate**, indem du es mit 1 **subtrahierst** (-), damit die Blöcke eine Ebene tiefer liegen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -60,8 +60,8 @@ blocks.place(GOLD_BLOCK, pos(0, -1, 0))
 })
 ```
 
-## Schritt 8 
-Erstelle eine ordentliche Ziegelstraße. Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: fülle Mit||`` **hinzu**!
+## 8. Erstelle eine Straße  
+Schaue, was im Spiel passiert, und **füge** einen anderen Block aus dem Menü ``||Blocks: fülle Mit||`` **hinzu**! (Ändere den Code so, dass du einen 3-Blöcke breiten Weg hast.)
 
 ### ~ tutorialhint
 ``` blocks
