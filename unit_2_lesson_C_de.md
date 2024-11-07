@@ -2,8 +2,8 @@
 
 # Der verknüpfte Wall
 
-## Schritt 1
-Hole dir einen Vorsprung. Du hast einige Startercodes erhalten, die du für diese Aktivität verwenden kannst. Füge nun einen neuen Ereignis-Handler ``||Player: Bei Chat-Befehl||`` hinzu. Ändere "jump" zu "wall".
+## 1. Start
+Du hast einige Startercodes erhalten, die du für deinen Programm verwenden kannst. Füge nun einen neuen Ereignis``||Player: Bei Chat-Befehl||`` hinzu. Ändere "jump" zu "wand".
 
 ```template
 let PlayerPosition: Position = null
@@ -22,17 +22,17 @@ player.onChat("position", function () {
 })
 ```
 
-## Schritt 2
-Erbaue eine Wand: Wähle aus ``||Blocks:Blöcke||`` einen Block ``||Blocks:fülle mit||``und platziere ihn innerhalb des Ereignis-Handlers ``||Player:Bei Chat-Befehl "wall"||``.
+## 2. Baue eine Wand 
+Wähle aus ``||Blocks:Blöcken||`` den ``||Blocks:fülle mit||``-Block und platziere es innerhalb des ``||Player:Bei Chat-Befehl "wand"||``.
 
-## Schritt 3
-Passe einige Dinge an: Ändere **Gras** zu **Glas** innerhalb des Blocks ``||Blocks:fülle mit||``.
+## 3. Dinge anpassen
+Ändere **Gras** zu **Glas** innerhalb des Blocks ``||Blocks:fülle mit||``.
 
-## Schritt 4
-Ziehe aus ``||Variables:VARIABLEN||`` den Block ``||Variables:from_position||``  in den **von** Block ``||Blocks:fülle mit||``.
+## 4. Variablen
+Ziehe aus ``||Variables:VARIABLEN||`` den Block ``||Variables:from_position||``  in den **von**-Teil des Blocks ``||Blocks:fülle mit||``.
 
-## Schritt 5
-Als nächstes ziehe ``||Variables:to_position||`` in den **nach**-Teil des Blocks ``||Blocks:fülle mit||``. Probiere den Befehl in Minecraft aus.
+## 5. Variablen
+Als nächstes ziehe ``||Variables:to_position||`` in den **nach**-Teil des Blocks ``||Blocks:fülle mit||``. Probiere den Code in Minecraft aus.
 
 ### ~ tutorialhint
  ```blocks
@@ -46,16 +46,16 @@ Als nächstes ziehe ``||Variables:to_position||`` in den **nach**-Teil des Block
 })
 ```
 
-## Schritt 6
-Reagiere, wenn Blöcke zerstört werden. Ziehe aus ``||Blocks:BLÖCKE||`` einen Block ``||Blocks:wenn abgebaut||`` in den Arbeitsbereich..
+## 6. Blockabbau erkennen
+Ziehe aus ``||Blocks:BLÖCKE||`` den ``||Blocks:wenn abgebaut||``-Block in den Arbeitsbereich.
 
-## Schritt 7
+## 7. 
 Ändere **Gras** zu **Glas**.
 
-## Schritt 8
-Aus ``||Blocks:BLÖCKE||`` platziere einen Block ``||Blocks:platziere an||`` in den Block ``||Blocks:wenn abgebaut||``.
+## 8. 
+Aus ``||Blocks:BLÖCKE||`` platziere einen ``||Blocks:platziere bei||``-Block in den ``||Blocks:wenn abgebaut||``-Block.
 
-## Schritt 9
+## 9. 
 Ändere **Gras** zu **Diamant**.
 
 ### ~ tutorialhint
@@ -64,13 +64,13 @@ blocks.onBlockBroken(GLASS, function () {
     blocks.place(DIAMOND_BLOCK, pos(0, 0, 0))
 })
 ```
-## Schritt 10
-Behebe den Positionscode. Platziere den Block ``||Positions:wähle zufällige Position||`` in den Block ``||Blocks:platziere Diamant||``. 
+## 10. Zufällige Position
+Platziere den ``||Positions:wähle zufällige Position||``-Block in den ``||Blocks:platziere Diamant||``-Block. 
 
-## Schritt 11
-Setze ``||Variables:from_position||`` in den **von**-Teil in diesem Block.
+## 11. Variablen
+Setze ``||Variables:from_position||`` in den **von**-Teil von diesem Block.
 
-Setze ``||Variables:to_position||`` in den **bis**-Teil in diesem Block.  
+Setze ``||Variables:to_position||`` in den **bis**-Teil von diesem Block.  
 
 ### ~ tutorialhint
 ```blocks
@@ -82,11 +82,12 @@ blocks.onBlockBroken(GLASS, function () {
 })
 ```
 
-## Schritt 12
-Dupliziere den Block ``||Blocks:wenn abgebaut Glas||``und ändere einige Dinge. Ersetze **Glas** durch **Diamant**.
+## 12. Duplizieren
+Dupliziere den ``||Blocks:wenn abgebaut Glas||``-Block und ändere einige Dinge. 
+Ersetze **Glas** durch **Diamant**.
 
-## Schritt 13
-Ändere dann ``||Blocks:platziere Diamant||`` to ``||Blocks:platziere orange Wolle||``.  
+## 13. Änderungen
+Ändere dann ``||Blocks:platziere Diamant||`` zum ``||Blocks:platziere orange Wolle||``.  
 
 ### ~ tutorialhint
 
@@ -127,6 +128,6 @@ player.onChat("position", function () {
     )
 })
 ```
-## Schritt 14
+## 14. Code testen 
 Probiere es jetzt in Minecraft aus.
-Ruff erstmal die Befehl "position" im Chat aus und dann ruff die Befehl "wall" im Chat
+Rufe zuerst den Befehl "position" im Chat auf und anschließend den Befehl "wand".
