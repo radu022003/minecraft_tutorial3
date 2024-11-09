@@ -1,9 +1,9 @@
 ### @explicitHints 1
 
-# Singen Sie ein Lied von Sixpence
+# Versteckte Spinnen
 
-## 1. Blockabbau erkennen
-Ziehe den ``||Blocks: wenn abgebaut||``-Befehl aus ``||Blocks: Blöcke||`` in die Arbeitsfläche.
+## 1. Abbau von Blöcken erkennen
+Ziehe den ``||Blocks: wenn _ abgebaut||``-Befehl aus ``||Blocks: Blöcke||`` in die Arbeitsfläche.
 
 ### ~ tutorialhint
 ```blocks
@@ -12,34 +12,34 @@ blocks.onBlockBroken(GRASS, function () {
 })
 ```
 
-## 2. Kuchen abbauen
-Wähle aus dem Dropdown-Menü das **Kuchen**-Element aus.
+## 2. Spinnennetz abbauen
+Wähle aus dem Dropdown-Menü das **Spinnennetz**-Element aus.
         
 ## 3. Tiere spawnen
-Ziehen Sie aus ``||Mobs:Kreaturen||`` den ``||Mobs:spawne bei||``-Block in den ``||Blocks:wenn abgebaut||``-Block.
+Ziehe aus ``||Mobs:Kreaturen||`` den ``||Mobs:spawne _ bei||``-Block in den ``||Blocks:wenn _ abgebaut||``-Block.
 
 ### ~ tutorialhint     
 
 ```blocks
-blocks.onBlockBroken(CAKE, function () {
-    mobs.spawn(CHICKEN, pos(0, 0, 0))
+blocks.onBlockBroken(COBWEB, function () {
+    mobs.spawn(SPIDER, pos(0, 0, 0))
 })
 ```
 
-## 4. Papagei spawnen
-Wählen Sie aus dem Dropdown-Menü im ``||Mobs:spawne bei||``-Block **Papagei** aus und ändern Sie die **Y**-Koordinate auf **1**.
+## 4. Spinne spawnen
+Wähle aus dem Dropdown-Menü im ``||Mobs:spawne _ bei||``-Block **Spinne** aus und ändere die **Y**-Koordinate auf **1**.
 
-## 5. Mehr Papageien
-Platzieren Sie eine ``||Loops:Schleife||`` um ``||Mobs:spawne bei||``. Geben Sie in der ``||Loops:Schleife||`` die Zahl **24** ein.
+## 5. Mehr Spinnen
+Platziere eine ``||Loops:Schleife||`` um ``||Mobs:spawne _ bei||``. Gebe in der ``||Loops:Schleife||`` die Zahl **10** ein.
 
 ### ~ tutorialhint
 ```blocks
-blocks.onBlockBroken(CAKE, function () {
-    for (let index = 0; index < 24; index++) {
-        mobs.spawn(CHICKEN, pos(0, 1, 0))
+blocks.onBlockBroken(COBWEB, function () {
+    for (let index = 0; index < 10; index++) {
+        mobs.spawn(SPIDER, pos(0, 1, 0))
     }
 })
 ```
 
 ## 6. Code testen
-Platziere einen Kuchen und baue ihn wieder ab. Dabei sollten Papageien erscheinen.
+Platziere ein Spinnenetz und baue ihn wieder ab. Dabei sollten Spinnen erscheinen.
