@@ -106,7 +106,7 @@ player.onChat("kopieren", function () {
 Ziehe ``||Variables:start||`` in den ersten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start** lauten.
 
 ## Schritt 13
-From ``||Variables:VARIABLEN||``, ziehe ``||Variables:stop||`` in den zweiten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start bis stop** lauten.
+Ziehe ``||Variables:stop||`` in den zweiten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start bis stop** lauten.
 
 ### ~ tutorialhint
 ```blocks
@@ -137,7 +137,7 @@ let start: Position = null
 let stop: Position = null
 player.onChat("start", function () {
     start = player.position()
-    player.say("Starting Point Set: " + start)
+    player.say("Startpunkt: " + start)
 })
 player.onChat("copy", function () {
     blocks.clone(
@@ -150,6 +150,6 @@ player.onChat("copy", function () {
 })
 player.onChat("stop", function () {
     stop = player.position()
-    player.say("Stopping Point Set: " + stop)
+    player.say("Stoppunkt: " + stop)
 })
 ```
