@@ -45,7 +45,7 @@ Im ``||Blocks:schreibe||``-Block für **O** gib die Koordinaten **(~11 ~0 ~0)** 
 
 ### ~ tutorialhint
 ``` blocks
-    player.onChat("compassrose", function () {
+    player.onChat("Kompassstern", function () {
         blocks.fill(
         GRAY_WOOL,
         pos(-10, 0, 0),
@@ -91,7 +91,7 @@ Im ``||Blocks:schreibe||``-Block für **S** gib die Koordinaten **(~0 ~0 ~11)** 
 
 ### ~ tutorialhint
     ``` blocks
-        player.onChat("compassrose", function () {
+        player.onChat("Kompassstern", function () {
             blocks.fill(
             GRAY_WOOL,
             pos(-10, -1, 0),
