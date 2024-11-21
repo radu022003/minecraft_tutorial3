@@ -2,19 +2,16 @@
 # Aktivität: Herbst liegt in der Luft
 
 ## Schritt 1
-Ziehen Sie einen ``||Player:bei Chat-Befehl||``-Block in die Arbeitsfläche.
+Klicke mit der rechten Maustaste auf den ``||Player:bei Chat-Befehl||``-Block und wähle "Duplizieren". Wiederhole dies zweimal, so dass du am Ende drei ``||Player:bei Chat-Befehl||``-Blöcke hast.
 
 ## Schritt 2
-Klicken Sie mit der rechten Maustaste auf den ``||Player:bei Chat-Befehl||`` und wählen Sie "Duplizieren". Wiederholen Sie dies zweimal, so dass Sie am Ende drei ``||Player:bei Chat-Befehl||``-Blöcke haben.
+Benenne diese Befehle in **"cr"** (Kreativ), **"su"** (Überleben) und **"an"** (Anzahl) um.
 
 ## Schritt 3
-Benennen Sie diese Befehle in **"cr"** (Kreativ), **"su"** (Überleben) und **"pm"** (Postmortem) um.
+Ziehe zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Player:bei gestorbenem Spieler||``.
 
 ## Schritt 4
-Ziehen Sie zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Player:bei gestorbenem Spieler||``.
-
-## Schritt 5
-Ändern Sie ``||Player:bei gehen Spieler||`` in den Block ``||Player:bei fallen Spieler||``.
+Ändere``||Player:bei gehen Spieler||`` in den Block ``||Player:bei fallen Spieler||``.
 
 ### ~ tutorialhint
 ``` blocks
@@ -33,16 +30,13 @@ Ziehen Sie zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``|
     player.onDied(function () {
 
     })
-```
+``` 
+ 
+## Schritt 5
+Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "cr"||``-Block hinein.
 
 ## Schritt 6
-Seien Sie "Kreativ". Konstruieren Sie den ``||Player:bei Chat-Befehl||`` für **"cr"**. Dieser Befehl ändert den Spielmodus auf Kreativ. Sie können im Kreativmodus fliegen, daher ist dies sehr hilfreich, um an einen hohen Ort zu gelangen.
- 
-## Schritt 7
-Ziehen Sie den ``||Gameplay:ändere Spielmodus zu||``-Block heraus und legen Sie ihn innerhalb des ``||Player:bei Chat-Befehl "cr"||``-Blocks ab.
-
-## Schritt 8
-In ``||Gameplay:ändere Spielmodus zu||``, wählen Sie den **Kreativ**-Modus und ändern Sie ``||Mobs:Ziel||`` auf sich selbst **@s**.
+In ``||Gameplay:ändere Spielmodus zu||``-Block, wähle den **Kreativ**-Modus und ändere ``||Mobs:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Kreativ setzen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -54,11 +48,11 @@ player.onChat("cr", function () {
 })
 ```
 
-## Schritt 9
-Einfach überleben. Ziehen Sie den Block ``||Gameplay:ändere Spielmodus zu||`` heraus und legen Sie ihn innerhalb des Chat-Befehls "su" ab.
+## Schritt 7
+Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "su"||``-Block.
 
-## Schritt 10
-In ``||Gameplay:ändere Spielmodus zu||`` änderen Sie ``||Mobs:Ziel||`` als **du selbst @s**.
+## Schritt 8
+In ``||Gameplay:ändere Spielmodus zu||``, wähle den **Überleben**-Modus und ändere ``||Mobs:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Überleben setzen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -70,32 +64,30 @@ player.onChat("su", function () {
 })
 ```
 
+## Schritt 9
+In ``||Variables:VARIABLEN||``, klicke auf **Erstelle eine Variable**, und benennen Sie ``||Variables:fallen||``.
+
+## Schritt 10
+In ``||Variables:VARIABLEn||``, klicken auf **Erstelle eine Variable**, und benennen Sie ``||Variables:report||``.
+
 ## Schritt 11
-In ``||Variables:VARIABLE||``, klicken Sie auf **Erstelle eine Variable**, und benennen Sie die neue Variable ``||Variable:fallen||``. Diese Variable wird jedes Mal, wenn der Spieler fällt, um einen Block inkrementiert )(hinzugefügt).
+Ziehe einen ``||Variables:ändere um||``-Block in den ``||Player:bei Chat-Befehl fallen||``-Block.
 
 ## Schritt 12
-Erinnern die fallen. In ``||Variables:VARIABLES||``, klicken Sie auf **Erstelle eine Variable**, und benennen Sie die neue Variable ``||Variables:report||``.
+In ``||Variables:ändere um||``-Block, wähle die Variable ``||Variables:fallen||``. **"ändere fallen um 1"**
 
 ## Schritt 13
-Ziehen Sie den Block ``||Variables:ändere um||`` in das Ereignis ``||Player:bei Chat-Befehl fallen||``.
+Ziehe zwei ``||Variables:setze auf||``-Blöcke in den ``||Player:bei gestorbem Spieler||``-Block hinein.
 
 ## Schritt 14
-In ``||Variables:ändere um||``, wählen Sie Ihre Variable **fallen** anstelle des Standards, **item**.
+Im ersten ``||Variables:setze auf||``-Block, wähle die Variable ``||Variables:report||``. Dann füge in die Lücke, die ``||Variables:fallen||``-Variable hinzu.
+
+Es sollte jetzt **setze report auf fallen** heißen. 
 
 ## Schritt 15
-Ziehen Sie ``||Variables:ändere um||`` heraus. Klicken Sie mit der rechten Maustaste darauf und wählen Sie Duplizieren. Jetzt sollten Sie zwei davon haben.
+Im zweiten ``||Variables:setze auf||``-Block, wähle die Variable ``||Variables:fallen||``. 
 
-Legen Sie einen ``||Variables:ändere um||``-Block in den Block "bei gestorbem Spieler".
-
-## Schritt 16
-In diesem ``||Variables:ändere um||``-Block wählen Sie **report** anstelle von **item** aus.
-
-## Schritt 17
-Ziehen Sie **fallen** in den zweiten Slot und ersetzen Sie die **0**, damit der Block lautet **setze report auf fallen**.
-
-## Schritt 18
-Reset the fallen count. Move the other ``||Variable:setze auf||`` you duplicated in step 15. Put this inside ``||Player:bei Chat-Befehl gestorbenem||`` at the very bottom. Change the variable to **fallen**.
-Setzen Sie den **fallen** Zähler zurück. Bewegen Sie das andere ``||Variable:setze auf||``, das Sie in Schritt 15 dupliziert haben. Platzieren Sie dies ganz unten innerhalb von ``||Player:bei Chat-Befehl gestorbenem||``. Ändern Sie die Variable auf **fallen**.
+Es sollte jetzt **setze fallen auf 0** heißen. 
 
 ### ~ tutorialhint
 ``` blocks
@@ -110,13 +102,11 @@ player.onTravelled(TravelMethod.fallen, function () {
 })
 ```
 
-## Schritt 19
-Berichten Sie über Ihre **fallen** Anzahl. Ziehen Sie ``||Player:sag||`` in ``||Player:bei Chat-Befehl "pm"||``.
+## Schritt 16
+Ziehe ein ``||Player:sag||``-Block in den ``||Player:bei Chat-Befehl "pm"||``-Block.
 
-## Schritt 20
-Klicken Sie auf **FORTGESCHRITTEN**, um die ``||Text:TEXT||``-Werkzeugkategorie anzuzeigen.
-
-Ziehen Sie ``||Text:verbinde||`` in ``||PLayer:sag||`` und ersetzen Sie **"Hi!"**.
+## Schritt 17
+Ziehe ein ``||Text:verbinde||``-Block in den ``||PLayer:sag||``-Block und drücke auf das "+" bei ``||Text:verbinde||``-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -126,11 +116,11 @@ player.onChat("pm", function () {
 })
 ```
 
-## Schritt 21
-Verbinden Sie die Variable mit der Nachricht. Geben Sie in ``||Text:verbinde||`` **"Du hast gefallen"** im ersten Slot ein, um *"Hallo"* zu ersetzen.
+## Schritt 18
+Schreibe in die erste Lücke von ``||Text:verbinde||``-Block **"Du bist"** und die dei dritte Lücke **Blöcke gefallen**.
 
-## Schritt 22
-Ziehen Sie ``||Variables:report||`` in den zweiten ``||Text:verbinde||``-Slot und ersetzen Sie *"Welt"*.
+## Schritt 19
+Ziehe die ``||Variables:report||``-Variable in die zweite Lücke vom ``||Text:verbinde||``-Block.
 
 ### ~ tutorialhint
 ```blocks
@@ -139,3 +129,6 @@ player.onChat("pm", function () {
     player.say("You fell " + report)
 })
 ```
+## Schritt 20
+Teste deinen Code aus
+
