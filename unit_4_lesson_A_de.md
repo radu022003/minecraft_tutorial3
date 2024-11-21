@@ -1,17 +1,18 @@
 ### @explicitHints 1
-# Aktivität: Hühnersturm 
+# Aktivität: Hühnerregen 
 
 ## Schritt 1
-Ziehen Sie einen ``||Player:Bei Chat-Befehl||`` in den Programmierbereich und ändern Sie den Befehl in **"huehner"**.
+Ziehe einen ``||Player:bei Chat-Befehl||``-Block in den Programmierbereich und schreibe **"huehner"** rein. 
 
 ## Schritt 2
-Fügen Sie eine ``||Loops:mache -mal wiederholen||`` Schleife innerhalb von ``||Player:Bei Chat-Befehl||`` "huehner" hinzu.
+Füge eine ``||Loops:mache -mal wiederholen||``-Schleife innerhalb von ``||Player:Bei Chat-Befehl||`` "huehner" hinzu.
 
 ## Schritt 3
-Fügen Sie einen ``||Mobs:spawne bei||``-Block innerhalb der ``||Loops:mache -mal wiederholen||``-Schleife hinzu.
+Füge einen ``||Mobs:spawne ___ bei||``-Block innerhalb der ``||Loops:mache -mal wiederholen||``-Schleife hinzu.
 
 ## Schritt 4
-Ändern Sie die **Y**-Koordinate auf **10** innerhalb des ``||Mobs:spawne bei||``-Blocks. Hühner werden 10 Blöcke über Ihrem Kopf erscheinen.
+Innerhalb des ``||Mobs:spawne ___ bei||``-Blocks, ändere die **Y**-Koordinate auf **10** . 
+So erscheinen Hühner 10 Blöcke über deinem Kopf.
 
 ### ~ tutorialhint
 ``` blocks
@@ -21,13 +22,12 @@ player.onChat("huehner", function () {
     }
 })
 ```
+## Schritt 5: Variable hinzufügen
+Drücke auf das "+" Symbol biem ``||Player:Bei Chat-Befehl huehner||``-Block. Dann füge in ``||Loops:mache -mal wiederholen||``-Schleife, die ``||Variables:num1||``-Variable hinzu.
 
-## Schritt 5
-Gehen Sie in Minecraft, drücken Sie **T**, um das Chat-Fenster zu öffnen, und geben Sie **huehner** im Chat-Fenster ein. Es regnet Hühner! Wenn Sie nun **huehner 15** im Chat-Fenster eingeben, wird die Variable **num1** den Wert **15** annehmen.
+## Schritt 6: Code testen
+Gebe im Chat-Fenster "**huehner** 15" ein. Es regnet Hühner! Die Variable **num1** hat den Wert **15** angenommen.
 
-## Schritt 6
-Drücken Sie auf den **Plus** von ``||Player:Bei Chat-Befehl||`` um die neue Variable zu erstellen.
-Mehr Hühner! Ersetzen Sie die Zahl **4** in ``||Loops:mache -mal wiederholen||`` durch ``||Variables:num1||`` aus ``||Variables:VARIABLE||``.
 
 ### ~ tutorialhint
 ``` blocks
