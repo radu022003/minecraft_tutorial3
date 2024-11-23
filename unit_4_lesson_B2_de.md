@@ -126,7 +126,7 @@ Ziehe die ``||Variables:report||``-Variable in die zweite Lücke vom ``||Text:ve
 ```blocks
 let report = 0
 player.onChat("pm", function () {
-    player.say("You fell " + report)
+    player.say("Du bist " + report + " Blöcke gefallen")
 })
 ```
 ## Schritt 20
