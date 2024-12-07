@@ -1,19 +1,25 @@
 ### @explicitHints 1
 
-# Aktivität: Alles meins!
+# Aktivität: Mine! Alles mein!
 
-## Schritt 1
-Erstellen Sie Steuerelemente für den Agenten. Benennen Sie das vorhandene ``||Player:Bei Chat-Befehl||`` in **mach** um.
+---
 
-## Schritt 2
-Sie können ein einfaches Menü erstellen, um alle Agentenbefehle zu verarbeiten. Ziehen Sie ein ``||Logic:wenn dann ansonsten||`` in ``||Player:Bei Chat-Befehl "mach"||``. Klicken Sie auf das **(+)** -Symbol auf dem ``||Logic:wenn dann ansonsten||``, um einen dritten Zweig hinzuzufügen, da Sie drei Bedingungen überprüfen werden.
+## Schritt 1  
+Erstelle Steuerungen für den Agenten. Benenne den vorhandenen ``||Player:bei Chat-Befehl||``-Block in **"mach"** um.  
 
-## Schritt 3
-Klicken Sie auf das **(+)**-Symbol bei ``||Player:Bei Chat-Befehl "mach"||`` und benennen Sie **num1** in **AgentOrder** um.
+---
 
-### ~ tutorialhint
-``` blocks
-player.onChat("mach", function (AgentOrder) {
+## Schritt 2  
+Du kannst ein einfaches Menü erstellen, um alle Befehle für den Agenten zu steuern. Ziehe einen ``||Logic:wenn ... dann ... ansonsten||``-Block in den ``||Player:bei Chat-Befehl "mach"||``-Block. Klicke auf das **(+)**-Symbol im ``||Logic:wenn ... dann ... ansonsten||``, um einen dritten Zweig hinzuzufügen, da du drei Bedingungen testen wirst.  
+
+---
+
+## Schritt 3  
+Klicke auf das **(+)**-Symbol des ``||Player:bei Chat-Befehl "mach"||``-Blocks und benenne **num1** in **AgentenBefehl** um.  
+
+### ~ tutorialhint  
+```blocks  
+player.onChat("mach", function (AgentenBefehl) {
     if (true) {
 
     } else if (false) {
@@ -22,58 +28,127 @@ player.onChat("mach", function (AgentOrder) {
 
     }
 })
-```
+```  
 
-## Schritt 4
-Jetzt überprüfen Sie einfach, was der Benutzer eingegeben hat. Sie möchten, dass der Benutzer den Agenten teleportieren und drehen kann. Der dritte Zweig gibt dem Benutzer einige Informationen, wenn nichts eingegeben wird. Nehmen Sie den Vergleichsblock **'0 = 0'** und duplizieren Sie ihn, da Sie zwei benötigen.
+---
 
-Platzieren Sie diese in den ``||Logic:wenn dann ansonsten||`` Block.
+## Schritt 4  
+Teste, welche Eingabe der Nutzer gemacht hat. Der Nutzer soll den Agenten teleportieren und drehen können. Der dritte Zweig gibt eine Nachricht, falls keine gültige Eingabe erfolgt. Ziehe den ``||Logic:0 = 0||``-Vergleichsblock und dupliziere ihn, da du zwei brauchst.  
 
-## Schritt 5
-Passen Sie diese an, damit Sie testen, was der Benutzer eingegeben hat. Wir müssen den Wert von ``||Variables:AgentOrder||`` überprüfen. Angenommen, ein Wert von **1** bedeutet, dass der Agent teleportiert wird, und ein Wert von **2** bedeutet, dass der Agent sich drehen soll.
+Platziere diese Blöcke in den ``||Logic:wenn ... dann ... ansonsten||``-Block.  
 
+---
 
-### ~ tutorialhint
-``` blocks
-player.onChat("mach", function (AgentOrder) {
-    if (AgentOrder == 1) {
+## Schritt 5  
+Passe die Vergleiche an, um die Eingabe des Nutzers zu testen. Der Wert von ``||Variables:AgentenBefehl||`` entscheidet, was passiert. Beispielsweise könnte der Wert **1** bedeuten, dass der Agent teleportiert wird, und **2**, dass er sich drehen soll.  
 
-    } else if (AgentOrder == 2) {
+### ~ tutorialhint  
+```blocks  
+player.onChat("mach", function (AgentenBefehl) {
+    if (AgentenBefehl == 1) {
+
+    } else if (AgentenBefehl == 2) {
 
     } else {
 
     }
 })
+```  
 
-```
+---
 
-## Schritt 6
-Zuletzt müssen Sie nur noch Blöcke zu den Zweigen hinzufügen, damit Ihr Agent die Aktionen ausführt. Fügen Sie einen ``||Agent: Agent teleportiere zu Spieler||``-Block in den ersten Zweig Ihres ``||Logik: wenn dann ansonsten||`` ein.
+## Schritt 6  
+Füge die Aktionen für den Agenten hinzu. Ziehe einen ``||Agent: Agent teleportiere zu Spieler||``-Block in den ersten Zweig des ``||Logic:wenn ... dann ... ansonsten||``-Blocks.  
 
-## Schritt 7
-Fügen Sie einen ``||Agent: Agent drehe dich nach||``-Block in den zweiten Zweig Ihres ``||Logik: wenn dann ansonsten||`` ein.
+### ~ tutorialhint  
+```blocks  
+player.onChat("mach", function (AgentenBefehl) {
+    if (AgentenBefehl == 1) {
+agent.teleportToPlayer()
+    } else if (AgentenBefehl == 2) {
 
-## Schritt 8
-Im letzten Zweig fügen Sie eine Nachricht hinzu, um dem Benutzer Anweisungen zu geben. Fügen Sie eine ``||Player: sag||``-Anweisung dem dritten Zweig Ihres ``||Logic: wenn dann ansonsten||``-Blocks hinzu.
+    } else {
 
-## Schritt 9
-Passen Sie den Text in der ``||Player:sag||``-Anweisung so an, dass er lautet: **Geben Sie 1 ein, um zu teleportieren, oder 2, um sich zu drehen**.
+    }
+})
+``` 
 
-## Schritt 10
-Erstelle den Befehl "grabe". Platziere einen ``||Player:Bei Chat-Befehl||``-Block im Programmierbereich und benenne ihn in **"grabe"** um.
+---
 
-## Schritt 11
-Du kannst Diamanten nur im Überlebensmodus abbauen, daher solltest du als Erstes sicherstellen, dass du den Spielmodus auf Überleben änderst. Platziere ``||Gameplay:ändere Spielmodus zu||`` in den ``||Player:Bei Chat-Befehl "grabe"||`` Block.
+## Schritt 7  
+Füge einen ``||Agent:Agent drehe||``-Block in den zweiten Zweig des ``||Logic:wenn ... dann ... ansonsten||``-Blocks ein.  
 
-## Schritt 12
-Passe ``||Gameplay:ändere Spielmodus zu||`` an, indem du das Dropdown-Menü für die Spielerauswahl anklickst und **du selbst @s** auswählst.
+### ~ tutorialhint  
+```blocks  
+player.onChat("mach", function (AgentenBefehl) {
+    if (AgentenBefehl == 1) {
+        agent.teleportToPlayer()
+    } else if (AgentenBefehl == 2) {
+        agent.turn(TurnDirection.Left)
+    } else {
 
-## Schritt 13
-Ziehen Sie ein ``||Logic:wenn dann ansonsten||`` heraus und platzieren Sie es nach dem Block ``||Gameplay:ändere Spielmodus zu||``.
+    }
+})
+``` 
 
+---
 
-### ~ tutorialhint
-``` blocks
+## Schritt 8  
+Füge eine Nachricht im dritten Zweig hinzu, um dem Nutzer eine Anleitung zu geben. Ziehe einen ``||Player:sag||``-Block in den dritten Zweig des ``||Logic:wenn ... dann ... ansonsten||``-Blocks.  
+
+### ~ tutorialhint  
+```blocks  
+player.onChat("mach", function (AgentenBefehl) {
+    if (AgentenBefehl == 1) {
+        agent.teleportToPlayer()
+    } else if (AgentenBefehl == 2) {
+        agent.turn(TurnDirection.Left)
+    } else {
+            player.say(":)")
+    }
+})
+``` 
+
+---
+
+## Schritt 9  
+Passe den Text im ``||Player:sag||``-Block an, sodass dort steht: **Gib 1 ein, um zu teleportieren oder 2, um dich zu drehen.**  
+
+### ~ tutorialhint  
+```blocks  
+player.onChat("mach", function (AgentenBefehl) {
+    if (AgentenBefehl == 1) {
+        agent.teleportToPlayer()
+    } else if (AgentenBefehl == 2) {
+        agent.turn(TurnDirection.Left)
+    } else {
+            player.say("Gib 1 ein, um zu teleportieren oder 2, um dich zu drehen.")
+    }
+})
+``` 
+
+---
+
+## Schritt 10  
+Erstelle den „grabe“-Befehl. Ziehe einen neuen ``||Player:bei Chat-Befehl||``-Block in deinen Arbeitsbereich und benenne ihn in **"grabe"** um.  
+
+---
+
+## Schritt 11  
+Um Diamanten abzubauen, musst du im Überlebensmodus spielen. Füge den ``||Gameplay:Spielmodus ändern||``-Block in den ``||Player:bei Chat-Befehl "grabe"||``-Block ein.  
+
+---
+
+## Schritt 12  
+Passe den ``||Gameplay:Spielmodus ändern||``-Block an, indem du im Dropdown-Menü den Spieler **du selbst @s** auswählst.  
+
+---
+
+## Schritt 13  
+Ziehe einen ``||Logic:wenn ... dann ... ansonsten||``-Block und füge ihn nach dem ``||Gameplay:Spielmodus ändern||``-Block ein.  
+
+### ~ tutorialhint  
+```blocks  
 player.onChat("grabe", function () {
     gameplay.setGameMode(
     SURVIVAL,
@@ -83,21 +158,18 @@ player.onChat("grabe", function () {
     } else {
     }
 })
-```
+```  
 
-## Schritt 14
-Suchen Sie nach Diamanten. Sie möchten einen Alarm auslösen, wenn der Agent wertvolle Blöcke wie Diamanterz findet. Greifen Sie einen **Gleichheit (=)** Vergleichsblock, um das **wahr** in Ihrem ``||Logic:wenn dann ansonsten||`` zu ersetzen.
+## Schritt 14  
+Lass den Agenten nach Diamanten suchen. Du möchtest eine Warnung ausgeben, wenn der Agent wertvolle Blöcke wie Diamanterz findet. Ersetze **wahr** im ``||Logic:wenn ... dann ... ansonsten||``-Block durch einen ``||Logic:0 = 0||``-Vergleichsblock.  
 
-## Schritt 15
-Ziehen Sie einen ``||Agent: Agent untersuche||`` in den ersten Slot des **Gleichheits**-Blocks, ``||Logic: 0 = 0||``, und ersetzen Sie die Zahl **0**. Der Block ``||Agent: Agent untersuche||`` wird den Block direkt vor dem Agenten überprüfen.
+---
 
-Ziehen Sie einen ``||Blocks:Block||`` heraus und lassen Sie ihn in den zweiten Steckplatz des **Gleichheits**-Blocks, ``||Logic: 0 = 0||``, fallen.
+## Schritt 15  
+Ziehe einen ``||Agent:Agent untersuche||``-Block in das erste Feld des ``||Logic:0 = 0||``-Vergleichsblocks, sodass er die Blöcke vor dem Agenten überprüft. Ziehe dann einen ``||Blocks:Block||``-Block in das zweite Feld und wähle im Dropdown-Menü **Diamanterz** aus.  
 
-In ``||Blocks:Block||``, verwenden Sie das Dropdown-Menü, um **Diamant-Erz** als den Block auszuwählen, den Sie überprüfen möchten.
-
-
-### ~ tutorialhint
-``` blocks
+### ~ tutorialhint  
+```blocks  
 player.onChat("grabe", function () {
     gameplay.setGameMode(
     SURVIVAL,
@@ -109,18 +181,20 @@ player.onChat("grabe", function () {
 
     }
 })
-```
+```  
 
-## Schritt 16
-Werde reich! Wenn du tatsächlich **Diamant-Erz** findest, möchtest du eine Nachricht auf dem Bildschirm anzeigen und das Erz abbauen. Ziehe dazu ``||Player:sage||`` und platziere es im ersten Zweig des ``||Logic:wenn dann ansonsten||``-Blocks.
+---
 
-Im ``||Player:sage||``-Block gib die Nachricht **Wir sind reich!** ein.
+## Schritt 16  
+Werde reich! Wenn der Agent **Diamanterz** findet, soll er eine Nachricht anzeigen und das Erz abbauen. Ziehe einen ``||Player:sag||``-Block in den ersten Zweig des ``||Logic:wenn ... dann ... ansonsten||``-Blocks und gib eine Nachricht ein, z. B. **„Wir sind reich!“**  
 
-## Schritt 17
-Ziehe die folgenden drei Blöcke und platziere sie der Reihe nach unter dem ``||Player:sage||``-Block: ``||Agent:agent zerstöre||``, ``||Agent:agent bewege dich||`` und ``||Agent:agent sammle alles||``.
+---
 
-### ~ tutorialhint
-``` blocks
+## Schritt 17  
+Füge unter dem ``||Player:sag||``-Block die folgenden Blöcke in dieser Reihenfolge ein: ``||Agent:Agent zerstöre||``, ``||Agent:Agent bewege||`` und ``||Agent:Agent sammle alles||``.  
+
+### ~ tutorialhint  
+```blocks  
 player.onChat("grabe", function () {
     gameplay.setGameMode(
     SURVIVAL,
@@ -132,20 +206,23 @@ player.onChat("grabe", function () {
         agent.move(FORWARD, 1)
         agent.collectAll()
     } else {
+
     }
 })
-```
+```  
 
-## Schritt 18
-Zerstöre die anderen Blöcke und mach weiter mit dem Abbau. Wenn der Agent kein Diamanterz findet, sollte er einfach den wertlosen Block vor ihm zerstören und sich vorwärts bewegen, ohne etwas zu sammeln. Ziehe ``||Agent:agent zerstöre||`` und ``||Agent:agent bewege dich||`` aus ``||Agent:AGENT||`` in die ``||Logik:ansonsten||``-Klausel.
+---
 
-## Schritt 19
-Du musst diesen Vorgang **64** Mal wiederholen, daher verwendest du eine Schleife. Ziehe eine ``||Loops:wiederhole||``-Schleife heraus und umschließe damit deinen ``||Logic:wenn dann ansonsten||``-Block.
+## Schritt 18  
+Zerstöre die anderen Blöcke und grabe weiter. Wenn der Agent kein Diamanterz findet, soll er den unwichtigen Block vor ihm zerstören und ohne Einsammeln weitergehen. Ziehe dafür die Blöcke ``||Agent:Agent zerstöre||`` und ``||Agent:Agent bewege||`` in den ``||Logic:ansonsten||``-Zweig.  
 
-In der ``||Loops:-mal wiederhole||`` Schleife gib die Zahl **64** ein.
+---
 
-### ~ tutorialhint
-``` blocks
+## Schritt 19  
+Wiederhole diesen Vorgang **64** Mal. Ziehe eine ``||Loops:wiederhole||``-Schleife, die den ``||Logic:wenn ... dann ... ansonsten||``-Block umschließt, und setze die Zahl **64** ein.  
+
+### ~ tutorialhint  
+```blocks  
 player.onChat("grabe", function () {
     gameplay.setGameMode(
     SURVIVAL,
@@ -163,28 +240,33 @@ player.onChat("grabe", function () {
         }
     }
 })
-```
+```  
 
-## Schritt 20
-Machen Sie eine Rückfahrt. Dadurch wird Ihr Agent vorwärts geschickt, um **64** Blöcke abzubauen, aber Sie müssen ihn umdrehen und zurückkommen lassen. Daher verwenden Sie eine weitere Schleife außerhalb Ihrer bestehenden ``||Loops:64-mal wiederholen||`` Schleife. Sie erstellen eine "geschachtelte Schleife", weil es eine Schleife innerhalb einer Schleife geben wird. Ziehen Sie eine weitere ``||Loops:-mal wiederholen||`` Schleife heraus und umgeben Sie Ihre bestehende ``||Loops:64-mal wiederholen ||`` Schleife.
+---
 
-## Schritt 21
-In der ``||Loops:-mal wiederholen||``-Schleife geben Sie die Zahl **2** ein, da Sie möchten, dass Ihr Agent nur zwei Reihen von Blöcken abbaut. Am Ende der ersten Reihe möchten Sie, dass Ihr Agent nach oben geht und sich umdreht.
+## Schritt 20  
+Sorge dafür, dass der Agent zurückkommt. Nachdem der Agent **64** Blöcke abgebaut hat, soll er sich umdrehen und zurückkehren. Um das zu erreichen, ziehe eine weitere ``||Loops:wiederhole||``-Schleife um die bestehende ``||Loops:wiederhole 64||``-Schleife.  
 
-## Schritt 22
-Ziehen Sie die folgenden vier Blöcke heraus und platzieren Sie sie in der angegebenen Reihenfolge unter der inneren ``||Loops:-mal wiederholen||``-Schleife: ``||Agent:agent zerstöre||``, ``||Agent:agent bewege dich||`` und zwei ``||Agent:agent drehe dich nach||``-Blöcke. Platzieren Sie sie hier, um Ihren Agenten für die Rückkehr zu positionieren. Sie müssen die Richtung für einige dieser Blöcke anpassen, indem Sie das Dropdown-Menü verwenden und nach oben auswählen.
+---
 
+## Schritt 21  
+Setze in der äußeren Schleife die Zahl **2**, da der Agent zwei Reihen von Blöcken abbauen soll. Am Ende der ersten Reihe soll der Agent sich umdrehen und eine Reihe höher gehen.  
 
-### ~ tutorialhint
-``` blocks 
+---
+
+## Schritt 22  
+Füge am Ende der inneren Schleife folgende Blöcke in dieser Reihenfolge hinzu: ``||Agent:Agent zerstöre||``, ``||Agent:Agent bewege||`` (nach oben) und zwei ``||Agent:Agent drehe||``-Blöcke (jeweils eine Richtung). Stelle sicher, dass du die Richtungen im Dropdown-Menü anpasst.  
+
+### ~ tutorialhint  
+```blocks  
 player.onChat("grabe", function () {
     gameplay.setGameMode(
     SURVIVAL,
     mobs.target(LOCAL_PLAYER)
     )
-    for (let i = 0; i < 2; i++) {
+    for (let j = 0; j < 2; j++) {
         for (let i = 0; i < 64; i++) {
-            if (agent.inspect(AgentInspection.Block, FORWARD) == DIAMOND_ORE || agent.inspect(AgentInspection.Block, FORWARD) == GOLD_ORE) {
+            if (agent.inspect(AgentInspection.Block, FORWARD) == DIAMOND_ORE) {
                 player.say("Wir sind reich!")
                 agent.destroy(FORWARD)
                 agent.move(FORWARD, 1)
@@ -200,6 +282,4 @@ player.onChat("grabe", function () {
         agent.turn(TurnDirection.Left)
     }
 })
-```
-
-
+```  
