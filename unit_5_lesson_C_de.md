@@ -3,16 +3,16 @@
 # Aktivität: Pyramide
 
 ## Schritt 1
-Kopiere den Startcode. Kopiere den Code aus dem Hinweis.
+Kopiere den Starter-Code. Kopiere den Code aus dem Hinweis.
 
 ### ~ tutorialhint
-```blocks
+```javascript
 player.onChat("tp", function () {
         player.teleport(positions.create(3, 0, 3))
         agent.teleportToPlayer() 
         player.teleport(positions.create(-3, 0, -3)) 
 }) 
-player.onChat("pyramide", function (BaseSize) {
+player.onChat("pyramid", function (BaseSize) {
         agent.setAssist(AgentAssist.PlaceOnMove, true)
         for (let i = 0; i <= 3; i++) {
                 agent.move(SixDirection.Forward, BaseSize - 1)
@@ -21,41 +21,42 @@ player.onChat("pyramide", function (BaseSize) {
         agent.move(SixDirection.Up, 1)
         agent.setAssist(AgentAssist.PlaceOnMove, false)
         agent.move(SixDirection.Forward, 1)
-        player.runChatCommand("pyramide " + (BaseSize - 2))
+        player.runChatCommand("pyramid " + (BaseSize - 2))
 })
-player.onChat("drehe", function () {
+player.onChat("turn", function () {
         agent.turn(TurnDirection.Left)
 })
 ```
+
 ## Schritt 2
-Starten Sie den Code und untersuchen Sie das Problem mit dem Startcode. Wenn Sie diesen Code genau so ausführen, wie er ist, werden Sie etwas Merkwürdiges feststellen.
+Führe den Code aus und untersuche das Problem mit dem Starter-Code. Wenn du diesen Code genau so ausführst, wirst du etwas Merkwürdiges bemerken.
 
 ## Schritt 3
-Rüsten Sie Ihren Agenten mit einigen Blöcken aus.
+Rüste deinen Agenten mit einigen Blöcken aus.
 
-In Ihrem Chatfenster geben Sie **tp** ein, um Ihren Agenten in Ihre Nähe zu teleportieren. Möglicherweise möchten Sie Ihren Agenten auch mit dem Befehl Drehen drehen, aber das ist vielleicht nicht notwendig.
+Gib im Chatfenster **tp** ein, um deinen Agenten in deine Nähe zu teleportieren. Möglicherweise möchtest du auch deinen Agenten mit dem Drehbefehl drehen, aber das ist eventuell nicht nötig.
 
 ## Schritt 4
-Geben Sie **pyramide 5** in das Chatfenster ein und sehen Sie, was passiert. Ihr Agent sollte die Pyramide problemlos bauen, aber er hört nicht auf. Der Agent baut immer weiter und weiter, ohne anzuhalten. Ihr Code befindet sich in einer Endlosschleife! Dies geschieht, weil am Ende des Codes ein Block steht, der den Code immer wieder aufruft.
+Gib **pyramid 5** im Chatfenster ein und sieh, was passiert. Dein Agent sollte die Pyramide problemlos bauen, aber er wird nicht aufhören. Der Agent baut einfach immer weiter. Dein Code ist in einer Endlosschleife! Dies passiert, weil am Ende des Codes ein Block steht, der den Code immer wieder aufruft.
 
 ### ~ tutorialhint
-``` blocks
+``` javascript
 let BaseSize = 0
-player.runChatCommand("pyramide " + (BaseSize - 2))
+player.runChatCommand("pyramid " + (BaseSize - 2))
 ```
 
 ## Schritt 5
-Fügen Sie **Falls-Anweisungen** hinzu. Ihre Aufgabe besteht darin, einige **Falls-Anweisungen** in diesen Code einzufügen, um das unendliche Verhalten zu stoppen!
+Füge **If-Anweisungen** hinzu. Deine Aufgabe ist es, einige **If-Anweisungen** in den Code einzufügen, um das endlose Verhalten zu stoppen!
 
 ### ~ tutorialhint
-Wenn Sie in einer Endlosschleife gefangen sind, müssen Sie Ihren Code aus dem Code-Verbindungsfenster heraus stoppen. Klicken Sie auf die Stopp-Schaltfläche in der unteren linken Ecke Ihres Code-Verbindungsfensters.
+Wenn du in einer Endlosschleife steckst, musst du deinen Code aus dem Verbindungsfenster stoppen. Klicke auf die Stopp-Taste in der unteren linken Ecke des Code-Verbindungsfensters.
 
 ## Schritt 6
-Stoppen Sie die Schleife. Um die Schleife zu stoppen, müssen Sie eine Variable überprüfen und dann Ihrem Code mitteilen, die Schleife zu stoppen. In einer solchen Situation ist die Verwendung einer if-Anweisung großartig. Ziehen Sie eine ``||Logic: wenn dann ansonsten||``-Anweisung in Ihren Code, sodass die **Falls-Anweisung** den gesamten Code innerhalb von ``||Player:Bei Chat-Befehl "pyramide"||`` umgibt.
+Beende die Schleife. Um die Schleife zu stoppen, musst du eine Variable überprüfen und dem Code sagen, dass er die Schleife stoppen soll. Eine If-Anweisung ist in dieser Situation sehr hilfreich. Ziehe einen ``||Logic:if then else||``-Block in deinen Code, sodass die **If-Anweisung** den gesamten Code innerhalb von ``||Player:bei Chat-Befehl "pyramid"||`` umgibt.
 
 ### ~ tutorialhint
-``` blocks
-player.onChat("pyramide", function (BaseSize) {
+```javascript
+player.onChat("pyramid", function (BaseSize) {
     if (true) {
         agent.setAssist(PLACE_ON_MOVE, true)
         for (let i = 0; i <= 3; i++) {
@@ -65,7 +66,7 @@ player.onChat("pyramide", function (BaseSize) {
         agent.move(UP, 1)
         agent.setAssist(PLACE_ON_MOVE, false)
         agent.move(FORWARD, 1)
-        player.runChatCommand("pyramide " + (BaseSize - 2))
+        player.runChatCommand("pyramid " + (BaseSize - 2))
     } else {
 
     }
@@ -73,24 +74,24 @@ player.onChat("pyramide", function (BaseSize) {
 ```
 
 ## Schritt 7
-Nun geben wir die Bedingung ein. Sie möchten, dass die Schleife stoppt, wenn die **Größe** unter **null** fällt. Der Benutzer gibt eine Größe ein, und nach jedem Durchlauf durch diesen Code wird die Größe um **2** reduziert. Auch hier passiert das in diesem Block.
+Jetzt fügen wir die Bedingung hinzu. Du möchtest, dass die Schleife stoppt, wenn die **Größe** unter **null** geht. Der Benutzer gibt eine Größe ein, und nach jedem Durchlauf des Codes wird die Größe um **2** verringert. Genau hier passiert das.
 
-``` javascript
+```javascript
 let BaseSize = 0
 player.runChatCommand("pyramid " + (BaseSize - 2))
 ```
 
 ## Schritt 8
-Greifen Sie eine der Befehle ``||Logic:0 = 0"||`` oder ``||Logic:0 < 0"||`` und platzieren Sie diese innerhalb Ihres ``||Logic: wenn dann ansonsten||``.
+Greife einen der Befehle ``||Logic:0 = 0"||`` oder ``||Logic:0 < 0"||`` und platziere ihn in deiner ``||Logic:if then else||``.
 
 ### ~ tutorialhint
-``` blocks
+```javascript
 let MadePyramid = false
-player.onChat("pyramide", function (BaseSize) {
-    // Detect if we should continue building pyramid
+player.onChat("pyramid", function (BaseSize) {
+    // Überprüfe, ob wir mit dem Bau der Pyramide fortfahren sollen
     if (BaseSize > 0) {
         agent.setAssist(PLACE_ON_MOVE, true)
-        // Builds one level of the pyramid
+        // Baut eine Ebene der Pyramide
         for (let i = 0; i <= 3; i++) {
             agent.move(FORWARD, BaseSize - 1)
             agent.turn(TurnDirection.Left)
@@ -99,25 +100,24 @@ player.onChat("pyramide", function (BaseSize) {
         agent.setAssist(PLACE_ON_MOVE, false)
         agent.move(FORWARD, 1)
         MadePyramid = true
-        player.runChatCommand("pyramide " + (BaseSize - 2))
+        player.runChatCommand("pyramid " + (BaseSize - 2))
     } else {
 
     }
 })
-
 ```
 
 ## Schritt 9
-Sie möchten Ihren Vergleich auf **'BaseSize > 0'** setzen. Wenn die Größe größer als null ist, möchten Sie etwas bauen. ABER wenn nicht, geben Sie dem Benutzer eine Nachricht.
+Du möchtest, dass der Vergleich **'BaseSize > 0'** lautet. Wenn die Größe größer als null ist, bauen wir etwas, aber wenn nicht, gibst du dem Benutzer eine Nachricht.
 
 ### ~ tutorialhint
-``` blocks
+```javascript
 let MadePyramid = false
-player.onChat("pyramide", function (BaseSize) {
-    // Detect if we should continue building pyramid
+player.onChat("pyramid", function (BaseSize) {
+    // Überprüfe, ob wir mit dem Bau der Pyramide fortfahren sollen
     if (BaseSize > 0) {
         agent.setAssist(PLACE_ON_MOVE, true)
-        // Builds one level of the pyramid
+        // Baut eine Ebene der Pyramide
         for (let i = 0; i <= 3; i++) {
             agent.move(FORWARD, BaseSize - 1)
             agent.turn(TurnDirection.Left)
@@ -126,7 +126,7 @@ player.onChat("pyramide", function (BaseSize) {
         agent.setAssist(PLACE_ON_MOVE, false)
         agent.move(FORWARD, 1)
         MadePyramid = true
-        player.runChatCommand("pyramide " + (BaseSize - 2))
+        player.runChatCommand("pyramid " + (BaseSize - 2))
     } else {
 
     }
@@ -134,30 +134,29 @@ player.onChat("pyramide", function (BaseSize) {
 ```
 
 ## Schritt 10
-"Mit dieser If-Anweisung haben Sie das Endloslooping gestoppt! Wie könnten Sie diesen Code noch verbessern? Es gibt zwei Situationen, in denen die Größe null sein kann. Wenn der Agent gerade eine Pyramide fertiggestellt hat oder der Benutzer vergessen hat, eine Größe für seine Pyramide einzugeben. Der Code wird in den ``||Logic: sonst||``-Zweig des ``||Logic: wenn dann||``-Blocks gelangen, wenn das passiert."
+Mit dieser If-Anweisung hast du die Schleife gestoppt! Wie könntest du diesen Code noch verbessern? Es gibt zwei Situationen, in denen die Größe null wird. Wenn der Agent gerade eine Pyramide gebaut hat oder der Benutzer vergessen hat, eine Größe für die Pyramide einzugeben. Der Code wird zum Else-Punkt im ``||Logic: If Then||``-Block gehen, wenn dies passiert.
 
 ## Schritt 11
-Können Sie eine Möglichkeit finden, die beiden vorhergehenden Bedingungen (A und B) zu überprüfen? Sie würden dies in diesem else-Zweig überprüfen. Schauen Sie sich unseren endgültigen Code genau an, bevor Sie die Herausforderungen meistern. Es gibt einen Hinweis, wie man dieses Rätsel löst. Haben Sie den neuen Befehl bemerkt?
+Kannst du eine Möglichkeit finden, diese beiden Bedingungen (A und B) zu überprüfen? Du würdest dies im Else-Zweig überprüfen. Schau dir unseren finalen Code genau an, bevor du die Herausforderungen angehst. Es gibt einen Hinweis, wie du dieses Puzzle lösen kannst. Hast du den neuen Befehl bemerkt?
 
 ### ~ tutorialhint
-``` blocks
+```javascript
 let MadePyramid = false
-// Teleports the agent near you but a little away so
-// you have time to get out of his way when he starts
-// building
+// Teleportiert den Agenten in deine Nähe, aber etwas weiter weg, damit
+// du Zeit hast, aus dem Weg zu gehen, wenn er mit dem Bau beginnt
 player.onChat("tp", function () {
     player.teleport(pos(3, 0, 3))
     agent.teleportToPlayer()
     player.teleport(pos(-3, 0, -3))
 })
-player.onChat("drehe", function () {
+player.onChat("turn", function () {
     agent.turn(TurnDirection.Left)
 })
-player.onChat("pyramide", function (BaseSize) {
-    // Detect if we should continue building pyramid
+player.onChat("pyramid", function (BaseSize) {
+    // Überprüfe, ob wir mit dem Bau der Pyramide fortfahren sollen
     if (BaseSize > 0) {
         agent.setAssist(PLACE_ON_MOVE, true)
-        // Builds one level of the pyramid
+        // Baut eine Ebene der Pyramide
         for (let i = 0; i <= 3; i++) {
             agent.move(FORWARD, BaseSize - 1)
             agent.turn(TurnDirection.Left)
@@ -166,7 +165,7 @@ player.onChat("pyramide", function (BaseSize) {
         agent.setAssist(PLACE_ON_MOVE, false)
         agent.move(FORWARD, 1)
         MadePyramid = true
-        player.runChatCommand("pyramide " + (BaseSize - 2))
+        player.runChatCommand("pyramid " + (BaseSize - 2))
     } else {
 
     }
@@ -174,4 +173,4 @@ player.onChat("pyramide", function (BaseSize) {
 ```
 
 ## Schritt 12
-Versuchen Sie, diese Variable und eine ``||Logic:wenn||`` Anweisung zu verwenden, um die Herausforderungen abzuschließen!
+Versuche, diese Variable und eine ``||Logic:if||``-Anweisung zu verwenden, um die Herausforderungen zu lösen!
