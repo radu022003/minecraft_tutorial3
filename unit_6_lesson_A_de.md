@@ -3,19 +3,17 @@
 # Aktivität: Sprung des Glaubens Minispiel
 
 ## Schritt 1
-Klicken Sie auf die Registerkarte **FORTGESCHRITTEN** in der Werkzeugleiste, um weitere Kategorien anzuzeigen
-
-In der ``||Functions:FUNKTIONEN||`` Toolbox-Schublade klicken Sie auf die Schaltfläche **Erstelle eine Funktion**. Benennen Sie die Funktion **pool**, und klicken Sie auf **Fertig**.
+Erstelle eine ``||Functions:Funktion||`` mit dem Namen **pool**. 
 
 ## Schritt 2
-"Erstellen Sie die Funktionen platform() und teleport(). Wiederholen Sie den vorherigen Schritt, um zwei weitere Funktionen mit den Namen **platform** und **teleport** zu erstellen."
+Erstelle zwei weitere ``||Functions:Funktionen||`` mit den Namen **plattform** und **teleport**.
 
 ## Schritt 3
 
-Ziehen Sie ``||Player:Bei Chat-Befehl||`` auf die Arbeitsfläche. Benennen Sie dies um zu **"play"**.
+Ziehe eine ``||Player:Bei Chat-Befehl||``-Block in die Arbeitsfläche. Benenne dies in **"play"** um.
 
 ## Schritt 4
-"Ziehen Sie die drei Blöcke ``||Functions:aufruf function pool||``, ``||Functions:aufruf function platform||`` und ``||Functions:aufruf function teleport||`` in ``||Loops:beim start||``."
+Ziehe die drei Blöcke ``||Functions:Aufruf pool||``, ``||Functions:Aufruf platform||`` und ``||Functions:Aufruf teleport||`` in den ``||Player:bei Chat-Befehl "play"||``-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -27,16 +25,13 @@ function platform(){}
 function teleport(){}
 ```
 
-## Schritt 5
-Der ``||Loops:beim start||``-Block wird ausgeführt, wenn das Programm startet. Dies kann manchmal lästig sein, wenn Sie Code testen oder das Programm neu starten möchten. Verwenden Sie die Schaltflächen in der unteren linken Ecke, um Ihren Code in diesen Fällen neu zu starten. Klicken Sie auf die Stopp-Schaltfläche in der unteren linken Ecke Ihres Code-Verbindungsfensters.
+## Schritt 5: Pool erstellen
+Ziehe einen ``||Blocks:Fülle mit||``-Block in den ``||Functions:function pool||``.
 
 ## Schritt 6
-Füllen Sie den Pool. Ziehen Sie den ``||Blocks:Fühle mit||`` Block in den ``||Functions:pool||``. Der ``||Blocks:Fühle mit||`` Block füllt eine dreidimensionale Box von den ersten Koordinaten bis zu den zweiten Koordinaten.
+Im Dropdown-Menü von ``||Blocks:Fülle mit||``-Block, wähle einen **Wasserblock**.
 
-## Schritt 7
-Verwenden Sie das Dropdown-Menü in ``||Blocks:Fühle mit||``, um einen Wasserblock auszuwählen.
-
-In ``||Blocks:Fühle mit||``, geben Sie die folgenden Werte für die ersten Koordinaten ein: **(0, -1, 0)** und **(2, -3, 2)** als die zweiten Koordinaten.
+Im ``||Blocks:Fülle mit||``-Block, gebe die folgenden Werte für die Koordinaten ein: **(0, -1, 0)** und **(2, -3, 2)**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -51,13 +46,12 @@ function pool() {
 pool()
 ```
 
-## Schritt 8
-Bauen Sie eine Plattform. Ziehen Sie einen weiteren ``||Blocks:Fühle mit||`` Block in ``||Functions:platform||``. Verwenden Sie das Dropdown-Menü in ``||Blocks:Fühle mit||``, um eine **Doppelte Holzstufe** auszuwählen.
+## Schritt 7: Plattform bauen 
+Ziehe einen weiteren ``||Blocks:Fülle mit||``-Block in ``||Functions:function platform||``. Im Dropdown-Menü von ``||Blocks:Fülle mit||``-Block, wähle eine **Doppelte Holzstufe**. 
 
-## Schritt 9
-Im ``||Blocks:Fühle mit||`` Block geben Sie die folgenden Werte für die ersten Koordinaten ein: **(1, 64, 1)**.
+Im ``||Blocks:Fühle mit||``-Block, gebe die folgenden Werte für die Koordinaten ein: **(1, 64, 1)** und **(3, 64, 3)**.
 
-Geben Sie die folgenden Werte für die zweiten Koordinaten ein: **(3, 64, 3)**.
+
 
 ### ~ tutorialhint
 ``` blocks
@@ -72,14 +66,19 @@ function platform() {
 platform()
 ```
 
+## Schritt 8
+Der letzte Schritt besteht darin, den Spieler an einen Ort knapp über der Mitte der Plattform zu teleportieren. 
+
+Ziehe einen ``||Player:teleportiere nach||`` Block in ``||Functions:function teleport||``.
+
+## Schritt 9
+Im ``||Player:teleportiere nach||``-Block gebe die folgenden Werte für die Koordinaten ein: **(2, 65, 2)**.
+
 ## Schritt 10
-Teleportieren Sie sich selbst. Der letzte Schritt besteht darin, den Spieler an einen Ort knapp über der Mitte der Plattform zu teleportieren. Ziehen Sie einen ``||Player:teleportiere nach||`` Block in ``||Functions:teleport||``.
+Setze den Spielmodus auf Überleben. 
 
-## Schritt 11
-Im ``||Player:teleportiere nach||`` Block geben Sie die folgenden Werte für die Koordinaten ein: **(2, 65, 2)**.
+Ziehe dazu einen ``||Player:teleportiere nach||``-Block in ``||Functions:function teleport||``.
 
-## Schritt 12
-Setzen Sie den Spielmodus auf Überleben, indem Sie zu ``||Gameplay:SPIELMECHANIK||`` gehen und einen ``||Gameplay:ändere Spielmodus zu||`` Block herausziehen. Probieren Sie Ihr Minispiel aus!
 
 ### ~ tutorialhint
 ``` blocks
@@ -96,12 +95,7 @@ teleport()
 ```
 
 ## Schritt 13
-Finden Sie eine Stelle mit offenem Boden. Denken Sie daran, dass Ihr Spiel praktisch startet, sobald die ``||Loops:beim start||`` Schleife ausgeführt wird. Möglicherweise müssen Sie also den Code starten und stoppen, um ihn zurückzusetzen. Dann machen Sie einen Sprung des Glaubens! Denken Sie daran, dass Sie, wenn Sie auf der Plattform sind, die Umschalttaste gedrückt halten können, während Sie sich bewegen, um nicht herunterzufallen, während Sie nach einem guten Sprungplatz suchen.
-
-Klicken Sie auf die Stopp-Schaltfläche in der unteren linken Ecke Ihres Code-Verbindungsfensters.
-
-## Schritt 14
-Starten Sie die Codierumgebung neu. Klicken Sie auf die Wiedergabe-Schaltfläche. Wenn die Wiedergabe-Schaltfläche nicht aktiviert ist, wird Ihr Code nicht in Minecraft ausgeführt.
+Teste jetzt dein Minispiel, indem du play in den Chat eingibst. 
 
 ### ~ tutorialhint
 ``` blocks
