@@ -1,21 +1,24 @@
 ### @explicitHints 1
 # Aktivität: Burger 
 
-## Schritt 1
-Um eine Funktion zu erstellen, klicken Sie in der ``||Functions:FUNKTIONEN||`` Werkzeugleisten-Schublade auf die Schaltfläche **Erstelle eine Funktion**.
-
-Benennen Sie die Funktion. Benennen Sie diese Funktion *unteresBrotchen()*, und klicken Sie auf **Fertig**.
+## Schritt 1: Buregerzutaten
+Erstelle fünf Funktionen mit den Namen **unteresBrotchen**, **Fleisch**, **Salat**, **Tomate** und **oberesBrotchen**.
 
 ## Schritt 2
-Erstellen Sie die Funktionen fleisch(), salat(), tomate() und oberesBrotchen(). Wiederholen Sie den vorherigen Schritt, um zwei weitere Funktionen mit den Namen **Fleisch**, **Salat** und **Tomate** sowie **oberesBrotchen** zu erstellen.
+Ziehe einen ``||Player:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und benenne es **"burger"**.
 
 ## Schritt 3
-Ziehen Sie einen ``||Player:Bei Chat-Befehl||`` Block auf die Arbeitsfläche.
+Füge die folgenden Blöcke in den ``||Player:Bei Chat-Befehl "burger"||``-Block hinzu:
 
-Benennen Sie ``||Player:Bei Chat-Befehl||``um zu **"burger"**.
+ ``||Functions:aufruf unteresBrotchen||``, 
 
-## Schritt 4
-Ziehen Sie fünf Blöcke ``||Functions:aufruf Funktion unteresBrotchen||``, ``||Functions:aufruf Funktion fleisch||``, ``||Functions:aufruf Funktion salat||``, ``||Functions:aufruf Funktion tomate||`` und ``||Functions:aufruf Funktion oberesBrotchen||`` in ``||Player:Bei Chat-Befehl "burger"||``.
+ ``||Functions:aufruf fleisch||``, 
+
+ ``||Functions:aufruf salat||``, 
+
+ ``||Functions:aufruf tomate||`` und 
+
+ ``||Functions:aufruf oberesBrotchen||``
 
 **HINWEIS**: Die Reihenfolge dieser Funktionsaufrufe ist wichtig.
 
@@ -45,13 +48,12 @@ function tomate()  {
 }
 ```
 
-## Schritt 5
-Erstellen Sie das untere Brötchen. Das erste, was Sie tun werden, ist, das untere Brötchen zu erstellen.
+## Schritt 4: unteresBrotchen
+Ziehen Sie einen ``||Blocks:Fülle mit||`` Block in ``||Functions:function unteresBrotchen||``. 
 
-Ziehen Sie einen ``||Blocks:Fühle mit||`` Block in ``||Functions:unteresBrotchen||``. Ändern Sie den Block, indem Sie **Eichenholzbretter** aus dem Dropdown-Menü auswählen.
+Ändere den Block, indem du **Eichenholzbretter** aus dem Dropdown-Menü auswählst.
 
-## Schritt 6
-Geben Sie die Koordinaten für das obere Brötchen mit einer Startposition von **(~3, ~0, ~3)** und einer Endposition von **(~8, ~0, ~8)** ein.
+Gebe folgende Koordinaten ein: von **(~3, ~0, ~3)** nach **(~8, ~0, ~8)** 
 
 ### ~ tutorialhint
 ```blocks
@@ -83,12 +85,13 @@ function tomate() {
 }
 ```
 
-## Schritt 7
-"Bereiten" Sie das Fleisch zu. Lassen Sie uns eine Schicht Fleisch erstellen. Ziehen Sie einen ``||Blocks:Fühle mit||`` Block in ``||Functions:Fleisch||``. 
+## Schritt 5: Fleisch
+Ziehe einen ``||Blocks:Fülle mit||``-Block in ``||Functions:function Fleisch||``. 
 
-Passen Sie das Material an, indem Sie **Braune Terrakotta** aus dem Dropdown-Menü auswählen. Ändern Sie dann die Position im Koordinatenbereich zu einer Startposition von **(~4, ~1, ~4)** und einer Endposition von **(~7, ~1, ~7)**.
+Ändere den Block, indem du **Braune Terrakotta** aus dem Dropdown-Menü auswählst.
 
-Duplizieren Sie es.
+Gebe folgende Koordinaten ein: von **(~4, ~1, ~4)** nach **(~7, ~1, ~7)**.
+
 
 ### ~ tutorialhint
 ```blocks
@@ -125,10 +128,12 @@ function tomate() {
 
 }
 ```
-## Schritt 8
-Erstelle den Salat. Lass uns eine Schicht Salat erstellen. Ziehe einen ``||Blocks:fühle mit||`` Block in die ``||Functions:lettuce||`` Funktion.
+## Schritt 6: Salat
+Ziehe einen ``||Blocks:Fülle mit||``-Block in ``||Functions:function Salat||``. 
 
-Ändere das Material, indem du **Lime Concrete** aus dem Dropdown-Menü auswählst. Dann ändere die Position in den Koordinaten zu einer Startposition von **(~4, ~2, ~4)** und einer Endposition von **(~7, ~2, ~7)**.
+Ändere den Block, indem du **Lime Concrete** aus dem Dropdown-Menü auswählst.
+
+Gebe folgende Koordinaten ein: von **(~4, ~2, ~4)** nach **(~7, ~2, ~7)**.
 
 ### ~ tutorialhint
 ```blocks
@@ -171,10 +176,12 @@ function tomate() {
 }
 ```
 
-## Schritt 9
-Erstellen Sie die Tomate. Erstellen wir eine Schicht Tomate. Ziehen Sie einen ``||Blocks:Fühle mit||`` Block in die ``||Functions:tomato||`` Funktion.
+## Schritt 7: Tomate 
+Ziehe einen ``||Blocks:Fülle mit||``-Block in ``||Functions:function Tomate||``. 
 
-Ändern Sie das Material, indem Sie **Roter Beton** aus dem Dropdown-Menü auswählen. Ändern Sie dann die Position im Koordinatenbereich zu einer Startposition von **(~4, ~3, ~4)** und einer Endposition von **(~7, ~3, ~7)**.
+Ändere den Block, indem du **Roter Beton** aus dem Dropdown-Menü auswählst.
+
+Gebe folgende Koordinaten ein: von **(~4, ~3, ~4)** nach **(~7, ~3, ~7)**.
 
 ### ~ tutorialhint
 ```blocks
@@ -189,16 +196,16 @@ function tomate() {
 tomate()
 ```
 
+## Schritt 8: oberesBrotchen
+Ziehe zwei ``||Blocks:Fülle mit||``-Blöcke in ``||Functions:function oberesBrotchen||``. 
+
+Ändere den Block, indem du **Eichenholzbretter** aus dem Dropdown-Menü auswählst.
+
+## Schritt 9
+Gebe folgende Koordinaten für den ersten ``||Blocks:Fülle mit||``-Block: von **(~3, ~4, ~3)** nach **(~8, ~4, ~8)**.
+
 ## Schritt 10
-Erstellen Sie das obere Brötchen. Die letzte Funktion ist das **obere Brötchen**. Um dem Burger ein realistischeres Aussehen zu geben, füllt diese Funktion zwei Schichten anstelle von nur einer. Ziehen Sie zwei ``||Blocks:Fühle mit||`` Blöcke in die ``||Functions:oberesBrotchen||`` Funktion.
-
-Ändern Sie das Material für jede Füllung auf **Eichenholzbretter**.
-
-## Schritt 11
-Ändern Sie zuerst die Koordinaten für die obere Füllung. Die Position für die Koordinaten sollte eine Startposition von **(~3, ~4, ~3)** und eine Endposition von **(~8, ~4, ~8)** haben.
-
-## Schritt 12
-Die untere Füllung sollte eine Startposition von **(~4, ~5, ~4)** und eine Endposition von **(~7, ~5, ~7)** haben.
+Gebe folgende Koordinaten für den zweiten ``||Blocks:Fülle mit||``-Block: von **(~4, ~5, ~4)** nach **(~7, ~5, ~7)**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -219,9 +226,9 @@ function oberesBrotchen() {
 oberesBrotchen()
 ```
 
-## Schritt 13
+## Schritt 11
 
-Vervollständigen Sie das Programm!
+Teste deinen Code, indem du **Burger** im Chat eingibst.
 
 ### ~ tutorialhint
 ```blocks
