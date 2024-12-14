@@ -123,7 +123,9 @@ function platform() {
     FillOperation.Replace
     )
 }
+player.onChat("play", function () {
 pool()
 platform()
 teleport()
+})
 ```
