@@ -3,13 +3,13 @@
 # Aktivität: Hilf dein Agent beim Farmen
 
 ## Schritt 1
-Standardmäßig starten neue Projekte mit einem ``||Player:Bei Chat-Befehl||``, aber Sie werden zwei benötigen. Duplizieren Sie diesen ``||Player:Bei Chat-Befehl||``, indem Sie mit der rechten Maustaste darauf klicken und "Duplizieren" auswählen.
+Standardmäßig starten neue Projekte mit einem ``||Player:Bei Chat-Befehl||``, aber diesmal wirst du zwei benötigen. Duplizieren diesen ``||Player:Bei Chat-Befehl||``, indem du mit der rechten Maustaste darauf klickst und "Duplizieren" auswählen.
 
 ## Schritt 2
-Benennen Sie einen **"tp"**, um den Agent an Ihren Standort zu teleportieren, und benennen Sie den anderen **"farm"**.
+Benennen einen **"tp"**, um den Agent an deinen Standort zu teleportieren, und benennen den anderen **"farm"**.
 
 ## Schritt 3
-Platzieren Sie ``||Agent:Agent, teleportiere zu Spieler||`` innerhalb von ``||Player:Bei Chat-Befehl "tp"||``.
+Platzieren ``||Agent:Agent, teleportiere zu Spieler||`` innerhalb von ``||Player:Bei Chat-Befehl "tp"||``.
 
 
 ### ~ tutorialhint
@@ -22,13 +22,11 @@ player.onChat("farm", function () {
 ```
 
 ## Schritt 4
-Bearbeiten Sie einige Böden. Ziehen Sie einen ``||Loops:-mal wiederholen||`` Block in ``||Player:Bei Chat-Befehl "farm"||``.
+Ziehen  einen ``||Loops:-mal wiederholen||`` Block in ``||Player:Bei Chat-Befehl "farm"||``.
+Dies bestimmt die Länge unserer Reihe, also ändere in ``||Loops:-mal wiederholen||`` **4** auf **6**.
 
 ## Schritt 5
-Dies bestimmt die Länge unserer Reihe, also ändern Sie in ``||Loops:-mal wiederholen||`` **4** auf **6**.
-
-## Schritt 6
-Platzieren Sie einen ``||Agent:Agent, grabe um||`` und einen ``||Agent:Agent, bewege dich||`` Block in ``||Loops:-mal wiederholen||``.
+Platziere einen ``||Agent:Agent, grabe um||`` und einen ``||Agent:Agent, bewege dich||`` Block in ``||Loops:-mal wiederholen||``.
 
 
 ### ~ tutorialhint
@@ -42,13 +40,13 @@ player.onChat("farm", function () {
 ```
 
 ## Schritt 7
-Kommen Sie zurück und bearbeiten Sie eine weitere Reihe. Bisher wird der Agent mit dem aktuellen Code den Boden direkt vor ihm bearbeiten (mit seiner eigenen Diamantschaufel) und sich dann in diesen Raum bewegen. Er macht dies sechsmal aufgrund der ``||Loops:-mal wiederholen||`` Schleife. Versuchen Sie, den Code in Minecraft auszuführen, um zu sehen, was passiert.
+Komm zurück und bearbeite eine weitere Reihe. Bisher wird der Agent mit dem aktuellen Code den Boden direkt vor ihm bearbeiten (mit seiner eigenen Diamantschaufel) und sich dann in diesen Raum bewegen. Er macht dies sechsmal aufgrund der ``||Loops:-mal wiederholen||`` Schleife. Versuche den Code in Minecraft auszuführen, um zu sehen, was passiert.
 
 ## Schritt 8
-Beachten Sie, wo der Agent nach Abschluss des ``||Loops:-mal wiederholen||`` Blocks landet. Das ist großartig, aber Sie brauchen zwei Reihen! Sie müssen den Agent dazu bringen, sich umzudrehen und die nächste Reihe zu bearbeiten, damit er wie auf dem folgenden Bild endet.
+Beachte, wo der Agent nach Abschluss des ``||Loops:-mal wiederholen||`` Blocks landet. Das ist großartig, aber du brauchst zwei Reihen! Du musst den Agent dazu bringen, sich umzudrehen und die nächste Reihe zu bearbeiten.
 
 ## Schritt 9
-Wenn Sie einen weiteren ``||Loops:-mal wiederholen||`` Block hinzufügen, können Sie dies erreichen. Sie müssen auch einige Anweisungen hinzufügen, um den Agent umzudrehen, bevor er mit der nächsten Reihe beginnt. Hier ist unser Versuch:
+Wenn du einen weiteren ``||Loops:-mal wiederholen||`` Block hinzufügst, kannst du dies erreichen. Du musst auch einige Anweisungen hinzufügen, um den Agent umzudrehen, bevor er mit der nächsten Reihe beginnt. Hier ist ein Versuch:
 
 
 ### ~ tutorialhint
@@ -70,4 +68,5 @@ player.onChat("farm", function () {
 ```
 
 ## Schritt 10
-Wenn Sie diesen Code ausführen, werden Sie feststellen, dass ein Problem besteht. Der Agent ist nicht richtig eingestellt, und die zweite Reihe ist nicht ausgerichtet. Wie können Sie den Code reparieren, um ihn richtig zu machen? Noch einmal, Sie möchten etwas, bei dem die Reihen perfekt ausgerichtet sind. Die Richtung, in die der Roboter am Ende schaut, ist nicht wichtig.
+Wenn Sie diesen Code ausführst, wirst du feststellen, dass ein Problem besteht. Der Agent ist nicht richtig eingestellt, und die zweite Reihe ist nicht ausgerichtet. Wie kannst du den Code reparieren, um ihn richtig zu machen?
+Kurz: Du möchtest etwas, bei dem die Reihen perfekt ausgerichtet sind. Die Richtung, in die der Roboter am Ende schaut, ist nicht wichtig.
