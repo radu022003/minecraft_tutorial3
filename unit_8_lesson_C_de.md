@@ -2,19 +2,15 @@
 
 # Aktivität: Warp Belt
 
-## Schritt 1
-Ziehen Sie einen ``||Loops:beim start||`` Block auf die Programmierfläche.
-Erstellen Sie ein leeres Array.
-
 ## Schritt 2
-Erstellen Sie eine Variable und nennen Sie sie **warp_array**. Ziehen Sie einen ``||Variables:setze||`` Block in den beim Start-Block.
+Erstelle eine Variable und nennen Sie sie **warp_array**. Ziehen Sie einen ``||Variables:setze||``-Block in den beim Start-Block.
 
-Aus dem Dropdown-Menü ``||Variables:setze||`` wählen Sie die Variable **warp_array** aus.
+Aus dem Dropdown-Menü ``||Variables:setze||`` wähle die Variable **warp_array** aus.
 
 ## Schritt 3
-Ziehen Sie ein ``||Arrays:leeres Array||`` in den ``||Variables:setze "warp_array" auf||`` Block.
+Ziehe ein ``||Arrays:leeres Array||`` in den ``||Variables:setze "warp_array" auf||``-Block.
 
-In ``||Arrays:leeres Array||``, klicken Sie auf das Minuszeichen **(–)**, um es zu leeren. Sie sollten sehen, dass sich der Titel zu ``||Arrays:leeres Array||`` ändert.
+In ``||Arrays:leeres Array||``, klicke auf das Minuszeichen **(–)**, um es zu leeren.
 
 ### ~ tutorialhint
 ``` blocks
@@ -23,19 +19,19 @@ warp_array = []
 ```
 
 ## Schritt 4
-Erstellen Sie den Befehl "löschen". Ziehen Sie einen ``||Player:Bei Chat-Befehl||`` Block auf die Programmierfläche.
+Ziehe einen ``||Player:Bei Chat-Befehl||``-Block auf die Programmierfläche.
 
-Nennen Sie diesen Befehl **delete**.
+Nenne diesen Befehl **delete**.
 
 ## Schritt 5
-Klicken Sie mit der rechten Maustaste auf das vorhandene ``||Variables:setze||`` im ``||Loops:beim start||`` und wählen Sie Duplizieren aus.
+Klicke mit der rechten Maustaste auf das vorhandene ``||Variables:setze||``-Block im ``||Loops:beim start||`` und Dupliziere sie.
 
-Ziehen Sie diesen neuen ``||Variables:setze||`` Block in den ``||Player:Bei Chat-Befehl "delete"||``.
+Ziehe diesen neuen ``||Variables:setze||``-Block in den ``||Player:Bei Chat-Befehl "delete"||``-Block.
 
 ## Schritt 6
-Ziehen Sie ein ``||Player:sag||`` nach dem ``||Variables:setze||``.
+Platziere einen ``||Player:sag||``-Block nach dem ``||Variables:setze||``-Block.
 
-In ``||Player:sag||``, geben Sie eine Nachricht ein, zum Beispiel **"Array gelöscht"**.
+In ``||Player:sag||``-Block, gebe eine Nachricht ein, zum Beispiel **"Array gelöscht"**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -47,16 +43,16 @@ player.onChat("delete", function () {
 warp_array = []
 ```
 ## Schritt 7
-Erstellen Sie den Befehl "speichern". Ziehen Sie einen weiteren ``||Player:Bei Chat-Befehl||`` auf die Arbeitsfläche.
+Erstelle den Befehl "speichern". Ziehe einen weiteren ``||Player:Bei Chat-Befehl||``-Block auf die Arbeitsfläche.
 
-Nennen Sie diesen Befehl **save**.
+Nenne diesen Befehl **save**.
 
 ## Schritt 8
-Ziehen Sie ``||Arrays:füge Wert am Ende hinzu||`` in den ``||Player:Bei Chat-Befehl "save"||``.
+Ziehe ``||Arrays:füge Wert am Ende hinzu||``-Block in den ``||Player:Bei Chat-Befehl "save"||``_block.
 
-Setzen Sie die Position in das Warp-Array. Wählen Sie aus dem Dropdown-Menü ``||Arrays:füge Wert am Ende hinzu||`` das **warp_array** als das Array aus, zu dem Sie Werte hinzufügen möchten.
+Wähle aus dem Dropdown-Menü ``||Arrays:füge Wert am Ende hinzu||`` das **warp_array** aus.
 
-Ziehen Sie einen ``||Player:Position des Spielers in der Welt||`` in das Hinzufügen des Werts von ``||Arrays:füge Wert am Ende hinzu||``.
+Ziehe einen ``||Player:Position des Spielers in der Welt||``-Block in dem ``||Arrays:füge Wert am Ende hinzu||``-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -65,9 +61,9 @@ warp_array.push(player.position())
 ```
 
 ## Schritt 9
-Ziehen Sie einen ``||Player:sag||`` Block nach dem ``||Arrays:"warp_array" füge Wert "player world position" am Ende hinzu||`` Block.
+Ziehe einen ``||Player:sag||``-Block nach dem ``||Arrays:"warp_array" füge Wert "Position des Spielers in der Welt" am Ende hinzu||``-Block.
 
-Im ``||Player:sag||`` Block geben Sie eine Nachricht ein, zum Beispiel **"Position hinzugefügt"**.
+Im ``||Player:sag||``-Block gebe eine Nachricht ein, zum Beispiel **"Position hinzugefügt"**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -84,12 +80,10 @@ warp_array = []
 ```
 
 ## Schritt 10
-Erstellen Sie einen "warp" Befehl. Der Spieler wird den Warp-Befehl verwenden, indem er eine Nummer übergibt, wie z.B. "warp 1" oder "warp 2", um sich an einen gespeicherten Ort im Array zu teleportieren.
-
-Ziehen Sie einen ``||Player:Bei Chat-Befehl||`` auf die Arbeitsfläche und nennen Sie ihn **warp**.
+Ziehe einen ``||Player:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und nenne es **warp**.
 
 ## Schritt 11
-In ``||Player:Bei Chat-Befehl "warp"||``, klicken Sie auf das Pluszeichen **(+)**, um einen Parameter hinzuzufügen. Dies wird standardmäßig als **num1** bezeichnet. Dies ist eine Variable. Dies ist die Nummer des Ortes, zu dem Sie sich teleportieren möchten. Denken Sie daran, dass in Arrays die Nummer, an der etwas gespeichert ist, als Index oder Schlüssel bezeichnet wird. Sie werden hier den Index durch ``||Player:Bei Chat-Befehl "warp"||`` übergeben. Dann werden Sie die Informationen abrufen, die an diesem Ort gespeichert sind.
+In ``||Player:Bei Chat-Befehl "warp"||``, klicke auf das Pluszeichen **(+)**, um einen Parameter hinzuzufügen. Dies wird standardmäßig als **num1** bezeichnet. Dies ist eine Variable. Dies ist die Nummer des Ortes, zu dem Sie sich teleportieren möchten. Denke daran, dass in Arrays die Nummer, an der etwas gespeichert ist, als Index oder Schlüssel bezeichnet wird. Du wirst hier den Index durch ``||Player:Bei Chat-Befehl "warp"||`` übergeben. Dann wirst du die Informationen abrufen, die an diesem Ort gespeichert sind.
 
 ## Schritt 12
 Wenn Sie sich zum dritten gespeicherten Ort teleportieren möchten, würden Sie **warp 3** im Chatfenster eingeben. Der Computer geht dann zum dritten Ort und holt Ihre Koordinaten für Sie!
@@ -97,10 +91,10 @@ Wenn Sie sich zum dritten gespeicherten Ort teleportieren möchten, würden Sie 
 Sie sollten Variablen immer sinnvoll benennen. Benennen Sie **num1** in **Warp_LocationNum** um.
 
 ## Schritt 13
-Ziehen Sie ``||Player:teleportiere nach||`` in ``||Player:Bei Chat-Befehl "warp"||``.
+Ziehe ``||Player:teleportiere nach||``-Block in ``||Player:Bei Chat-Befehl "warp"||``.
 
 ## Schritt 14
-Jetzt müssen wir nur noch die Informationen aus unserem Array abrufen. Ziehen Sie aus ``||Arrays:ARRAYS||`` den Block ``||Arrays:rufe Wert ab bei||`` in ``||Player:teleportiere nach||`` und ersetzen Sie den vorhandenen Koordinatenblock.
+Jetzt müssen wir nur noch die Informationen aus unserem Array abrufen. Ziehe aus ``||Arrays:ARRAYS||`` den Block ``||Arrays:rufe Wert ab bei||`` in ``||Player:teleportiere nach||`` und ersetze den vorhandenen Koordinatenblock.
 
 ### ~ tutorialhint
 ``` blocks
@@ -109,9 +103,9 @@ player.teleport(warp_array[0])
 ```
 
 ## Schritt 15
-Aus dem Dropdown-Menü von ``||Arrays:rufe Wert ab bei||`` wählen Sie die Variable **warp_array** aus.
+Aus dem Dropdown-Menü von ``||Arrays:rufe Wert ab bei||`` wähle die Variable **warp_array** aus.
 
-Ziehen Sie **Warp_LocationNum** in den zweiten Steckplatz von ``||Arrays:rufe Wert ab bei||``.
+Ziehe **Warp_LocationNum** in den zweiten Steckplatz von ``||Arrays:rufe Wert ab bei||``.
 
 ### ~ tutorialhint
 ``` blocks
@@ -121,7 +115,7 @@ player.onChat("warp", function (Warp_LocationNum) {
 })
 ```
 ## Schritt 16
-Jetzt, wenn Sie den Warp-Befehl mit einer Zahl aufrufen, wird der Code die Position an der Stelle abrufen, die Sie angeben. Dann teleportieren Sie sich zur Position, die im Array gespeichert ist.
+Jetzt, wenn du den Warp-Befehl mit einer Zahl aufrufst, wird der Code die Position an der Stelle abrufen, die du angibst. Dann teleportierst du dich zur Position, die im Array gespeichert ist.
 
 ### ~ tutorialhint
 ``` blocks
