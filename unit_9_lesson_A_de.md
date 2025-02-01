@@ -1,8 +1,8 @@
 ### @explicitHints 1
-# Aktivität: Maze Generation
+# Aktivität: Labyrinth Generation
 
-## Schritt 1
-Verwenden Sie den präsentierten Einstiegscode. 
+## Schritt 1: Starter-Code verwenden
+Nutze den folgenden Starter-Code:
 
 ```template
 let dirs: number[] = []
@@ -14,7 +14,7 @@ let forward = 0
 let temp = 0
 let moves: string[] = []
 let tempArray: number[] = []
-player.onChat("maze", function () {
+player.onChat("laby", function () {
     blocks.fill(
     blocks.block(Block.Stone),
     positions.create(-5, 0, -5),
@@ -25,7 +25,7 @@ player.onChat("maze", function () {
     blocks.place(blocks.block(Block.Air), positions.create(0, 0, 0))
     agent.setAssist(AgentAssist.DestroyObstacles, false)
     player.teleport(positions.create(0, 5, 0))
-    player.say("let's dig that maze!")
+    player.say("Lass uns das Labyrinth graben!")
     dig()
 })
 function shuffle() {
@@ -42,46 +42,46 @@ function shuffle() {
     }
 }
 function dig() {
-    player.say("dig deeper")
+    player.say("Tiefer graben")
     shuffle()
     for (let i = 0; i < 3; i++) {
-        player.say("try " + moves[dirs[dirs.length - 1]])
-        // turn towards the new direction
+        player.say("versuch " + moves[dirs[dirs.length - 1]])
+        // zur neuen Richtung drehen
         if (dirs[dirs.length - 1] == left) {
             agent.turn(TurnDirection.Left)
         } else if (dirs[dirs.length - 1] == right) {
             agent.turn(TurnDirection.Right)
         }
-        // is this a wall?
+        // ist das eine Wand?
         if (agent.detect(AgentDetection.Block, SixDirection.Forward)) {
-            // dig once
+            // einmal graben
             agent.destroy(SixDirection.Forward)
             agent.move(SixDirection.Forward, 1)
-            // did we dig through a wall?
+            // haben wir durch die Wand gegraben?
             if (!(agent.detect(AgentDetection.Block, SixDirection.Forward))) {
-                player.say("oops, that was a wall")
-                // move back and put the wall back
+                player.say("oops, das war eine Wand")
+                // geh zurück und platziere die Wand wieder
                 agent.move(SixDirection.Back, 1)
                 agent.place(SixDirection.Forward)
             } else {
-                // yay! keep digging
+                // yay! weiter graben
                 agent.destroy(SixDirection.Forward)
                 agent.move(SixDirection.Forward, 1)
-                // did we reach the end of the maze?
+                // haben wir das Ende des Labyrinths erreicht?
                 if (!(agent.detect(AgentDetection.Block, SixDirection.Forward))) {
-                    // go back and place wall
-                    player.say("oops, too far")
+                    // gehe zurück und platziere eine Wand
+                    player.say("oops, zu weit")
                     agent.move(SixDirection.Back, 1)
                     agent.place(SixDirection.Forward)
                     agent.move(SixDirection.Back, 1)
                 } else {
                     dig()
-                    // start roll back
+                    // starte rollback
                     agent.move(SixDirection.Back, 2)
                 }
             }
         }
-        // turn back to the original direction
+        // zurück zur eigentlichen Richtung
         if (dirs[dirs.length - 1] == left) {
             agent.turn(TurnDirection.Right)
         } else if (dirs[dirs.length - 1] == right) {
@@ -97,30 +97,69 @@ left = 1
 right = 2
 ```
 
-## Schritt 2
-Der Agent wird Materialien benötigen, um Löcher zu stopfen, die er im Labyrinth verursacht. Da der Agent beim Erkunden "lernt", kann es passieren, dass er versehentlich einen Block der Labyrinthwand bricht, nur um später festzustellen, dass wir diesen Block benötigen. Daher stopft der Agent dann das Loch, das er versehentlich gemacht hat. Sie können dem Agenten einige Eichenholzdielen geben, um die Löcher zu stopfen. Geben Sie dem Agenten einige Eichenholzdielen in seinem Inventar, im oberen linken Inventarplatz.
+## Schritt 2: Materialien zum Reparieren bereitstellen
+Manchmal zerstört der Agent aus Versehen einen Block der Labyrinthwand – aber später merken wir, dass wir diesen Block doch brauchen. Deshalb flickt der Agent den Fehler aus und repariert das Loch.
 
-## Schritt 3
-Lassen Sie uns das Programm ausprobieren! Geben Sie den Befehl "Labyrinth" im Chatfenster ein, um das Programm auszuführen. Tippen Sie zweimal auf die Leertaste und fliegen Sie nach oben, um einen Überblick zu bekommen.
+**Aufgabe:** Gib dem Agenten etwas Holz (Eichenholzbretter) in seinem Inventar. Lege die Bretter in den oberen linken Slot.
 
-## Schritt 4
-Bauen Sie die Start- und Endpositionen. Für die nächste Aktivität muss der Agent wissen, wann er das Labyrinth erfolgreich durchquert hat. In Aktivität 2 werden Sie einige Codes erstellen, um den Agenten erfolgreich durch das Labyrinth zu navigieren. Um sich für die nächste Aktivität vorzubereiten, müssen Sie die Start- und Endbereiche des Labyrinths vorbereiten.
 
-## Schritt 5
-Sie müssen den Spieler mit einer Diamantspitzhacke und einem Redstone-Block ausstatten. Die Spitzhacke dient dazu, den Stein für den Startpunkt und den Endpunkt zu zerstören. Das Redstone wird den Endpunkt markieren. Öffnen Sie das Terminal mit '/', geben Sie dann den Befehl "give" ein, um den Spieler mit einer Diamantspitzhacke und einem Redstone-Block auszustatten.
+
+## Schritt 3: Programm ausprobieren
+Probier jetzt dein Programm aus!
+
+**So geht’s:**
+
+1. Tippe im Chat-Fenster den Befehl **laby** ein.
+2. Drücke die Leertaste zweimal schnell hintereinander, um hochzufliegen und das Geschehen zu beobachten.
+
+## Schritt 4: Starte- und Endpunkte bauen
+Baue einen Start- und einen Endpunkt für dein Labyrinth.
+Warum das wichtig ist: In der nächsten Aufgabe soll der Agent wissen, wann er das Labyrinth erfolgreich durchquert hat.
+In Aktivität 2 wirst du Code schreiben, der dem Agenten hilft, das Labyrinth zu meistern.
+
+**Aufgabe:** Bereite daher den Bereich für den Start- und Endpunkt vor.
+
+
+## Schritt 5: Spieler ausstatten
+Du musst den Spieler mit Werkzeugen versorgen:
+
+- Diamantspitzhacke: Damit kannst du den Stein an den Start- und Endpunkten zerstören.
+- Redstone-Block: Dieser Block markiert den Endpunkt des Labyrinths.
+
+**So geht’s:**
+
+Öffne das Terminal, indem du / eingibst.
+Tippe die folgenden Befehle ein:
+
 **/give @s diamond_pickaxe**
+
 **/give @s redstone_block**
 
 ## Schritt 6
-Jetzt müssen Sie nur noch einen Start- und einen Endpunkt bauen. Entscheiden Sie einen Startpunkt und einen Endpunkt. Wahrscheinlich werden diese sich an entgegengesetzten Enden des Labyrinths befinden.
+Jetzt musst du nur noch den Start- und Endpunkt bauen.
+Überlege:
 
-## Schritt 7
-Zerstören Sie einen Block am Startpunkt.
+- Wo soll das Labyrinth beginnen?
+- Wo soll es enden?
 
-Zerstören Sie einen Block am Endpunkt. Platzieren Sie einen Redstone-Block unter dem Endpunkt.
+Meistens liegen diese Punkte an den gegenüberliegenden Enden des Labyrinths.
 
-## Schritt 8
-Nachdem Sie den Grasblock, der den Endstandort markiert, zerstört haben, platzieren Sie einen Redstone-Block im Erdreich.
 
-## Schritt 9
-In der nächsten Aktivität, Maze Pathfinding, wird der Agent anhalten, wenn er Redstone unter seinen Füßen entdeckt. So werden Sie wissen, dass er das Labyrinth abgeschlossen hat!
+
+## Schritt 7: Blöcke zerstören und platzieren
+Was du machen sollst:
+
+1. Zerstöre einen Block an der Startposition, um den Start freizumachen.
+2. Zerstöre einen Block an der Endposition.
+
+Anschließend:
+- **Platziere einen Redstone-Block unter dem Endpunkt**, damit du ihn klar erkennen kannst.
+
+## Schritt 8: Endpunkt im Boden markieren
+Nachdem du den Grasblock am Endpunkt zerstört hast, setze einen Redstone-Block in den darunterliegenden Erdboden.
+So wird der Endpunkt deutlich markiert.
+
+## Schritt 9: Nächste Aufgabe – Labyrinth Pathfinding
+In der nächsten Aktivität „Labyrinth Pathfinding“ lernst du, wie der Agent anhält, sobald er unter sich Redstone entdeckt.
+
+**Das bedeutet:** Wenn der Agent Redstone unter seinen Füßen findet, weißt du, dass er das Labyrinth erfolgreich durchquert hat!
