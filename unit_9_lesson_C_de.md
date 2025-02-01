@@ -1,8 +1,9 @@
-### @explicitHints 1
-# Aktivität: Tree Hunter 
+### @explicitHints 1  
+# Aktivität: Tree Hunter
 
-## Schritt 1
-Use the starter code that has been provided. Make the “runchopper” command. Create a ``||Player:Bei Chat-Befehl||`` block and rename it **"runchopper"**.
+## Schritt 1  
+Verwende den bereitgestellten Starter-Code. Erstelle den Chat-Befehl „runchopper“.  
+Erzeuge einen ``||Player:Bei Chat-Befehl||``‑Block und benenne ihn in **"runchopper"** um.
 
 ```template
 let flipturn = false
@@ -28,7 +29,7 @@ function follow() {
     } else if (!(agent.detect(AgentDetection.Block, SixDirection.Down))) {
         agent.move(SixDirection.Down, 1)
     } else {
- 
+ 
     }
 }
 player.onChat("tp", function () {
@@ -51,10 +52,12 @@ function turn() {
     flipturn = !(flipturn)
 }
 ```
-## Schritt 2
-To determine the size of the area to search, let’s attach a number as a parameter to our "runchopper" command block that will represent the length of one side of the square search area. 
 
-Click the plus sign **(+)** in ``||Player:Bei Chat-Befehl "runchopper"||`` to add the **num1** parameter to our block. Use the dropdown to rename **num1** to **area**.
+---
+
+## Schritt 2  
+Um die Größe des Suchgebiets festzulegen, fügen wir unserem „runchopper“‑Chatbefehl einen Parameter hinzu, der die Länge einer Seite des quadratischen Suchgebiets darstellt.  
+Klicke im Block ``||Player:Bei Chat-Befehl "runchopper"||`` auf das Pluszeichen **(+)**, um den Parameter **num1** hinzuzufügen. Benenne diesen über das Dropdown-Menü in **area** um.
 
 ### ~ tutorialhint
 ``` blocks
@@ -63,36 +66,39 @@ player.onChat("runchopper", function(area) {
 })
 ```
 
-## Schritt 3
-Create the “suchen()” function. Let’s create the remaining function that will make up our program. Then at the end we will call all of our functions from ``||Player:Bei Chat-Befehl "runchopper"||``. 
+---
 
-Create a new function and name it: **suchen**.
+## Schritt 3  
+Erstelle die Funktion **suchen()**.  
+Wir erstellen nun die restlichen Funktionen, die unser Programm bilden. Am Ende rufen wir alle Funktionen aus dem Block ``||Player:Bei Chat-Befehl "runchopper"||`` auf.
 
-## Schritt 4
-Add logic to the suchen() function. The **suchen()** function, which will have the agent check to see if there are any trees around it. The agent will check to the right, the left, and in front for wood blocks indicating a tree. If it finds a wood block, it will call the *chop()* function to chop the tree down.
+---
 
-## Schritt 5
-Drag an ``||Logic:wenn dann ansonsten||`` into ``||Function:Funktion suchen||``.
+## Schritt 4  
+Füge Logik in die Funktion **suchen()** ein.  
+Die Funktion **suchen()** soll den Agenten prüfen lassen, ob sich Bäume in seiner Umgebung befinden. Der Agent sucht dabei rechts, links und vor sich nach Holzblöcken, die auf einen Baum hinweisen. Findet er einen solchen Block, ruft er die Funktion *chop()* auf, um den Baum zu fällen.
 
-In the ``||Logic:wenn dann ansonsten||``, click the plus sign **(+)** two times to create two additional ``||Logic:sonst wenn||`` clauses.
+---
 
-## Schritt 6
-Look for some wood on the left. Let’s first see if there is a block of wood to the left of the agent.
+## Schritt 5  
+Ziehe einen ``||Logic:wenn dann ansonsten||``‑Block in die Funktion **suchen()**.  
+Klicke in diesem Block zweimal auf das Pluszeichen **(+)**, um zwei zusätzliche ``||Logic:sonst wenn||``‑Klauseln zu erstellen.
 
-Drag out a ``||Logic:0 = 0||`` comparison block. Put this comparison into the first conditional slot for the ``||Logic:wenn||`` statement.
+---
 
-## Schritt 7
-Drag an ``||Agent:agent untersuche||`` block into the first slot of the ``||Logic:0 = 0||``.
+## Schritt 6  
+Suche nach Holz links:  
+Ziehe einen ``||Logic:0 = 0||``‑Vergleichsblock heraus und platziere ihn in das erste Bedingungsfeld des ``||Logic:wenn||``‑Blocks.
 
-In ``||Agent:agent untersuche||``, use the drop-down menu to select **links** as the direction to inspect.
+---
 
-Drag out a ``||Blocks:block||`` and drop this in the second slot of the ``||Logic:0 = 0||``.
-
-In ``||Blocks:block||``, use the drop-down menu to select an **Oak Wood** block or a type of tree in the area you want to search. 
+## Schritt 7  
+Ziehe einen ``||Agent:agent untersuche||``‑Block in das erste Feld des ``||Logic:0 = 0||``‑Blocks.  
+Wähle im ``||Agent:agent untersuche||``‑Block über das Dropdown-Menü die Richtung **links** aus.  
+Ziehe einen ``||Blocks:block||``‑Block heraus und platziere ihn im zweiten Feld des Vergleichs.  
+Wähle im ``||Blocks:block||``‑Block über das Dropdown-Menü ein **Eichenholz**‑Block oder einen anderen Baumtyp aus, den du durchsuchen möchtest.
 
 ### ~ tutorialhint
-This tests to see if there is Oak Wood and if there is the agent will need to chop it!
-
 ``` blocks
 function suchen() {
     if (agent.inspect(AgentInspection.Block, LEFT) == LOG_OAK) {
@@ -107,23 +113,25 @@ function suchen() {
 }
 ```
 
-## Schritt 8
-Chop to the left. From ``||Agent:AGENT||``, put an ``||Agent:Agent, drehe dich nach||`` into the first branch of the ``||Logic:if then||``.
+---
+
+## Schritt 8  
+Fällt den Baum links:  
+Ziehe aus ``||Agent:AGENT||`` einen ``||Agent:Agent, drehe dich nach||``‑Block in den ersten Ast des ``||Logic:wenn dann||``‑Blocks.
 
 ### ~ tutorialhint
-If you do find some wood to the left of the agent, then you will want to turn the agent left and call the *chop()* function to chop down the tree. Finally, you will want the agent to turn back around and face forward again.
+Wenn du links vom Agenten Holz findest, solltest du den Agenten nach links drehen und die Funktion chop() aufrufen, um den Baum zu fällen. Anschließend sollte sich der Agent wieder umdrehen und nach vorne blicken.
 
-## Schritt 9
-Place a ``||Functions:call function chop||`` under the ``||Agent:Agent, drehe dich nach||``.
+---
 
-Duplicate the ``||Agent:Agent,drehe dich nach||`` and place the copy below ``||Functions:call function chop||``.
-
-In this new ``||Agent:Agent, drehe dich nach||``, use the drop-down menu to select **right**. 
+## Schritt 9  
+Platziere einen ``||Functions:Aufruf Funktion chop||``‑Block unterhalb des ``||Agent:Agent, drehe dich nach||``‑Blocks.  
+Dupliziere anschließend den ``||Agent:Agent, drehe dich nach||``‑Block und platziere die Kopie unterhalb des ``||Functions:Aufruf Funktion chop||``‑Blocks.  
+Wähle in diesem neuen Block über das Dropdown-Menü **rechts** aus.
 
 ### ~ tutorialhint
-
 ``` blocks
-function search() {
+function suchen() {
     if (agent.inspect(AgentInspection.Block, LEFT) == LOG_OAK) {
         agent.turn(TurnDirection.Left)
         chop()
@@ -141,19 +149,23 @@ function chop()  {
 }
 ```
 
-## Schritt 10
-Look for wood to chop straight ahead. Now, you want check for wood in front of your agent. In this case, you don’t need to turn the agent.
+---
 
-Click on the first condition we made and duplicate it. Snap the duplicate into the condition slot of the second branch of your ``||Logic:wenn||``.
+## Schritt 10  
+Suche nach Holz, das geradeaus gefällt werden kann.  
+Du möchtest nun prüfen, ob sich vor dem Agenten ein Holzblock befindet. In diesem Fall muss der Agent nicht gedreht werden.  
+Klicke auf die erste erstellte Bedingung und dupliziere sie. Platziere das Duplikat in das zweite Bedingungsfeld deines ``||Logic:wenn||``‑Blocks.
 
-## Schritt 11
-Now just make a few adjustments. In ``||Agent:Agent, untersuche||`` change the direction to **forward**.
+---
 
-Duplicate ``||Functions:Aufruf function chop||`` and place it inside this branch(2nd branch) of the ``||Logic:wenn||``.
+## Schritt 11  
+Nimm nun einige Anpassungen vor:  
+Ändere im duplizierten ``||Agent:agent untersuche||``‑Block die Richtung zu **vorne**.  
+Dupliziere den ``||Functions:Aufruf Funktion chop||``‑Block und platziere ihn in diesem zweiten Ast.
 
 ### ~ tutorialhint
 ``` blocks
-function search() {
+function suchen() {
     if (agent.inspect(AgentInspection.Block, LEFT) == LOG_OAK) {
         agent.turn(TurnDirection.Left)
         chop()
@@ -171,31 +183,35 @@ function chop() {
 }
 ```
 
-## Schritt 12
-Look for wood to chop on the right. Finally, you should see if there is a block of wood to the right of the agent. 
+---
 
-Click on the first condition we made and duplicate it again. Place this in the third branch of the ``||Logic:sonst wenn||``.
+## Schritt 12  
+Suche nach Holz rechts:  
+Dupliziere die erste Bedingung und platziere sie in den dritten Ast des ``||Logic:sonst wenn||``‑Blocks.
 
 ### ~ tutorialhint
-This is essentially the same as looking to the left but several things will be opposite.
+Das ist im Grunde dasselbe wie links zu schauen, nur dass einige Dinge umgekehrt sind.
 
+---
 
-## Schritt 13
-Adjust the direction to **right**.
+## Schritt 13  
+Passe die Richtung in diesem Ast auf **rechts** an.  
+Du benötigst zwei ``||Agent:Agent, drehe dich nach||``‑Blöcke. Dupliziere zwei und platziere sie in den dritten Ast.
 
-You will need two ``||Agent:Agent,drehe dich nach||`` blocks. Duplicate two and put them inside the third branch.
+---
 
-## Schritt 14
-Duplicate ``||Function:Aufruf Funktion chop||`` and place it between the two ``||Agent:Agent,drehe dich nach||`` blocks.
+## Schritt 14  
+Dupliziere den ``||Functions:Aufruf Funktion chop||``‑Block und platziere ihn zwischen den beiden ``||Agent:Agent, drehe dich nach||``‑Blöcken.  
+Passe anschließend die Drehungen an: Dieses Mal dreht sich der Agent zuerst nach rechts, fällt den Baum und dreht sich dann wieder nach links, um in seine Ausgangsrichtung zurückzukehren.
 
-Now, just adjust the turns. This time the agent turns right first, chops, and then turns back to the left.
+---
 
-## Schritt 15
-The final else branch of your ``||Logic:wenn||`` will be left blank.
+## Schritt 15  
+Der letzte **ansonsten**‑Ast deines ``||Logic:wenn||``‑Blocks bleibt leer.
 
 ### ~ tutorialhint
 ``` blocks
-function search() {
+function suchen() {
     if (agent.inspect(AgentInspection.Block, LEFT) == LOG_OAK) {
         agent.turn(TurnDirection.Left)
         chop()
@@ -215,52 +231,70 @@ function chop() {
 }
 ```
 
-## Schritt 16
-Allow the agent to destroy obstacles in its path. The agent has a block that will give it some extra powers that are useful in this case. The block is called set Assist and it is located in the ``||Agent:AGENT||`` Toolbox drawer.
+---
 
-Drag a ``||Agent:setze assist||`` block into ``||Player:Bei Chat-Befehl "runchopper"||``. Use the drop-down menu to select **destroy obstacles**.
+## Schritt 16  
+Erlaube dem Agenten, Hindernisse auf seinem Weg zu zerstören.  
+Der Agent verfügt über einen Block, der ihm zusätzliche Fähigkeiten verleiht – er kann damit automatisch Blöcke platzieren, wenn er sich bewegt, und Blöcke aus jedem Inventarslot verwenden, statt nur aus dem oberen linken Slot.  
+Ziehe einen ``||Agent:setze assist||``‑Block in den Block ``||Player:Bei Chat-Befehl "runchopper"||`` und wähle im Dropdown-Menü **destroy obstacles** aus.
 
 ### ~ tutorialhint
-Check out other cool things this block can do by searching for it in the help! It can allow your agent to place blocks automatically when it moves and also place blocks from any slot in its inventory instead of just using the upper left hand inventory slot.
+Schau dir an, welche weiteren coolen Funktionen dieser Block hat – du findest sie in der Hilfe! Mit ihm kann dein Agent automatisch Blöcke platzieren, während er sich bewegt, und auch Blöcke aus jedem Slot seines Inventars verwenden, statt nur den oberen linken Slot.
 
+---
 
-##Step 17
-Finally, select ``||Logic:Wahr||``.
+## Schritt 17  
+Wähle abschließend ``||Logic:Wahr||``.
 
-## Schritt 18
-Control the agent’s turn direction. You need the agent to turn around at the end of each row. 
+---
 
-Let’s create a Boolean variable to keep track of which direction to turn. We’ll use ``||Logic:Wahr||`` to denote a Right turn and ``||Logic:Falsch||`` to represent a Left turn. After we make our turn, we’ll switch the boolean variable.
+## Schritt 18  
+Steuere die Drehung des Agenten.  
+Am Ende jeder Reihe soll sich der Agent umdrehen.  
+Erstelle dazu eine Boolean‑Variable, um festzuhalten, in welche Richtung gedreht werden soll. Wir verwenden ``||Logic:Wahr||`` für eine Rechtsdrehung und ``||Logic:Falsch||`` für eine Linksdrehung.  
+Nach der Drehung wird die Boolean‑Variable umgeschaltet.  
+Die Variable **flipturn** wurde bereits im Starter-Code dieser Aktivität angelegt.  
+Ziehe einen ``||Variables:setze||``‑Block in den Block ``||Player:Bei Chat-Befehl "runchopper"||`` und wähle über das Dropdown-Menü **flipturn** aus.
 
-The variable **flipturn** was created as part of the starter code at the beginning of this activity. This is meant to be your Boolean variable.
+---
 
-Drag a ``||Variables:setze||`` block into ``||Player:Bei Chat-Befehl "runchopper"||``. Use the drop-down menu to select **flipturn**
-
-## Schritt 19
-Drag a ``||Logic:Falsch||`` block into the set and replace the **0**.
+## Schritt 19  
+Ziehe einen ``||Logic:Falsch||``‑Block in den Setz‑Block und ersetze damit die **0**.
 
 ### ~ tutorialhint
 ``` blocks
 let flipturn = false
-player.onChat("runchopper", function (area) {
+player.onChat("runchopper", function(area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false;
 })
 ```
 
-## Schritt 20
-We have everything in place. Now we just need to build it out. To move the agent through its search you will: Get the agent to move down one row of the grid, Turn at the end, then Continue going down rows until the square area is complete.
+---
 
-## Schritt 21
-Put *search()* and *follow()* into the chat command. Now that we have all our functions built, let’s bring it all together. For each step, we want our agent to Search for trees, and follow the ground terrain. By searching the agent will be actually searching three rows at a time because it searches left, right, and forward with each step.
+## Schritt 20  
+Nun ist alles vorbereitet. Jetzt müssen wir den Agenten durch das Suchgebiet bewegen:  
+Der Agent soll eine Reihe des Gitters hinuntergehen, sich am Ende wenden und dann weitere Reihen abgehen, bis das quadratische Gebiet vollständig durchsucht wurde.
 
-## Schritt 22
-Drag a ``||Loops:-mal wiederholen||`` block into ``||Player:Bei Chat-Befehl "runchopper"||``. Place this below ``||Variables:setze flipturn||`` block.
+---
 
-## Schritt 23
-Remember, that the **area** parameter is the number of blocks in each row. Drag ``||Variables:area||`` into the ``||Loops:-mal wiederholen||`` block replacing the default **4**.
+## Schritt 21  
+Füge die Funktionen *suchen()* und *follow()* in den Chatbefehl ein.  
+Nachdem alle Funktionen erstellt wurden, bringen wir nun alles zusammen.  
+Bei jedem Schritt soll der Agent nach Bäumen suchen und dem Geländeverlauf folgen. Dabei sucht er gleichzeitig in drei Richtungen (links, rechts und geradeaus).
 
-Now the agent will search for all the blocks in one row, how ever many the user specifies. Drag the ``||Functions:Aufruf Funktion search||``, and the ``||Functions:Aufruf Funktion follow||`` blocks into the **repeat loop**.
+---
+
+## Schritt 22  
+Ziehe einen ``||Loops:-mal wiederholen||``‑Block in den Block ``||Player:Bei Chat-Befehl "runchopper"||`` und platziere ihn unterhalb des ``||Variables:setze flipturn||``‑Blocks.
+
+---
+
+## Schritt 23  
+Denke daran, dass der Parameter **area** die Anzahl der Blöcke in jeder Reihe angibt.  
+Ziehe ``||Variables:area||`` in den ``||Loops:-mal wiederholen||``‑Block und ersetze damit den Standardwert **4**.  
+Nun wird der Agent alle Blöcke einer Reihe durchsuchen – so viele, wie der Benutzer angibt.  
+Ziehe anschließend die Blöcke ``||Functions:Aufruf Funktion suchen||`` und ``||Functions:Aufruf Funktion follow||`` in die Wiederholungsschleife.
 
 ### ~ tutorialhint
 ``` blocks
@@ -270,11 +304,11 @@ player.onChat("runchopper", function (area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false
     for (let i = 0; i < area; i++) {
-        search()
+        suchen()
         follow()
     }
 })
-function search() {
+function suchen() {
 
 }
 function follow() {
@@ -282,8 +316,11 @@ function follow() {
 }
 ```
 
-## Schritt 24
-Add the *turn()* function to turn at the end of a row. Now, at the end of each row, we want to turn our agent around. Drag the ``||Functions:Aufruf Funktion turn||`` and place this underneath the ``||Loops:-mal wiederholen||`` loop.
+---
+
+## Schritt 24  
+Füge die Funktion *turn()* hinzu, damit sich der Agent am Ende jeder Reihe wendet.  
+Ziehe den Block ``||Functions:Aufruf Funktion turn||`` unterhalb der ``||Loops:-mal wiederholen||``‑Schleife.
 
 ### ~ tutorialhint
 ``` blocks
@@ -292,12 +329,12 @@ player.onChat("runchopper", function (area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false
     for (let i = 0; i < area; i++) {
-        search()
+        suchen()
         follow()
     }
     turn()
 })
-function search() {
+function suchen() {
 
 }
 function follow() {
@@ -308,23 +345,30 @@ function turn() {
 }
 ```
 
-## Schritt 25
-Complete a Square Search Grid. You will need to add one more ``||Loops:SCHLEIFEN||``, so the agent searches the complete grid and completes the square instead of just searching three rows.
+---
 
-## Schritt 26
-Because the agent is searching three blocks every step, it will not need to loop for the full area given. We would divide the area given by 3. In the example below, the agent is searching a 9x9 grid but as you can see it only needs to walk down the rows 3 times to do so.
+## Schritt 25  
+Erstelle ein vollständiges quadratisches Suchgitter.  
+Du musst dazu eine weitere ``||Loops:SCHLEIFEN||``‑Schleife hinzufügen, damit der Agent das gesamte Gebiet durchsucht und ein Quadrat bildet, anstatt nur eine Reihe (bzw. drei Reihen) abzuarbeiten.
 
-With that said, you need a ``||Loops:SCHLEIFEN||`` to handle this. Drag another ``||Loops:-mal wiederholen||`` loop out on the workspace. This new ``||Loops:-mal wiederholen||`` loop should enclose everything below ``||Variables:set flipturn||``.
+---
 
-## Schritt 27
-Drag a ``||Math:0 ÷ 0 ||``block into the ``||Loops:-mal wiederholen||`` loop replacing the default **4**.
+## Schritt 26  
+Da der Agent in jedem Schritt drei Blöcke durchsucht, muss nicht die gesamte, angegebene Fläche geloopt werden.  
+Teile den Wert von **area** durch 3. Im folgenden Beispiel durchsucht der Agent ein 9×9‑Gitter, benötigt aber nur 3 Wiederholungen, um alle Reihen abzugehen.  
+Füge dazu eine weitere ``||Loops:-mal wiederholen||``‑Schleife ein, die alles unterhalb des Blocks ``||Variables:setze flipturn||`` einschließt.
 
-## Schritt 28
-Drag ``||Variables:area||`` into the first slot of the ``||Math:0 ÷ 0||``.
+---
 
-In the ``||Math:area ÷ 0||`` block, type **3** in the second slot. 
+## Schritt 27  
+Ziehe einen ``||Math:0 ÷ 0||``‑Block in die neue ``||Loops:-mal wiederholen||``‑Schleife und ersetze damit den Standardwert **4**.
 
-To test this out be sure you first teleport your agent to your location using the provided ``||Player:Bei Chat-Befehl "tp"||`
+---
+
+## Schritt 28  
+Ziehe ``||Variables:area||`` in das erste Feld des ``||Math:0 ÷ 0||``‑Blocks.  
+Gib im zweiten Feld des Blocks den Wert **3** ein.  
+Um das Ganze zu testen, teleportiere deinen Agenten zunächst zu deiner Position mit dem bereitgestellten ``||Player:Bei Chat-Befehl "tp"||``‑Befehl.
 
 ### ~ tutorialhint
 ``` blocks
@@ -341,13 +385,13 @@ player.onChat("runchopper", function (area) {
     flipturn = false
     for (let i = 0; i < area / 3; i++) {
         for (let i = 0; i < area; i++) {
-            search()
+            suchen()
             follow()
         }
         turn()
     }
 })
-function search() {
+function suchen() {
     if (agent.inspect(AgentInspection.Block, LEFT) == LOG_OAK) {
         agent.turn(TurnDirection.Left)
         chop()
