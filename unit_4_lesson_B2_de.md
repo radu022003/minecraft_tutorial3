@@ -5,7 +5,7 @@
 Klicke mit der rechten Maustaste auf den ``||Player:bei Chat-Befehl||``-Block und wähle "Duplizieren". Wiederhole dies zweimal, so dass du am Ende drei ``||Player:bei Chat-Befehl||``-Blöcke hast.
 
 ## Schritt 2
-Benenne diese Befehle in **"cr"** (Kreativ), **"su"** (Überleben) und **"an"** (Anzahl) um.
+Benenne diese Befehle in **"kr"** (Kreativ), **"üb"** (Überleben) und **"an"** (Anzahl) um.
 
 ## Schritt 3
 Ziehe zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Player:bei gestorbenem Spieler||``.
@@ -15,16 +15,16 @@ Ziehe zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Play
 
 ### ~ tutorialhint
 ``` blocks
-    player.onChat("cr", function () {
+    player.onChat("kr", function () {
 
     })
-    player.onChat("su", function () {
+    player.onChat("üb", function () {
 
     })
     player.onTravelled(TravelMethod.Walk, function () {
 
     })
-    player.onChat("pm", function () {
+    player.onChat("an", function () {
 
     })
     player.onDied(function () {
@@ -33,14 +33,14 @@ Ziehe zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Play
 ``` 
  
 ## Schritt 5
-Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "cr"||``-Block hinein.
+Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "kr"||``-Block hinein.
 
 ## Schritt 6
 In ``||Gameplay:ändere Spielmodus zu||``-Block, wähle den **Kreativ**-Modus und ändere ``||Mobs:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Kreativ setzen.
 
 ### ~ tutorialhint
 ``` blocks
-player.onChat("cr", function () {
+player.onChat("kr", function () {
     gameplay.setGameMode(
     CREATIVE,
     mobs.target(LOCAL_PLAYER)
@@ -49,14 +49,14 @@ player.onChat("cr", function () {
 ```
 
 ## Schritt 7
-Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "su"||``-Block.
+Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "üb"||``-Block.
 
 ## Schritt 8
 In ``||Gameplay:ändere Spielmodus zu||``, wähle den **Überleben**-Modus und ändere ``||Mobs:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Überleben setzen.
 
 ### ~ tutorialhint
 ``` blocks
-player.onChat("su", function () {
+player.onChat("üb", function () {
     gameplay.setGameMode(
     SURVIVAL,
     mobs.target(LOCAL_PLAYER)
@@ -71,7 +71,7 @@ In ``||Variables:VARIABLEN||``, klicke auf **Erstelle eine Variable**, und benen
 In ``||Variables:VARIABLEn||``, klicken auf **Erstelle eine Variable**, und benennen Sie ``||Variables:report||``.
 
 ## Schritt 11
-Ziehe einen ``||Variables:ändere um||``-Block in den ``||Player:bei Chat-Befehl fallen||``-Block.
+Ziehe einen ``||Variables:ändere um||``-Block in den ``||Player:bei gestorbem Spieler||``-Block.
 
 ## Schritt 12
 In ``||Variables:ändere um||``-Block, wähle die Variable ``||Variables:fallen||``. **"ändere fallen um 1"**
@@ -103,7 +103,7 @@ player.onTravelled(TravelMethod.fallen, function () {
 ```
 
 ## Schritt 16
-Ziehe ein ``||Player:sag||``-Block in den ``||Player:bei Chat-Befehl "pm"||``-Block.
+Ziehe ein ``||Player:sag||``-Block in den ``||Player:bei Chat-Befehl "an"||``-Block.
 
 ## Schritt 17
 Ziehe ein ``||Text:verbinde||``-Block in den ``||PLayer:sag||``-Block und drücke auf das "+" bei ``||Text:verbinde||``-Block.
@@ -111,7 +111,7 @@ Ziehe ein ``||Text:verbinde||``-Block in den ``||PLayer:sag||``-Block und drück
 ### ~ tutorialhint
 ``` blocks
 let report = 0
-player.onChat("pm", function () {
+player.onChat("an", function () {
     player.say("Hallo" + "Welt")
 })
 ```
@@ -125,7 +125,7 @@ Ziehe die ``||Variables:report||``-Variable in die zweite Lücke vom ``||Text:ve
 ### ~ tutorialhint
 ```blocks
 let report = 0
-player.onChat("pm", function () {
+player.onChat("an", function () {
     player.say("Du bist " + report + " Blöcke gefallen")
 })
 ```
