@@ -3,13 +3,13 @@
 # Aktivität: Sprung des Glaubens Minispiel
 
 ## Schritt 1
+Klicke im Werkzeugkasten auf den Reiter "Erweitert", um weitere Kategorien anzuzeigen.
 Erstelle eine ``||Functions:Funktion||`` mit dem Namen **pool**. 
 
 ## Schritt 2
 Erstelle zwei weitere ``||Functions:Funktionen||`` mit den Namen **plattform** und **teleport**.
 
 ## Schritt 3
-
 Ziehe eine ``||Player:Bei Chat-Befehl||``-Block in die Arbeitsfläche. Benenne dies in **"play"** um.
 
 ## Schritt 4
