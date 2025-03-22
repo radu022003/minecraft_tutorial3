@@ -86,6 +86,7 @@ Ziehe einen ``||Mobs:Gib||``-Block und platziere ihn als letzten Block in die ``
 
 ## Schritt 11
 Du musst dich selber als Ziel wählen und dir selber ein Schwert oder eine andere Waffe geben. Z.B. ein **Diamantschwert**.
+Dazu brauchst du ein ``||Mobs:gib Block oder Element||``-Block und ein ``||Blocks:Element||``-Block. 
 
 ### ~ tutorialhint
 ``` blocks
