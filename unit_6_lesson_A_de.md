@@ -77,7 +77,7 @@ Im ``||Player:teleportiere nach||``-Block gebe die folgenden Werte für die Koor
 ## Schritt 10
 Setze den Spielmodus auf Überleben. 
 
-Ziehe dazu einen ``||Player:teleportiere nach||``-Block in ``||Functions:function teleport||``.
+Ziehe dazu einen ``||Gameplay:ändere Spielmodus zu||``-Block in die ``||Functions:Funktion teleport||``.
 
 
 ### ~ tutorialhint
