@@ -5,7 +5,7 @@
 ## Schritt 1
 Kopiere den Starter-Code. Kopiere den Code aus dem Hinweis.
 
-### ~ template
+### ~ tutorialhint
 ```javascript
 player.onChat("tp", function () {
         player.teleport(positions.create(3, 0, 3))
