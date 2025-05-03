@@ -124,7 +124,7 @@ Ziehe hierfür einen `||Agent:Agent drehe dich||`- und einen `||Agent:Agent bewe
 ## Schritt 12
 
 Prüfe nun auch vorwärts und rechts:
-Klicke zweimal auf das **(+)-Symbol** im `||Logic:if then else||`-Block, um zwei **else if**-Klauseln hinzuzufügen.
+Klicke zweimal auf das **(+)-Symbol** im `||Logic:wenn dann ansonsten||`-Block, um zwei **sonst wenn**-Klauseln hinzuzufügen.
 
 ### ~ tutorialhint
 
