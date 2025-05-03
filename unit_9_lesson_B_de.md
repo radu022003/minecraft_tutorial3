@@ -43,7 +43,7 @@ Nutze die grundlegenden Agenten-Steuerungen, um den Agenten zum Startpunkt des L
 
 ---
 
-## Schritt 4
+## Schritt 3
 
 Erstelle einen `||Player:Bei Chat-Befehl||`-Block und benenne ihn in **"mr"** um (mr = Maze Runner).
 Ziehe aus `||Loops:SCHLEIFEN||` einen `||Loops:während||`-Block in deinen `||Player:Bei Chat-Befehl "mr"||`-Block.
@@ -53,7 +53,7 @@ So sucht dein Agent weiter, bis er unter sich **Redstone** erkennt.
 
 ## Schritt 5
 
-Platziere einen `||Logic:nicht||`-Block in die `||Loops:während||`-Schleife und ersetze darin den Standardwert **wahr**.
+Platziere einen `||Logic:nicht||`-Block in die `||Loops:während||`-Schleife und ersetze darin den Standardwert **falsch** damit.
 
 ---
 
