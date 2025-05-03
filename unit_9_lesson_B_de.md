@@ -253,7 +253,7 @@ Um den Tanz auszulösen, füge außerhalb der `||Loops:während||`-Schleife eine
 * Ziehe aus `||Player:Spieler||` den Block `||Player:führe Chatbefehl aus""||` unter deine während-Schleife.
 * Ändere das leere Feld auf **"dance"**.
 
-> Die Verwendung von `||Player:führe Chatbefehl "dance" aus""|| ist wie ein Funktionsaufruf – du könntest auch eine Funktion verwenden.
+> Die Verwendung von  `||Player:führe Chatbefehl "dance" aus""||` ist wie ein Funktionsaufruf – du könntest auch eine Funktion verwenden.
 
 ### \~ tutorialhint
 
