@@ -1,8 +1,17 @@
-### @explicitHints 1  
+Nachgedacht für eine Sekunde
+
+
+Entschuldige, das passe ich an und achte darauf, dass alle „`||…||`“-Blöcke genau erhalten bleiben:
+
+---
+
+### @explicitHints 1
+
 # Aktivität: Maze Pathfinding
 
-## Schritt 1  
-Verwende den bereitgestellten Einstiegscode aus der **Einführung in die Agent**-Aktivität:
+## Schritt 1
+
+Verwende den bereitgestellten Starter-Code aus der **Einführung in die Agent**-Aktivität:
 
 ```template
 player.onChat("tp", function () {
@@ -24,30 +33,40 @@ player.onChat("rt", function () {
 
 ---
 
-## Schritt 2  
-Nutze die grundlegenden Agentensteuerungen, um den Agenten zum Startpunkt des Labyrinths zu bewegen. Bewege deinen Spieler an den Anfang des Labyrinths und gib den Befehl **"tp"** in das Chatfenster ein – dein Agent sollte sich dorthin teleportieren. Anschließend drehst du den Agenten mit **"lt"** (links) oder **"rt"** (rechts), damit er in das Labyrinth hineinblickt.
+## Schritt 2
+
+Nutze die grundlegenden Agenten-Steuerungen, um den Agenten zum Startpunkt des Labyrinths zu bewegen.
+
+1. Bewege deinen Spieler an den Labyrinth-Eingang.
+2. Tippe im Chat **"tp"** ein – dein Agent teleportiert sich zu dir.
+3. Drehe den Agenten mit **"lt"** (links) oder **"rt"** (rechts), damit er ins Labyrinth schaut.
 
 ---
 
-## Schritt 4  
-Erstelle einen **Player:Bei Chat-Befehl**-Block und benenne ihn in **"mr"** um (mr steht für Maze Runner, also Labyrinthläufer).
+## Schritt 4
 
-Platziere den gesamten Algorithmus in einer **Loops:während**-Schleife, die deinem Agenten sagt, dass er weiter nach dem Ende des Labyrinths suchen soll, solange er nicht auf **Redstone** steht. Ziehe dazu aus **Loops:SCHLEIFEN** einen **Loops:während**-Block in deinen **Player:Bei Chat-Befehl "mr"**-Block.
-
----
-
-## Schritt 5  
-Platziere einen **Logic:nicht**-Block in der **Loops:während**-Schleife und ersetze darin den Standardwert „true“.
+Erstelle einen `||Player:Bei Chat-Befehl||`-Block und benenne ihn in **"mr"** um (mr = Maze Runner).
+Ziehe aus `||Loops:SCHLEIFEN||` einen `||Loops:während||`-Block in deinen `||Player:Bei Chat-Befehl "mr"||`-Block.
+So sucht dein Agent weiter, bis er unter sich **Redstone** erkennt.
 
 ---
 
-## Schritt 6  
-Ziehe einen **Agent:Agent, erkenne**-Block in den **Logic:nicht**-Block hinein.
+## Schritt 5
 
-Im **Agent:Agent, erkenne**-Block wählst du im Dropdown-Menü **Redstone** als den zu erkennenden Blocktyp aus und stellst die Richtung auf **nach unten** ein.
+Platziere einen `||Logic:nicht||`-Block in die `||Loops:während||`-Schleife und ersetze darin den Standardwert **wahr**.
+
+---
+
+## Schritt 6
+
+Ziehe einen `||Agent:Agent erkenne||`-Block in den `||Logic:nicht||`-Block.
+
+* Wähle im Dropdown **Redstone** als zu erkennenden Block-Typ.
+* Wähle **nach unten** als Richtung.
 
 ### ~ tutorialhint
-``` blocks
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
     }
@@ -56,26 +75,32 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 7  
-Überprüfe, ob links ein freier Weg vorhanden ist. Als Nächstes schauen wir, ob ein Weg nach links offen ist – falls ja, soll der Agent nach links abbiegen und sich vorwärts bewegen. Ziehe dazu einen **Logic:wenn dann ansonsten**-Block in die **Loops:während**-Schleife.
+## Schritt 7
+
+Prüfe, ob links ein Weg frei ist.
+Ziehe einen `||Logic:wenn dann ansonsten||`-Block in deine `||Loops:während||`-Schleife.
 
 ---
 
-## Schritt 8  
-Ziehe einen **Logic:nicht**-Block in den bedingten Bereich (das „wenn“-Feld) des **Logic:wenn dann ansonsten**-Blocks und ersetze darin den Standardwert **wahr**.
+## Schritt 8
+
+Platziere einen `||Logic:nicht||`-Block im **wenn**-Feld des `||Logic:wenn dann ansonsten||`-Blocks und ersetze dort **wahr**.
 
 ---
 
-## Schritt 9  
-Ziehe einen **Agent:Agent, erkenne**-Block in den **Logic:nicht**-Block hinein.
+## Schritt 9
+
+Ziehe einen weiteren `||Agent:Agent erkenne||`-Block in den neuen `||Logic:nicht||`-Block.
 
 ---
 
-## Schritt 10  
-Im **Agent:Agent, erkenne**-Block wählst du im Dropdown-Menü **links** als die Richtung aus, in die geschaut werden soll.
+## Schritt 10
+
+Im `||Agent:Agent erkenne||`-Block wähle im Dropdown **links** als Richtung.
 
 ### ~ tutorialhint
-``` blocks
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
         if (!(agent.detect(AgentDetection.Block, LEFT))) {
@@ -89,16 +114,21 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 11  
-Drehe den Agenten nach links und bewege ihn vorwärts. Wenn der Agent keinen Block auf seiner linken Seite erkennt, soll er nach links abbiegen und sich vorwärts bewegen. Ziehe dazu einen **Agent:Agent, drehe dich**-Block und einen **Agent:Agent, bewege dich**-Block in den ersten Ast deines **Logic:wenn dann**-Blocks.
+## Schritt 11
+
+Wenn links frei ist, soll der Agent nach links drehen und einen Schritt vorwärts machen.
+Ziehe hierfür einen `||Agent:Agent drehe dich||`- und einen `||Agent:Agent bewege dich||`-Block in den **wenn**-Ast deines `||Logic:wenn dann ansonsten||`.
 
 ---
 
-## Schritt 12  
-Prüfe, ob ein Weg vorwärts oder rechts frei ist. Füge dazu zwei weitere Bedingungen hinzu, um zu überprüfen, ob der Weg vor oder rechts des Agenten frei ist. Klicke dazu zweimal auf das Pluszeichen **(+)** unten im **Logic:wenn dann ansonsten**-Block, um zwei zusätzliche **Logic:sonst wenn dann**-Klauseln hinzuzufügen.
+## Schritt 12
+
+Prüfe nun auch vorwärts und rechts:
+Klicke zweimal auf das **(+)-Symbol** im `||Logic:if then else||`-Block, um zwei **else if**-Klauseln hinzuzufügen.
 
 ### ~ tutorialhint
-``` blocks
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
         if (!(agent.detect(AgentDetection.Block, LEFT))) {
@@ -116,21 +146,26 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 13  
-Dupliziere den **Logic:nicht**-Block aus dem ersten Bedingungsfeld des **Logic:wenn dann**-Blocks. Klicke mit der rechten Maustaste auf diesen Block und wähle „Duplizieren“ – wiederhole dies zweimal, um zwei weitere **Logic:nicht**-Blöcke (mit **Agent:Agent, erkenne**) zu erstellen. Platziere diese duplizierten Blöcke in den beiden zusätzlichen **Logic:sonst wenn dann**-Feldern.
+## Schritt 13
+
+Dupliziere den `||Logic:nicht||`-Block aus dem ersten **wenn**-Ast zweimal (Rechtsklick → Duplizieren).
+Platziere die Duplikate in die beiden **sonst wenn**-Felder.
 
 ---
 
-## Schritt 14  
-Im zweiten Ast des **Logic:sonst wenn dann**-Blocks wählst du im Dropdown-Menü **vorwärts** als die Richtung aus, die überprüft werden soll. Damit prüfst du zuerst links und dann vorwärts.
+## Schritt 14
+
+Im zweiten **sonst wenn**-Ast wähle im `||Agent:Agent erkenne||`-Block **vorwärts** als Richtung.
 
 ---
 
-## Schritt 15  
-Im dritten Ast des **Logic:sonst wenn dann**-Blocks wählst du im Dropdown-Menü **rechts** als die Richtung aus, die überprüft werden soll. Damit prüfst du zuerst links, dann vorwärts und schließlich rechts.
+## Schritt 15
+
+Im dritten **sonst wenn**-Ast wähle **rechts** als Richtung.
 
 ### ~ tutorialhint
-``` blocks
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
         if (!(agent.detect(AgentDetection.Block, LEFT))) {
@@ -144,33 +179,19 @@ player.onChat("mr", function () {
 })
 ```
 
----
+## Schritt 16
 
-## Schritt 16  
-Bewege den Agenten vorwärts. Wenn er vor sich keinen Block erkennt, soll er einfach vorwärts gehen. Ziehe dazu einen **Agent:Agentenbewegung**-Block in den zweiten Ast der **Logic:sonst wenn dann**-Klausel.
+Wenn vorwärts frei ist, ziehe einen weiteren `||Agent:Agent bewege||`-Block in den zweiten **sonst wenn**-Ast, damit der Agent einfach vorwärts geht.
 
----
+Wenn rechts frei ist, soll der Agent nach rechts drehen und vorwärts gehen.
+Ziehe einen weiteren `||Agent:Agent drehe||`- und einen `||Agent:Agent bewege dich||`-Block in den dritten **sonst wenn**-Ast.
+Im `||Agent:Agent drehe dich||`-Block wähle **rechts** als Drehrichtung.
 
-## Schritt 17  
-Bewege den Agenten nach rechts. Wenn er auf seiner rechten Seite keinen Block erkennt, soll er nach rechts abbiegen und sich vorwärts bewegen.
-
----
-
-## Schritt 18  
-Ziehe in den dritten Ast der **Logic:sonst wenn dann**-Klausel einen **Agent:Agent, drehe dich nach**-Block und einen **Agent:Agent, bewege dich**-Block hinein.
-
----
-
-## Schritt 19  
-Im **Agent:Agent, drehe dich nach**-Block wählst du im Dropdown-Menü **rechts** als Drehrichtung aus.
-
----
-
-## Schritt 20  
-Du kannst diese Blöcke auch duplizieren – das ist vollkommen in Ordnung!
+Du kannst diese Blöcke auch duplizieren – das ist völlig in Ordnung!
 
 ### ~ tutorialhint
-``` blocks
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
         if (!(agent.detect(AgentDetection.Block, LEFT))) {
@@ -189,11 +210,14 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 21  
-Drehe den Agenten um und lasse ihn rückwärts gehen. Wenn der Agent in einer Sackgasse steckt (also keine der drei Richtungen frei ist), soll er sich umdrehen und in die entgegengesetzte Richtung zurückgehen. Ziehe dazu aus **Agent:AGENT** die folgenden drei Blöcke in den letzten **Logic:ansonsten**-Ast: zwei **Agent:Agent, drehe dich**-Blöcke und einen **Agent:Agentenbewegung**-Block.
+## Schritt 17
+
+Wenn alle drei Richtungen blockiert sind (Sackgasse), soll der Agent umdrehen und rückwärts gehen.
+Ziehe dazu in den **ansonsten**-Ast des `||Logic:wenn dann ansonsten||` aus  `||Agent:Agent||` zwei `||Agent:agent drehe dich||`-Blöcke und einen `||Agent:agent bewege dich||`-Block.
 
 ### ~ tutorialhint
-``` blocks
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
         if (!(agent.detect(AgentDetection.Block, LEFT))) {
@@ -215,47 +239,28 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 22  
-Redstone gefunden! Sobald der Agent Redstone erkennt, weiß er, dass er das Ziel erreicht hat. Du kannst den Agenten am Ende des Labyrinths einen Freudentanz machen lassen – verwende dazu gerne den Code aus der **Tanz Tanz Agent**-Aktivität in **Lektion 7: Iteration**.
+## Schritt 18
+
+Redstone gefunden! Sobald der Agent **Redstone** unter sich erkennt, weiß er, dass er das Ziel erreicht hat.
+Du kannst ihn am Ende einen Freudentanz aufführen lassen – verwende dazu bespielsweise Code aus der **Tanze Tanze Agent**-Aktivität in **Lektion 5: Iteration**.
 
 ---
 
-## Schritt 23  
-Um den Code für den **Player:Bei Chat-Befehl "tanz"** auszuführen, platziere einen **Player:führe Chat-Befehl aus ""**-Block aus **Player:SPIELER** unterhalb und außerhalb der **Loops:während**-Schleife. Der Block sollte lauten **Player:führe Chat-Befehl aus "tanz"**, wenn du fertig bist.  
-**Hinweis:** Die Verwendung von **Player:führe Chat-Befehl aus "tanz"** ist wie ein Funktionsaufruf – du könntest hier auch eine Funktion verwenden, wenn du möchtest.
+## Schritt 19
 
-### ~ tutorialhint
-``` blocks
-player.onChat("fd", function () {
-    agent.move(FORWARD, 1)
-})
-player.onChat("lt", function () {
-    agent.turn(TurnDirection.Left)
-})
-player.onChat("bk", function () {
-    agent.move(BACK, 1)
-})
-player.onChat("rt", function () {
-    agent.turn(TurnDirection.Right)
-})
-player.onChat("tp", function () {
-    agent.teleportToPlayer()
-})
+Um den Tanz auszulösen, füge außerhalb der `||Loops:während||`-Schleife einen `||Player:führe Chatbefehl aus""||`-Block ein und stelle ihn auf **"dance"**:
+
+* Ziehe aus `||Player:Spieler||` den Block `||Player:führe Chatbefehl aus""||` unter deine während-Schleife.
+* Ändere das leere Feld auf **"dance"**.
+
+> Die Verwendung von `||Player:führe Chatbefehl "dance" aus""|| ist wie ein Funktionsaufruf – du könntest auch eine Funktion verwenden.
+
+### \~ tutorialhint
+
+```blocks
 player.onChat("mr", function () {
     while (!(agent.detect(AgentDetection.Redstone, DOWN))) {
-        if (!(agent.detect(AgentDetection.Block, LEFT))) {
-            agent.turn(TurnDirection.Left)
-            agent.move(FORWARD, 1)
-        } else if (!(agent.detect(AgentDetection.Block, FORWARD))) {
-            agent.move(FORWARD, 1)
-        } else if (!(agent.detect(AgentDetection.Block, RIGHT))) {
-            agent.turn(TurnDirection.Right)
-            agent.move(FORWARD, 1)
-        } else {
-            agent.turn(TurnDirection.Left)
-            agent.turn(TurnDirection.Left)
-            agent.move(FORWARD, 1)
-        }
+        // … Pfadfindungs-Logik …
     }
     player.runChatCommand("dance")
 })
