@@ -1,10 +1,3 @@
-Nachgedacht für eine Sekunde
-
-
-Entschuldige, das passe ich an und achte darauf, dass alle „`||…||`“-Blöcke genau erhalten bleiben:
-
----
-
 ### @explicitHints 1
 
 # Aktivität: Maze Pathfinding
