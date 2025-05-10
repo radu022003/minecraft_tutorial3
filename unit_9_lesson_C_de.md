@@ -1,9 +1,9 @@
 ### @explicitHints 1  
-# Aktivität: Tree Hunter
+# Aktivität: Baumjäger
 
 ## Schritt 1  
-Verwende den bereitgestellten Starter-Code. Erstelle den Chat-Befehl „runchopper“.  
-Erzeuge einen ``||Player:Bei Chat-Befehl||``‑Block und benenne ihn in **"runchopper"** um.
+Verwende den bereitgestellten Starter-Code. Erstelle den Chat-Befehl „chopper“.  
+Erzeuge einen ``||Player:Bei Chat-Befehl||``‑Block und benenne ihn in **"chopper"** um.
 
 ```template
 let flipturn = false
@@ -56,12 +56,12 @@ function turn() {
 ---
 
 ## Schritt 2  
-Um die Größe des Suchgebiets festzulegen, fügen wir unserem „runchopper“‑Chatbefehl einen Parameter hinzu, der die Länge einer Seite des quadratischen Suchgebiets darstellt.  
-Klicke im Block ``||Player:Bei Chat-Befehl "runchopper"||`` auf das Pluszeichen **(+)**, um den Parameter **num1** hinzuzufügen. Benenne diesen über das Dropdown-Menü in **area** um.
+Um die Größe des Suchgebiets festzulegen, fügen wir unserem „chopper“‑Chatbefehl einen Parameter hinzu, der die Länge einer Seite des quadratischen Suchgebiets darstellt.  
+Klicke im Block ``||Player:Bei Chat-Befehl "chopper"||`` auf das Pluszeichen **(+)**, um den Parameter **num1** hinzuzufügen. Benenne diesen über das Dropdown-Menü in **area** um.
 
 ### ~ tutorialhint
 ``` blocks
-player.onChat("runchopper", function(area) {
+player.onChat("chopper", function(area) {
 
 })
 ```
@@ -70,7 +70,7 @@ player.onChat("runchopper", function(area) {
 
 ## Schritt 3  
 Erstelle die Funktion **suchen()**.  
-Wir erstellen nun die restlichen Funktionen, die unser Programm bilden. Am Ende rufen wir alle Funktionen aus dem Block ``||Player:Bei Chat-Befehl "runchopper"||`` auf.
+Wir erstellen nun die restlichen Funktionen, die unser Programm bilden. Am Ende rufen wir alle Funktionen aus dem Block ``||Player:Bei Chat-Befehl "chopper"||`` auf.
 
 ---
 
@@ -190,7 +190,7 @@ Suche nach Holz rechts:
 Dupliziere die erste Bedingung und platziere sie in den dritten Ast des ``||Logic:sonst wenn||``‑Blocks.
 
 ### ~ tutorialhint
-Das ist im Grunde dasselbe wie links zu schauen, nur dass einige Dinge umgekehrt sind.
+Das ist im Grunde dasselbe wie links nach Holz zu suchen, nur dass einige Dinge umgekehrt sind.
 
 ---
 
@@ -236,7 +236,7 @@ function chop() {
 ## Schritt 16  
 Erlaube dem Agenten, Hindernisse auf seinem Weg zu zerstören.  
 Der Agent verfügt über einen Block, der ihm zusätzliche Fähigkeiten verleiht – er kann damit automatisch Blöcke platzieren, wenn er sich bewegt, und Blöcke aus jedem Inventarslot verwenden, statt nur aus dem oberen linken Slot.  
-Ziehe einen ``||Agent:setze assist||``‑Block in den Block ``||Player:Bei Chat-Befehl "runchopper"||`` und wähle im Dropdown-Menü **destroy obstacles** aus.
+Ziehe einen ``||Agent:setze assist||``‑Block in den Block ``||Player:Bei Chat-Befehl "chopper"||`` und wähle im Dropdown-Menü **Hindernisse zerstören** aus.
 
 ### ~ tutorialhint
 Schau dir an, welche weiteren coolen Funktionen dieser Block hat – du findest sie in der Hilfe! Mit ihm kann dein Agent automatisch Blöcke platzieren, während er sich bewegt, und auch Blöcke aus jedem Slot seines Inventars verwenden, statt nur den oberen linken Slot.
@@ -254,7 +254,7 @@ Am Ende jeder Reihe soll sich der Agent umdrehen.
 Erstelle dazu eine Boolean‑Variable, um festzuhalten, in welche Richtung gedreht werden soll. Wir verwenden ``||Logic:Wahr||`` für eine Rechtsdrehung und ``||Logic:Falsch||`` für eine Linksdrehung.  
 Nach der Drehung wird die Boolean‑Variable umgeschaltet.  
 Die Variable **flipturn** wurde bereits im Starter-Code dieser Aktivität angelegt.  
-Ziehe einen ``||Variables:setze||``‑Block in den Block ``||Player:Bei Chat-Befehl "runchopper"||`` und wähle über das Dropdown-Menü **flipturn** aus.
+Ziehe einen ``||Variables:setze||``‑Block in den Block ``||Player:Bei Chat-Befehl "chopper"||`` und wähle über das Dropdown-Menü **flipturn** aus.
 
 ---
 
@@ -264,7 +264,7 @@ Ziehe einen ``||Logic:Falsch||``‑Block in den Setz‑Block und ersetze damit d
 ### ~ tutorialhint
 ``` blocks
 let flipturn = false
-player.onChat("runchopper", function(area) {
+player.onChat("chopper", function(area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false;
 })
@@ -286,7 +286,7 @@ Bei jedem Schritt soll der Agent nach Bäumen suchen und dem Geländeverlauf fol
 ---
 
 ## Schritt 22  
-Ziehe einen ``||Loops:-mal wiederholen||``‑Block in den Block ``||Player:Bei Chat-Befehl "runchopper"||`` und platziere ihn unterhalb des ``||Variables:setze flipturn||``‑Blocks.
+Ziehe einen ``||Loops:-mal wiederholen||``‑Block in den Block ``||Player:Bei Chat-Befehl "chopper"||`` und platziere ihn unterhalb des ``||Variables:setze flipturn||``‑Blocks.
 
 ---
 
@@ -300,7 +300,7 @@ Ziehe anschließend die Blöcke ``||Functions:Aufruf Funktion suchen||`` und ``|
 ``` blocks
 let area = 0
 let flipturn = false
-player.onChat("runchopper", function (area) {
+player.onChat("chopper", function (area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false
     for (let i = 0; i < area; i++) {
@@ -325,7 +325,7 @@ Ziehe den Block ``||Functions:Aufruf Funktion turn||`` unterhalb der ``||Loops:-
 ### ~ tutorialhint
 ``` blocks
 let flipturn = false
-player.onChat("runchopper", function (area) {
+player.onChat("chopper", function (area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false
     for (let i = 0; i < area; i++) {
@@ -380,7 +380,7 @@ player.onChat("tp", function () {
 player.onChat("lt", function () {
     agent.turn(TurnDirection.Left)
 })
-player.onChat("runchopper", function (area) {
+player.onChat("chopper", function (area) {
     agent.setAssist(DESTROY_OBSTACLES, true)
     flipturn = false
     for (let i = 0; i < area / 3; i++) {
