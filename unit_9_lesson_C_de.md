@@ -236,7 +236,7 @@ function chop() {
 ## Schritt 16  
 Erlaube dem Agenten, Hindernisse auf seinem Weg zu zerstören.  
 Der Agent verfügt über einen Block, der ihm zusätzliche Fähigkeiten verleiht – er kann damit automatisch Blöcke platzieren, wenn er sich bewegt, und Blöcke aus jedem Inventarslot verwenden, statt nur aus dem oberen linken Slot.  
-Ziehe einen ``||Agent:setze assist||``‑Block in den Block ``||Player:Bei Chat-Befehl "chopper"||`` und wähle im Dropdown-Menü **Hindernisse zerstören** aus.
+Ziehe einen ``||Agent:Agent platziere bei Bewegung||``‑Block in den Block ``||Player:Bei Chat-Befehl "chopper"||`` und wähle im Dropdown-Menü **Hindernisse zerstören** aus.
 
 ### ~ tutorialhint
 Schau dir an, welche weiteren coolen Funktionen dieser Block hat – du findest sie in der Hilfe! Mit ihm kann dein Agent automatisch Blöcke platzieren, während er sich bewegt, und auch Blöcke aus jedem Slot seines Inventars verwenden, statt nur den oberen linken Slot.
@@ -244,7 +244,7 @@ Schau dir an, welche weiteren coolen Funktionen dieser Block hat – du findest 
 ---
 
 ## Schritt 17  
-Wähle abschließend ``||Logic:Wahr||``.
+Wähle abschließend **EIN**.
 
 ---
 
