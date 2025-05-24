@@ -71,6 +71,7 @@ player.onChat("start", function () {
 
 ## Schritt 9
 Wiederhole dies für den Stop-Befehl. Klicke mit der rechten Maustaste auf ``||Player:Bei Chat-Befehl||`` **"start"** und dupliziere es. Benenne den ``||Player:Bei Chat-Befehl||`` Befehl in **stop** um.
+Lösche danne den leeren ``||Player:Bei Chat-Befehl||``-Blöck für **"stop"**.
 
 Ändere den Text des ``||Player:sag||``-Blocks in **"Stoppunkt"**. Füge eine ``||Variables: stop||``-Variable in den ``||Text:verbinde||``-Block ein.
 
@@ -84,9 +85,6 @@ player.onChat("stop", function () {
 ```
 
 ## Schritt 10
-Lösche die leeren ``||Player:Bei Chat-Befehl||``-Blöcke für **"stop"** und **"kopieren"**.
-
-## Schritt 11
 Erstelle den Kopier-Befehl. Öffne ``||Blocks:BLÖCKE||`` und ziehe den ``||Blocks:klone||``-Block in den Block mit der Bezeichnung **"kopieren"**.
 
 ### ~ tutorialhint
@@ -102,10 +100,10 @@ player.onChat("kopieren", function () {
 })
 ```
 
-## Schritt 12
+## Schritt 11
 Ziehe ``||Variables:start||`` in den ersten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start** lauten.
 
-## Schritt 13
+## Schritt 12
 Ziehe ``||Variables:stop||`` in den zweiten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start bis stop** lauten.
 
 ### ~ tutorialhint
@@ -123,10 +121,10 @@ player.onChat("kopieren", function () {
 })
 ```
 
-## Schritt 14
+## Schritt 13
 Teste deinen Code in Minecraft. Baue zuerst ein Haus oder eine Struktur, die du kopieren möchtest. Gehe zu einer der unteren Ecken der Struktur und gib im Chat den Befehl "start" ein.
 
-## Schritt 15
+## Schritt 14
 Bewege deinen Spieler diagonal zur oberen Ecke vom Startpunkt. Im Chatfenster gib den Befehl "stop" ein.
 Versetze deinen Spieler an einen freien Platz in der Welt, an dem du die Struktur kopieren möchtest, und gib im Chatfenster den Befehl "kopieren" ein.
 Hat es dein Haus oder deine Struktur korrekt kopiert?
