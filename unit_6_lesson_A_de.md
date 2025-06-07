@@ -94,7 +94,7 @@ teleport()
 
 ```
 
-## Schritt 13
+## Schritt 11
 Teste jetzt dein Minispiel, indem du play in den Chat eingibst. 
 
 ### ~ tutorialhint
