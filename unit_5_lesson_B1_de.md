@@ -112,7 +112,7 @@ player.onChat("mach", function (AgentenBefehl) {
 ---
 
 ## Schritt 9  
-Passe den Text im ``||Player:sag||``-Block an, sodass dort steht: **Gib 1 ein, um zu teleportieren oder 2, um dich zu drehen.**  
+Passe den Text im ``||Player:sag||``-Block an, sodass dort steht: **Gib 1 ein, um zu teleportieren oder 2, um zu drehen.**  
 
 ### ~ tutorialhint  
 ```blocks  
