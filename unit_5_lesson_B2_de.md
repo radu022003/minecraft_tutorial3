@@ -73,7 +73,7 @@ Ziehe eine ``||Loops:während||``-Schleife und lege sie unter den ``||Variables:
 ---
 
 ## Schritt 9  
-Ziehe einen ``||Agent:Agent erkenne 'Block' 'vorwärts'||``-Block in die Bedingung der ``||Loops:während||``-Schleife, um **true** zu ersetzen.  
+Ziehe einen ``||Agent:Agent erkenne 'Block' 'vorwärts'||``-Block in die Bedingung der ``||Loops:während||``-Schleife, um **falsch** zu ersetzen.  
 
 ### ~ tutorialhint  
 ```blocks  
