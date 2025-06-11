@@ -71,9 +71,6 @@ Füge in die erste Lücke vom ``||Text:verbinde||``-Block die ``||Variables:Wort
 
 Dann ändere die **Redstone-Lampe** in **Redstone-Block**.
 
-## Schritt 9
-Ändere die Richtung in den ``||Blocks:schreibe||``-Blöcken. Wähle im Dropdown-Menü **Süden (positives Z)** aus.
-
 ### ~ tutorialhint
 ```blocks
 let Wort2 = ""
