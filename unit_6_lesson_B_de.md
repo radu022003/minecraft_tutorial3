@@ -12,7 +12,7 @@ Erstelle zwei weitere ``||Functions:Funktionen||`` mit den Namen **atmosphere** 
 Ziehe einen ``||Player:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und benenne es zum **"play"**.
 
 ## Schritt 4
-Ziehe die drei Blöcke ``||Functions:aufruf setup||``, ``||Functions:aufruf atmosphere||`` und ``||Functions:aufruf zombiepig||`` in den ``||Blocks:Bei Chat-Befehl "play"||``-Block.
+Ziehe die drei Blöcke ``||Functions:aufruf setup||``, ``||Functions:aufruf atmosphere||`` und ``||Functions:aufruf zombiepig||`` in den **bei Chat-Befehl "play"**-Block.
 
 ### ~ tutorialhint
 ``` blocks
