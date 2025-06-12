@@ -3,7 +3,7 @@
 # Aktivität: Sprung des Glaubens Minispiel
 
 ## Schritt 1
-Klicke im Werkzeugkasten auf den Reiter "Erweitert", um weitere Kategorien anzuzeigen.
+Klicke im Werkzeugkasten auf den Reiter "Fortgeschritten", um weitere Kategorien anzuzeigen.
 Erstelle eine ``||Functions:Funktion||`` mit dem Namen **pool**. 
 
 ## Schritt 2
