@@ -63,7 +63,7 @@ function atmosphere()  {
 ```
 
 ## Schritt 7
-Einstellungen anpassen. Sie möchten, dass das Spiel automatisch funktioniert. Nachdem Sie "play" eingeben, soll das Spiel mit allem eingerichtet werden, sodass Sie ein paar verrückte Zombie-Schweine-Menschen bekämpfen können. Das erste Problem ist der Schwierigkeitsgrad des Spiels. Das Schwein wird sich nicht in ein Zombie-Schwein verwandeln, wenn das Spiel auf Friedlich eingestellt ist.
+Du möchtest, dass das Spiel automatisch funktioniert. Nachdem du "play" eingibst, soll das Spiel mit allem eingerichtet werden, sodass du ein paar verrückte Zombie-Schweine-Menschen bekämpfen kannst. Das erste Problem ist der Schwierigkeitsgrad des Spiels. Das Schwein wird sich nicht in ein Zombie-Schwein verwandeln, wenn das Spiel auf Friedlich eingestellt ist.
 
 ## Schritt 8
 Ziehe einen ``||Gameplay:Stelle Schwierigkeit ein auf||`` Block in ``||Functions:setup||``.
@@ -71,13 +71,13 @@ Ziehe einen ``||Gameplay:Stelle Schwierigkeit ein auf||`` Block in ``||Functions
 Passe diesen neuen Block so an, dass er ``||Gameplay:stelle Schwierigkeit ein auf 'normal'||`` lautet.
 
 ## Schritt 9
-Als nächstes möchten Sie den Spielmodus für Ihren Spieler ändern. Durch Einstellen des Spielmodus auf Überlebensmodus wird sichergestellt, dass der Schweinmensch hinter Ihnen herkommt! 
+Als nächstes möchtest du den Spielmodus für den Spieler ändern. Durch Einstellen des Spielmodus auf Überlebensmodus wird sichergestellt, dass der Schweinemensch dich angreicht! 
 
 Ziehe einen ``||Gameplay:Ändere Spielmodus zu||``-Block in ``||Functions:Setup||``.
 
 Passe diesen neuen Block so an, dass er ``||Gameplay:ändere Spielmodus zu 'Überleben'||`` lautet.
 
-Ändereauch das Ziel, sodass es **"du selbst"** lautet.
+Ändere auch das Ziel, sodass es **"du selbst"** lautet.
 
 ## Schritt 10
 Schließlich wird es sehr schwierig sein zu kämpfen, ohne eine Waffe zu haben. Du kannst dir selber eine Waffe geben, um das Spiel für deinen Spieler vernünftiger zu gestalten. 
