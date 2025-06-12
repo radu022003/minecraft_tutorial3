@@ -3,7 +3,7 @@
 # Aktivität: Zombie Schwein 
 
 ## Schritt 1
-Erstelle eine ``||Functions:Funktion||`` mit dem Namen **zombipig**.
+Erstelle eine ``||Functions:Funktion||`` mit dem Namen **zombiepig**.
 
 ## Schritt 2
 Erstelle zwei weitere ``||Functions:Funktionen||`` mit den Namen **atmosphere** und **setup**.
