@@ -39,7 +39,7 @@ player.onChat("lt", function () {
     agent.turn(TurnDirection.Left)
 })
 function turn() {
-    agent.setAssist(AgentAssist.DetroyObstacles, true)
+    agent.setAssist(DESTROY_OBSTACLES, true)
     if (flipturn) {
         agent.turn(TurnDirection.Right)
         agent.move(SixDirection.Forward, 3)
