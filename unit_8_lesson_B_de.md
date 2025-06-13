@@ -94,7 +94,7 @@ Ziehe aus ``||Mobs:MOBS||`` einen ``||Mobs:spawne Tier bei||``-Block und platzie
 Ziehe aus ``||Variables:VARIABLEN||`` die ``||Variables:Wert||``-Variable in den ``||Mobs:spawne Tier bei||``-Block. 
 Es sollte jetzt **spawne Wert bei** heißen. 
 
-Passen Sie die Koordinaten in ``||Mobs:spawn Tier bwi||`` auf **(~3, ~0, ~0)** an, sodass die Tiere ein paar Blocks vom Spieler entfernt spawnen.
+Passen Sie die Koordinaten in ``||Mobs:spawn Wert bei||`` auf **(~3, ~0, ~0)** an, sodass die Tiere ein paar Blocks vom Spieler entfernt spawnen.
 
 ## Schritt 20
 Um Tierpaare zu erstellen, klicke mit der rechten Maustaste auf den ``||Mobs:spawne Wert bei||``-Block, um ihn zu duplizieren. Wenn du möchtest, kannst du hier auch eine Schleife verwenden.
