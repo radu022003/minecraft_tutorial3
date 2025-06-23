@@ -10,17 +10,8 @@ Verwende den bereitgestellten Starter-Code aus der **Einführung in die Agent**-
 player.onChat("tp", function () {
     agent.teleportToPlayer()
 })
-player.onChat("fd", function () {
-    agent.move(SixDirection.Forward, 1)
-})
 player.onChat("lt", function () {
     agent.turn(TurnDirection.Left)
-})
-player.onChat("bk", function () {
-    agent.move(SixDirection.Back, 1)
-})
-player.onChat("rt", function () {
-    agent.turn(TurnDirection.Right)
 })
 ```
 
@@ -32,7 +23,7 @@ Nutze die grundlegenden Agenten-Steuerungen, um den Agenten zum Startpunkt des L
 
 1. Bewege deinen Spieler an den Labyrinth-Eingang.
 2. Tippe im Chat **"tp"** ein – dein Agent teleportiert sich zu dir.
-3. Drehe den Agenten mit **"lt"** (links) oder **"rt"** (rechts), damit er ins Labyrinth schaut.
+3. Drehe den Agenten mit **"lt"**, damit er ins Labyrinth schaut.
 
 ---
 
@@ -40,17 +31,16 @@ Nutze die grundlegenden Agenten-Steuerungen, um den Agenten zum Startpunkt des L
 
 Erstelle einen `||Player:Bei Chat-Befehl||`-Block und benenne ihn in **"mr"** um (mr = Maze Runner).
 Ziehe aus `||Loops:SCHLEIFEN||` einen `||Loops:während||`-Block in deinen `||Player:Bei Chat-Befehl "mr"||`-Block.
-So sucht dein Agent weiter, bis er unter sich **Redstone** erkennt.
 
 ---
 
-## Schritt 5
+## Schritt 4
 
 Platziere einen `||Logic:nicht||`-Block in die `||Loops:während||`-Schleife und ersetze darin den Standardwert **falsch** damit.
 
 ---
 
-## Schritt 6
+## Schritt 5
 
 Ziehe einen `||Agent:Agent erkenne||`-Block in den `||Logic:nicht||`-Block.
 
@@ -68,26 +58,26 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 7
+## Schritt 6
 
 Prüfe, ob links ein Weg frei ist.
 Ziehe einen `||Logic:wenn dann ansonsten||`-Block in deine `||Loops:während||`-Schleife.
 
 ---
 
-## Schritt 8
+## Schritt 7
 
 Platziere einen `||Logic:nicht||`-Block im **wenn**-Feld des `||Logic:wenn dann ansonsten||`-Blocks und ersetze dort **wahr**.
 
 ---
 
-## Schritt 9
+## Schritt 8
 
 Ziehe einen weiteren `||Agent:Agent erkenne||`-Block in den neuen `||Logic:nicht||`-Block.
 
 ---
 
-## Schritt 10
+## Schritt 9
 
 Im `||Agent:Agent erkenne||`-Block wähle im Dropdown **links** als Richtung.
 
@@ -107,14 +97,14 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 11
+## Schritt 10
 
 Wenn links frei ist, soll der Agent nach links drehen und einen Schritt vorwärts machen.
 Ziehe hierfür einen `||Agent:Agent drehe dich||`- und einen `||Agent:Agent bewege dich||`-Block in den **wenn**-Ast deines `||Logic:wenn dann ansonsten||`.
 
 ---
 
-## Schritt 12
+## Schritt 11
 
 Prüfe nun auch vorwärts und rechts:
 Klicke zweimal auf das **(+)-Symbol** im `||Logic:wenn dann ansonsten||`-Block, um zwei **sonst wenn**-Klauseln hinzuzufügen.
@@ -139,20 +129,20 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 13
+## Schritt 12
 
 Dupliziere den `||Logic:nicht||`-Block aus dem ersten **wenn**-Ast zweimal (Rechtsklick → Duplizieren).
 Platziere die Duplikate in die beiden **sonst wenn**-Felder.
 
 ---
 
-## Schritt 14
+## Schritt 13
 
 Im zweiten **sonst wenn**-Ast wähle im `||Agent:Agent erkenne||`-Block **vorwärts** als Richtung.
 
 ---
 
-## Schritt 15
+## Schritt 14
 
 Im dritten **sonst wenn**-Ast wähle **rechts** als Richtung.
 
@@ -172,7 +162,7 @@ player.onChat("mr", function () {
 })
 ```
 
-## Schritt 16
+## Schritt 15
 
 Wenn vorwärts frei ist, ziehe einen weiteren `||Agent:Agent bewege||`-Block in den zweiten **sonst wenn**-Ast, damit der Agent einfach vorwärts geht.
 
@@ -203,7 +193,7 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 17
+## Schritt 16
 
 Wenn alle drei Richtungen blockiert sind (Sackgasse), soll der Agent umdrehen und rückwärts gehen.
 Ziehe dazu in den **ansonsten**-Ast des `||Logic:wenn dann ansonsten||` aus  `||Agent:Agent||` zwei `||Agent:agent drehe dich||`-Blöcke und einen `||Agent:agent bewege dich||`-Block.
@@ -232,14 +222,13 @@ player.onChat("mr", function () {
 
 ---
 
-## Schritt 18
-
-Redstone gefunden! Sobald der Agent **Redstone** unter sich erkennt, weiß er, dass er das Ziel erreicht hat.
-Du kannst ihn am Ende einen Freudentanz aufführen lassen – verwende dazu bespielsweise Code aus der **Tanze Tanze Agent**-Aktivität in **Lektion 5: Iteration**.
+## Schritt 17: Redstone gefunden! 
+Sobald der Agent **Redstone** unter sich erkennt, weiß er, dass er das Ziel erreicht hat.
+Du kannst ihn am Ende einen Freudentanz aufführen lassen 
 
 ---
 
-## Schritt 19
+## Schritt 18: Optional!
 
 Um den Tanz auszulösen, füge außerhalb der `||Loops:während||`-Schleife einen `||Player:führe Chatbefehl aus""||`-Block ein und stelle ihn auf **"dance"**:
 
