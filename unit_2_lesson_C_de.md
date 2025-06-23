@@ -1,6 +1,6 @@
 ### @explicitHints 1
 
-# Der verknüpfte Wand
+# Die verknüpfte Wand
 
 ## 1. Start
 Du hast einige Startercodes erhalten, die du für deinen Programm verwenden kannst. Nutze sie!
