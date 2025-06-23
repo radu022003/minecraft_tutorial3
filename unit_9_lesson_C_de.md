@@ -279,7 +279,7 @@ Der Agent soll eine Reihe des Gitters hinuntergehen, sich am Ende wenden und dan
 ---
 
 ## Schritt 21  
-Füge die Funktionen *suchen()* und *follow()* in den Chatbefehl ein.  
+Füge die Funktionen **suchen()** und **follow()** in den Chatbefehl ein.  
 Nachdem alle Funktionen erstellt wurden, bringen wir nun alles zusammen.  
 Bei jedem Schritt soll der Agent nach Bäumen suchen und dem Geländeverlauf folgen. Dabei sucht er gleichzeitig in drei Richtungen (links, rechts und geradeaus).
 
@@ -319,7 +319,7 @@ function follow() {
 ---
 
 ## Schritt 24  
-Füge die Funktion *turn()* hinzu, damit sich der Agent am Ende jeder Reihe wendet.  
+Füge die Funktion **turn()** hinzu, damit sich der Agent am Ende jeder Reihe wendet.  
 Ziehe den Block ``||Functions:Aufruf Funktion turn||`` unterhalb der ``||Loops:-mal wiederholen||``‑Schleife.
 
 ### ~ tutorialhint
@@ -361,7 +361,7 @@ Füge dazu eine weitere ``||Loops:-mal wiederholen||``‑Schleife ein, die alles
 ---
 
 ## Schritt 27  
-Ziehe einen ``||Math:0 ÷ 0||``‑Block in die neue ``||Loops:-mal wiederholen||``‑Schleife und ersetze damit den Standardwert **4**.
+Ziehe einen ``||Math:0 / 0||``‑Block in die neue ``||Loops:-mal wiederholen||``‑Schleife und ersetze damit den Standardwert **4**.
 
 ---
 
