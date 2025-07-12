@@ -130,7 +130,7 @@ Lass den Agenten wieder herunterkommen. Ziehe eine ``||Loops:wiederhole||``-Schl
 ---
 
 ## Schritt 13 
-Ziehe die Variable **höhe** in die ``||Loops:wiederhole||``-Schleife, um die Zahl **4** zu ersetzen.  
+Ziehe die Variable ``||Variables:höhe||``  in die ``||Loops:wiederhole||``-Schleife, um die Zahl **4** zu ersetzen.  
 
 ### ~ tutorialhint  
 ```blocks  
