@@ -1,11 +1,11 @@
- ### @explicitHints 1
- 
- # Activität: Minecraft-Umzugsunternehmen
+### @explicitHints 1
+
+# Aktivität: Minecraft-Umzugsunternehmen
 
 ## Schritt 1
-Ziehe drei ``||Player:bei Chat-Befehl||``-Blöcke in den Arbeitsbereich.
+Ziehe drei ``||PLAYER:bei Chat-Befehl||``-Blöcke in den Arbeitsbereich.
 
-Ändere die Namen dieser ``||Player:bei Chat-Befehl||``-Blöcke in **start**, **stop** und **kopieren**.
+Ändere die Namen dieser ``||PLAYER:bei Chat-Befehl||``-Blöcke in **start**, **stop** und **kopieren**.
 
 ### ~ tutorialhint
 ```blocks
@@ -15,7 +15,7 @@ player.onChat("kopieren", function () { })
 ```
 
 ## Schritt 2
-Erstelle die Variablen. Öffne ``||Variables:VARIABLEN||`` und klicke auf die Schaltfläche **Erstelle eine Variable**.
+Erstelle die Variablen. Öffne ``||VARIABLEN:VARIABLEN||`` und klicke auf die Schaltfläche **Erstelle eine Variable**.
 
 Nenne die Variable **start** und klicke auf **Ok**.
 
@@ -23,12 +23,12 @@ Nenne die Variable **start** und klicke auf **Ok**.
 Erstelle eine weitere Variable und nenne sie **stop**, und klicke auf **Ok**.
 
 ## Schritt 4
-Setze die Variablen. Platziere einen ``||Variables:setze||``-Block in ``||Player:Bei Chat-Befehl||`` für "start".
+Setze die Variablen. Platziere einen ``||VARIABLEN:setze||``-Block in ``||PLAYER:Bei Chat-Befehl||`` für "start".
 
-Verwende das Dropdown-Menü und wähle die ``||Variables:start||`` aus.
+Verwende das Dropdown-Menü und wähle die ``||VARIABLEN:start||`` aus.
 
 ## Schritt 5
-Setze die Startposition auf die ``||Player:Position des Spielers in der Welt||``. Ziehe ``||Player:Position des Spielers in der Welt||`` in ``||Variables:setze start||`` um die **0** zu ersetzen.
+Setze die Startposition auf die ``||PLAYER:Position des Spielers in der Welt||``. Ziehe ``||PLAYER:Position des Spielers in der Welt||`` in ``||VARIABLEN:setze start||`` um die **0** zu ersetzen.
 
 ### ~ tutorialhint
 ```blocks
@@ -38,7 +38,7 @@ player.onChat("start", function () {
 })
 ```
 ## Schritt 6
-Schreibe Nachrichten. Füge einen ``||Player:sag||``-Block nach ``||Variables:setze start||`` hinzu.
+Schreibe Nachrichten. Füge einen ``||PLAYER:sag||``-Block nach ``||VARIABLEN:setze start||`` hinzu.
 
 ### ~ tutorialhint
 ```blocks
@@ -50,14 +50,14 @@ player.onChat("start", function () {
 ```
 
 ## Schritt 7
-Öffne ``||Text:TEXT||`` und platziere ``||Text:verbinde||`` im ``||Player:sag||``-Block, ersetze **":)"**.
+Als Nächstes öffne ``||TEXT:TEXT||`` und platziere ``||TEXT:verbinde||`` im ``||PLAYER:sag||``-Block, ersetze **":)"**.
 
-Im ersten Feld von ``||Text:verbinde||`` gib **"Startpunkt"** ein.
+Im ersten Feld von ``||TEXT:verbinde||`` gib **"Startpunkt"** ein.
 
-``||Text:TEXT||`` befindet sich im **FORGESCHRITTEN**.
+``||TEXT:TEXT||`` befindet sich im **FORTGESCHRITTEN**.
 
 ## Schritt 8
-Öffne als nächstes ``||VARIABLES: VARIABLEN||`` und ziehe ``||Variables: start||`` in das zweite Feld des ``||Text:verbinde||``-Blocks.
+Öffne als nächstes ``||VARIABLES: VARIABLEN||`` und ziehe ``||VARIABLEN: start||`` in das zweite Feld des ``||TEXT:verbinde||``-Blocks.
 
 ### ~ tutorialhint
 ```blocks
@@ -70,10 +70,10 @@ player.onChat("start", function () {
 ```
 
 ## Schritt 9
-Wiederhole dies für den Stop-Befehl. Klicke mit der rechten Maustaste auf ``||Player:Bei Chat-Befehl||`` **"start"** und dupliziere es. Benenne den ``||Player:Bei Chat-Befehl||`` Befehl in **stop** um.
-Lösche danne den leeren ``||Player:Bei Chat-Befehl||``-Blöck für **"stop"**.
+Wiederhole dies für den Stop-Befehl. Klicke mit der rechten Maustaste auf ``||PLAYER:Bei Chat-Befehl||`` **"start"** und dupliziere es. Benenne den ``||PLAYER:Bei Chat-Befehl||``-Befehl in **stop** um.
+Lösche dann den leeren ``||PLAYER:Bei Chat-Befehl||``-Block für **"stop"**.
 
-Ändere den Text des ``||Player:sag||``-Blocks in **"Stoppunkt"**. Füge eine ``||Variables: stop||``-Variable in den ``||Text:verbinde||``-Block ein.
+Ändere den Text des ``||PLAYER:sag||``-Blocks in **"Stoppunkt"**. Füge eine ``||VARIABLEN: stop||``-Variable in den ``||TEXT:verbinde||``-Block ein.
 
 ### ~ tutorialhint
 ``` blocks
@@ -85,7 +85,7 @@ player.onChat("stop", function () {
 ```
 
 ## Schritt 10
-Erstelle den Kopier-Befehl. Öffne ``||Blocks:BLÖCKE||`` und ziehe den ``||Blocks:klone||``-Block in den Block mit der Bezeichnung **"kopieren"**.
+Erstelle den Kopier-Befehl. Öffne ``||BLOCKS:BLÖCKE||`` und ziehe den ``||BLOCKS:klone||``-Block in den Block mit der Bezeichnung **"kopieren"**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -101,10 +101,10 @@ player.onChat("kopieren", function () {
 ```
 
 ## Schritt 11
-Ziehe ``||Variables:start||`` in den ersten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start** lauten.
+Ziehe ``||VARIABLEN:start||`` in den ersten Slot des ``||BLOCKS:klone||``-Blocks. Dein Block sollte jetzt **klonen von start** lauten.
 
 ## Schritt 12
-Ziehe ``||Variables:stop||`` in den zweiten Slot des ``||Blocks:klone||``-Blocks. Dein Block sollte jetzt **klonen von start bis stop** lauten.
+Ziehe ``||VARIABLEN:stop||`` in den zweiten Slot des ``||BLOCKS:klone||``-Blocks. Dein Block sollte jetzt **klonen von start bis stop** lauten.
 
 ### ~ tutorialhint
 ```blocks

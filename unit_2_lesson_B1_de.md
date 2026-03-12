@@ -2,8 +2,14 @@
 
 # Versteckte Spinnen
 
-## 1. Abbau von Blöcken erkennen
-Ziehe den ``||Blocks: wenn _ abgebaut||``-Befehl aus ``||Blocks: Blöcke||`` in die Arbeitsfläche.
+## Vorbereitung
+- Stelle den Schwierigkeitsgrad von **Friedlich** auf **Einfach**, damit Spinnen spawnen können! (Pausenmenü → Einstellungen → Schwierigkeitsgrad)
+- Lege ein **Spinnennetz** in dein Inventar.
+
+## 1. Blockabbau erkennen
+Ziehe den ``||BLOCKS:wenn _ abgebaut||``-Block aus ``||BLOCKS:Blöcke||`` in die Arbeitsfläche.
+
+Dieser Block führt den Code darin aus, **jedes Mal wenn ein bestimmter Block abgebaut wird**.
 
 ### ~ tutorialhint
 ```blocks
@@ -12,25 +18,32 @@ blocks.onBlockBroken(GRASS, function () {
 })
 ```
 
-## 2. Spinnennetz abbauen
-Wähle aus dem Dropdown-Menü das **Spinnennetz**-Element aus.
-        
-## 3. Tiere spawnen
-Ziehe aus ``||Mobs:Kreaturen||`` den ``||Mobs:spawne _ bei||``-Block in den ``||Blocks:wenn _ abgebaut||``-Block.
+## 2. Spinnennetz auswählen
+Klicke auf das Dropdown-Menü im ``||BLOCKS:wenn _ abgebaut||``-Block und wähle **Spinnennetz** aus.
 
-### ~ tutorialhint     
+Jetzt reagiert dein Code, sobald ein Spinnennetz abgebaut wird.
 
+## 3. Spinnen-Spawn hinzufügen
+Ziehe aus ``||MOBS:Kreaturen||`` den ``||MOBS:spawne _ bei||``-Block in den ``||BLOCKS:wenn Spinnennetz abgebaut||``-Block.
+
+Im Spawn-Block siehst du zunächst ein **Tier** (z.B. Huhn). Wir wollen aber eine Spinne spawnen, die unter den **Monstern** zu finden ist – das änderst du im nächsten Schritt.
+
+### ~ tutorialhint
 ```blocks
 blocks.onBlockBroken(COBWEB, function () {
     mobs.spawn(SPIDER, pos(0, 0, 0))
 })
 ```
 
-## 4. Spinne spawnen
-Wähle aus dem Dropdown-Menü im ``||Mobs:spawne _ bei||``-Block **Spinne** aus und ändere die **Y**-Koordinate auf **1**.
+## 4. Spinne und Höhe einstellen
+Klicke auf das Dropdown-Menü im ``||MOBS:spawne _ bei||``-Block und wähle **Spinne** aus.
 
-## 5. Mehr Spinnen
-Platziere eine ``||Loops:Schleife||`` um ``||Mobs:spawne _ bei||``. Gebe in der ``||Loops:Schleife||`` die Zahl **10** ein.
+**Wichtig:** Ändere außerdem die **Y-Koordinate** auf **1**, damit die Spinne 1 Block über dem Boden erscheint und nicht in der Erde steckt.
+
+## 5. Mehr Spinnen mit einer Schleife
+Ziehe den ``||SCHLEIFEN:_-mal wiederholen||``-Block um den ``||MOBS:spawne _ bei||``-Block herum. Ändere die Zahl auf **10**.
+
+**Was macht eine Schleife?** Eine Schleife wiederholt den Code darin mehrmals. Mit der Zahl **10** werden **10 Spinnen** gespawnt – statt nur einer!
 
 ### ~ tutorialhint
 ```blocks
@@ -41,5 +54,7 @@ blocks.onBlockBroken(COBWEB, function () {
 })
 ```
 
-## 6. Code testen
-Platziere ein Spinnenetz und baue ihn wieder ab. Dabei sollten Spinnen erscheinen.
+## 6. Testen
+Platziere ein **Spinnennetz** aus deinem Inventar in der Spielwelt. Baue es dann ab – dabei sollten **10 Spinnen** erscheinen!
+
+> **Tipp:** Falls keine Spinnen erscheinen, überprüfe ob der Schwierigkeitsgrad auf **Einfach** oder höher gestellt ist. Auf **Friedlich** spawnen keine Monster.

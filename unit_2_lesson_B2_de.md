@@ -1,9 +1,18 @@
 ### @explicitHints 1
 
-# Zombies! Sie sterben nicht!
+# Zombies! Sie werden immer mehr!
 
-## 1. Kreaturen erkennen
-Ziehe einen ``||Mobs:wenn _ getötet||``-Block auf die Arbeitsfläche.
+## Vorbereitung
+- Stelle den Schwierigkeitsgrad von **Friedlich** auf **Einfach**, damit Zombies spawnen können! (Pausemenü → Einstellungen → Schwierigkeitsgrad)
+- Lege zuerst folgende Gegenstände in dein Inventar: **Wüstenzombie-Spawn-Ei**, **Rüstung** und ein **Schwert**.
+- Stelle danach den Spielmodus auf **Überleben**.
+
+Hinweis: Wir verwenden **Wüstenzombies**. Diese verbrennen tagsüber nicht, daher musst du die Tageszeit nicht manuell ändern.
+
+## 1. Ereignis bei getötetem Monster
+Ziehe einen ``||MOBS:wenn _ getötet||``-Block auf die Arbeitsfläche.
+
+Dieser Block führt den Code darin aus, **jedes Mal wenn eine bestimmte Kreatur getötet wird**.
 
 ### ~ tutorialhint
 ```blocks
@@ -11,57 +20,68 @@ mobs.onMobKilled(CHICKEN, function () {
 })
 ```
 
-## 2. Erkennen von Monstern
-Ziehe aus dem ``||Mobs:KREATUREN||``-Blöcken einen ``||Mobs:Monster||``-Block heraus, um den Standardwert Tier zu ersetzen. Verwende das Dropdown-Menü im ``||Mobs:Monster||`` und wähle **Zombie**-Spawn-Ei aus.
+## 2. Wüstenzombie auswählen
+Standardmäßig ist ein Huhn eingestellt. Wir wollen auf **Wüstenzombies** reagieren.
 
-## 3. Neue Zombies erstellen
-Ziehe aus den ``||Mobs:KREATUREN||``-Blöcken einen ``||Mobs:spawne _ bei||``-Block in den ``||Mobs:wenn Monster getötet||``-Block.
+Ziehe aus ``||MOBS:KREATUREN||`` einen ``||MOBS:Monster||``-Block und ersetze damit das Huhn im ``||MOBS:wenn _ getötet||``-Block. Klicke dann auf das Dropdown-Menü und wähle **Wüstenzombie** aus.
+
+## 3. Spawn-Block hinzufügen
+Ziehe aus ``||MOBS:KREATUREN||`` einen ``||MOBS:spawne _ bei||``-Block in den ``||MOBS:wenn Wüstenzombie getötet||``-Block.
+
+Damit wird jedes Mal, wenn ein Wüstenzombie getötet wird, eine neue Kreatur gespawnt. Im nächsten Schritt legen wir fest, was gespawnt werden soll.
 
 ### ~ tutorialhint
 ```blocks
-mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
+mobs.onMobKilled(mobs.monster(HUSK), function () {
 mobs.spawn(CHICKEN, pos(0, 0, 0))
 })
 ```
 
-## 4. Zombies auswählen
-Ersätze die Standard-Einstellung **Tier** im Spawn-Block durch ein ``||Mobs:Monster||``-Zombie-Ei.
+## 4. Husk spawnen
+Ersetze im Spawn-Block das Tier durch einen ``||MOBS:Monster||``-**Wüstenzombie**-Block.
+
+Jetzt spawnt beim Tod eines Wüstenzombie ein neuer Wüstenzombie.
 
 ### ~ tutorialhint
 ```blocks
-mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
-mobs.spawn(mobs.monster(ZOMBIE), pos(0, 0, 0))
+mobs.onMobKilled(mobs.monster(HUSK), function () {
+mobs.spawn(mobs.monster(HUSK), pos(0, 0, 0))
 })
 ```
 
-## 5. Mehr Zombies
-Zwei Zombies sind besser als einer. Wir möchten für jeden getöteten Zombie zwei neue erscheinen lassen.
+## 5. Zwei neue Monster pro Kill
+Jetzt sollen beim Tod eines Husks **zwei neue** erscheinen.
 
-Ziehe aus ``||Loops:Schleifen||`` eine ``||Loops:Schleife||`` in die Arbeitsfläche.
-Diese ``||Loops:wiederholen||``-Schleife sollte in die ``||Mobs:wenn Monster getötet||`` Block sein und der ``||Mobs:spawne||``-Block sollte innerhalb der ``||Loops:wiederholen||``-Schleife liegen.
+Ziehe den ``||SCHLEIFEN:_-mal wiederholen||``-Block um den ``||MOBS:spawne Wüstenzombie bei||``-Block herum. Setze die Zahl auf **2**.
 
-Gebe in der ``||Loops:wiederholen||``-Schleife die Zahl **2** ein.
+Die Schleife sorgt dafür, dass der Spawn-Block **zweimal** ausgeführt wird – also immer 2 neue Zombies erscheinen.
 
 ### ~ tutorialhint
 ```blocks
-mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
+mobs.onMobKilled(mobs.monster(HUSK), function () {
     for (let index = 0; index < 2; index++) {
-        mobs.spawn(mobs.monster(ZOMBIE), pos(0, 0, 0))
+        mobs.spawn(mobs.monster(HUSK), pos(0, 0, 0))
     }
 })
 ```
 
-## 6. Wo sollen die Zombies erscheinen?
-Ersetze die Standardposition **(~0 ~0 ~0)** durch einen ``||Positions:Wähle zufällige Position||``-Block.
+## 6. Zufällige Spawn-Position
+Mit der aktuellen Koordinate `~0, ~0, ~0` spawnen alle Monster genau auf deiner Position. Das ist zu gefährlich!
 
-## 7. Zufällige Position einstellen
-Setze im ``||Positions:Wähle zufällige Position||``-Block die **von**-Koordinaten als **(~ 10 ~ 0 ~ 10)** und die **bis**-Koordinaten als **(~ -10 ~ 0 ~ -10)** ein.
+Ersetze die Standardposition **(~ 0, ~ 0, ~ 0)** durch einen ``||POSITIONEN:wähle zufällige Position||``-Block aus ``||POSITIONEN:Positionen||``.
+
+## 7. Zufälligen Bereich einstellen
+Setze im ``||POSITIONEN:wähle zufällige Position||``-Block:
+- **von**: **(~ 10, ~ 0, ~ 10)**
+- **bis**: **(~ -10, ~ 0, ~ -10)**
+
+Damit spawnen die Wüstenzombies an einem zufälligen Punkt in einem Bereich von 10 Blöcken um dich herum.
 
 ### ~ tutorialhint
 ```blocks
-mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
+mobs.onMobKilled(mobs.monster(HUSK), function () {
     for (let i = 0; i < 2; i++) {
-        mobs.spawn(mobs.monster(ZOMBIE), randpos(
+        mobs.spawn(mobs.monster(HUSK), randpos(
             pos(10, 0, 10),
             pos(-10, 0, -10)
         ))
@@ -69,6 +89,13 @@ mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
 })
 ```
 
-## 8. Code testen
+## 8. Testen
+Probiere deinen Code in Minecraft aus! 
 
-Probiere deinen Code aus!
+**So funktioniert es:**
+1. Platziere mit dem Wüstenzombie-Spawn-Ei einen Wüstenzombie in der Welt.
+2. Töte ihn mit deinem Schwert.
+3. Beobachte, wie **2 neue Wüstenzombies** erscheinen.
+4. Töte diese – und es werden **4** – dann **8** – dann **16**...
+
+> Es werden immer mehr! Kannst du das Zombie-Problem unter Kontrolle behalten?

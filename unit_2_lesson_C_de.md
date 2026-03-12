@@ -3,20 +3,23 @@
 # Die verknüpfte Wand
 
 ## 1. Start
-Du hast einige Startercodes erhalten, die du für deinen Programm verwenden kannst. Nutze sie!
-Füge nun einen neuen Ereignis``||Player: Bei Chat-Befehl||`` hinzu. Ändere den Text "jump" zu "wand".
+Du hast einen Starter-Code erhalten, der bereits einen ``||PLAYER:bei Chat-Befehl "position"||``-Block enthält. Dieser speichert deine aktuelle Position und berechnet automatisch zwei Punkte für die Wand.
+
+Füge jetzt einen **neuen** ``||PLAYER:bei Chat-Befehl||``-Block in die Arbeitsfläche ein und ändere den Text von **"run"** zu **"wand"**.
+
+**Hinweis:** Den vorhandenen "position"-Block musst du **nicht** ändern – er wird später benötigt!
 
 ```template
 let PlayerPosition: Position = null
-let from_position: Position = null
-let to_position: Position = null
+let von_position: Position = null
+let bis_position: Position = null
 player.onChat("position", function () {
     PlayerPosition = player.position()
-    from_position = positions.add(
+    von_position = positions.add(
     PlayerPosition,
     pos(6, 0, 0)
     )
-    to_position = positions.add(
+    bis_position = positions.add(
     PlayerPosition,
     pos(-6, 13, 0)
     )
@@ -24,11 +27,11 @@ player.onChat("position", function () {
 ```
 
 ## 2. Baue eine Wand
-Wähle aus ``||Blocks:Blöcken||`` den ``||Blocks:fülle mit||``-Block und platziere es innerhalb des ``||Player:Bei Chat-Befehl "wand"||``.
+Wähle aus ``||BLOCKS:Blöcken||`` den ``||BLOCKS:fülle mit||``-Block und platziere ihn innerhalb des ``||PLAYER:bei Chat-Befehl "wand"||``.
 
 ### ~ tutorialhint
  ```blocks
-        player.onChat("wall", function () {
+        player.onChat("wand", function () {
                 blocks.fill(
                 GRASS,
                 pos(0, 0, 0),
@@ -39,34 +42,43 @@ Wähle aus ``||Blocks:Blöcken||`` den ``||Blocks:fülle mit||``-Block und platz
 ```
 
 ## 3. GLAS statt Gras
-Ändere **Gras** zu **Glas** im des Block ``||Blocks:fülle mit||``.
+Ändere **Gras** zu **Glas** im Block ``||BLOCKS:fülle mit||``.
 
-## 4. Variablen
-Ziehe aus ``||Variables:VARIABLEN||`` den Block ``||Variables:from_position||``  in den **von**-Teil des Blocks ``||Blocks:fülle mit||``.
+## 4. Variablen – Von-Position
+Ziehe aus ``||VARIABLEN:VARIABLEN||`` den Block ``||VARIABLEN:von_position||`` in den **von**-Teil des Blocks ``||BLOCKS:fülle mit||``.
 
-## 5. Variablen
-Als nächstes ziehe ``||Variables:to_position||`` in den **nach**-Teil des Blocks ``||Blocks:fülle mit||``. Probiere den Code in Minecraft aus.
+Diese Variable enthält die Position, die beim Ausführen des "position"-Befehls gespeichert wurde.
+
+## 5. Variablen – Bis-Position
+Ziehe als Nächstes ``||VARIABLEN:bis_position||`` in den **bis**-Teil des Blocks ``||BLOCKS:fülle mit||``.
+
+**So testest du den Code in Minecraft:**
+1. Drücke **T** um das Chat-Fenster zu öffnen.
+2. Tippe **position** ein und drücke Enter – das speichert deine aktuelle Position.
+3. Tippe dann **wand** ein und drücke Enter – die Glaswand erscheint!
+
+**Tipp:** Der "position"-Befehl **muss zuerst** eingegeben werden, sonst weiß der Code nicht, wo die Wand entstehen soll.
 
 ### ~ tutorialhint
  ```blocks
-        player.onChat("wall", function () {
+    player.onChat("wand", function () {
                 blocks.fill(
                 GLASS,
-                from_position,
-                to_position,
+        von_position,
+        bis_position,
                 FillOperation.Replace
                 )
 })
 ```
 
 ## 6. Blockabbau erkennen
-Ziehe aus ``||Blocks:BLÖCKE||`` den ``||Blocks:wenn _ abgebaut||``-Block in den Arbeitsbereich.
+Ziehe aus ``||BLOCKS:BLÖCKE||`` den ``||BLOCKS:wenn _ abgebaut||``-Block in den Arbeitsbereich.
 
 ## 7. GLAS statt Gras (wieder)
 Ändere **Gras** zu **Glas**.
 
 ## 8. Block platzieren, wenn abgebaut
-Aus ``||Blocks:BLÖCKE||`` platziere einen ``||Blocks:platziere _ bei||``-Block in den ``||Blocks:wenn Glas abgebaut||``-Block.
+Aus ``||BLOCKS:BLÖCKE||`` platziere einen ``||BLOCKS:platziere _ bei||``-Block in den ``||BLOCKS:wenn Glas abgebaut||``-Block.
 
 ## 9. 💎 statt Gras
 Ändere **Gras** zu einem **Diamantblock**.
@@ -78,64 +90,70 @@ blocks.onBlockBroken(GLASS, function () {
 })
 ```
 ## 10. Zufällige Position
-Platziere den ``||Positions:wähle zufällige Position||``-Block in den ``||Blocks:platziere Diamant||``-Block.
+Platziere den ``||POSITIONEN:wähle zufällige Position||``-Block in den ``||BLOCKS:platziere Diamant||``-Block.
 
 ## 11. Variablen
-Setze ``||Variables:from_position||`` in den **von**-Teil von diesem Block.
+Setze ``||VARIABLEN:von_position||`` in den **von**-Teil von diesem Block.
 
-Setze ``||Variables:to_position||`` in den **bis**-Teil von diesem Block.
+Setze ``||VARIABLEN:bis_position||`` in den **bis**-Teil von diesem Block.
 
 ### ~ tutorialhint
 ```blocks
 blocks.onBlockBroken(GLASS, function () {
     blocks.place(DIAMOND_BLOCK, randpos(
-    from_position,
-    to_position
+    von_position,
+    bis_position
     ))
 })
 ```
 
 ## 12. Duplizieren
-Dupliziere den ``||Blocks:wenn Glas abgebaut||``-Block und ändere einige Dinge.
-Ersetze **Glas** durch einen **Diamantblock**.
+Dupliziere den ``||BLOCKS:wenn Glas abgebaut||``-Block:
+
+**So duplizierst du in MakeCode:**
+1. Klicke mit der **rechten Maustaste** auf den Block.
+2. Wähle **"Duplizieren"** aus dem Menü.
+3. Eine exakte Kopie des Blocks erscheint in der Arbeitsfläche.
+
+Nach dem Duplizieren: Ändere im neuen Block **Glas** zu **Diamantblock** (als Auslöser).
 
 ## 13. Änderungen
-Ändere dann ``||Blocks:platziere Diamant bei||`` zu ``||Blocks:platziere orange Wolle bei||``.
+Ändere dann ``||BLOCKS:platziere Diamant bei||`` zu ``||BLOCKS:platziere orange Wolle bei||``.
 
 ### ~ tutorialhint
 
 ```blocks
 
-let to_position: Position = null
-let from_position: Position = null
+let bis_position: Position = null
+let von_position: Position = null
 let PlayerPosition: Position = null
 blocks.onBlockBroken(GLASS, function () {
     blocks.place(DIAMOND_BLOCK, randpos(
-    from_position,
-    to_position
+    von_position,
+    bis_position
     ))
 })
 blocks.onBlockBroken(DIAMOND_BLOCK, function () {
     blocks.place(ORANGE_WOOL, randpos(
-    from_position,
-    to_position
+    von_position,
+    bis_position
     ))
 })
-player.onChat("wall", function () {
+player.onChat("wand", function () {
     blocks.fill(
     GLASS,
-    from_position,
-    to_position,
+    von_position,
+    bis_position,
     FillOperation.Replace
     )
 })
 player.onChat("position", function () {
     PlayerPosition = player.position()
-    from_position = positions.add(
+    von_position = positions.add(
     PlayerPosition,
     pos(6, 0, 0)
     )
-    to_position = positions.add(
+    bis_position = positions.add(
     PlayerPosition,
     pos(-6, 13, 0)
     )

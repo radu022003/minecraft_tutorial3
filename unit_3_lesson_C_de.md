@@ -1,14 +1,16 @@
 ### @explicitHints 1
 
-# Aktivität: Auto Farmer
+# Aktivität: Schafstall-Bauer
 
-## Schritt 1
-Hol dir den Block ``||Player:bei gehen Spieler||`` und ziehe ihn in die Arbeitsfläche.
+## 1. Schaf bei Bewegung spawnen
+Hol dir den Block ``||PLAYER:bei gehen Spieler||`` und ziehe ihn in die Arbeitsfläche.
 
-Ziehe den Block ``||Mobs:spawne||`` in den Block ``||Player:bei gehen Spieler||``. Wähle das **Schaf** oder ein anderes Tier für deine Farm im Block ``||Mobs:spawne||`` aus.
+Ziehe den Block ``||MOBS:spawne||`` in den Block ``||PLAYER:bei gehen Spieler||``. Wähle **Schaf** oder ein anderes Tier.
 
-## Schritt 2
-Setze die Koordinaten **(~0, ~0, ~1)** im ``||Mobs:spawne||``-Block. Das Schaf wird einen Block südlich des Spielers entlang der **Z**-Achse erscheinen.
+## 2. Spawn-Koordinate setzen
+Setze die Koordinaten **(~ 0, ~ 0, ~ 1)** im ``||MOBS:spawne||``-Block. Das Schaf erscheint 1 Block südlich vom Spieler.
+
+**Erinnerung:** Positives Z = Süden, negatives Z = Norden.
 
 ### ~ tutorialhint
 ``` blocks
@@ -17,20 +19,20 @@ player.onTravelled(WALK, function () {
 })
 ```
 
-## Schritt 3
-Starte den Schafstall. Ziehe einen neuen ``||Player:Bei Chat-Befehl||`` in die Arbeitsfläche und ändere den Befehl zu **"pen"**.
+## 3. Befehl für den Stall anlegen
+Ziehe einen neuen ``||PLAYER:bei Chat-Befehl||`` in die Arbeitsfläche und ändere den Befehl zu **"stall"**.
 
-## Schritt 4
-Platziere einen ``||Blocks:fülle mit||``-Block innerhalb des ``||Player:Bei Chat-Befehl "pen"||``.
+## 4. Südwand bauen
+Platziere einen ``||BLOCKS:fülle mit||``-Block innerhalb des ``||PLAYER:bei Chat-Befehl "stall"||``.
 
-Passe den ``||Blocks:fülle mit||``-Block auf **Netherziegelzaun** an. Und ändere die Koordinaten zu **~5, ~0, ~1** und **~-5, ~4, ~1**.
+Passe den Block auf **Netherziegelzaun** an. Setze die Koordinaten auf **(~ 5, ~ 0, ~ 1)** und **(~ -5, ~ 4, ~ 1)**.
 
 ### ~ tutorialhint
 ``` blocks
 player.onTravelled(WALK, function () {
     mobs.spawn(SHEEP, pos(0, 0, 1))
 })
-player.onChat("pen", function () {
+player.onChat("stall", function () {
     blocks.fill(
     NETHER_BRICK_FENCE,
     pos(5, 0, 1),
@@ -40,21 +42,24 @@ player.onChat("pen", function () {
 })
 ```
 
-## Schritt 5
-Erstelle Seitenwände. Klicke mit der rechten Maustaste auf den ``||Blocks:fülle mit||``-Block, der deine Südwand erstellt, und dupliziere ihn zweimal. Diese neuen Duplikate werden deine Seitenwände sein.
+## 5. Seiten mit zwei Zauntypen bauen
+Klicke mit der rechten Maustaste auf den ``||Blocks:fülle mit||``-Block, der deine Südwand erstellt, und dupliziere ihn **zweimal**. Diese neuen Duplikate werden deine Seitenwände sein.
 
-## Schritt 6
-Passe das Material für die Seitenwände an. Eine Seite kann aus **Akazienzaun**, und die andere aus **Birkenzaun** sein.
+- Linke Seite: **Birkenzaun**
+- Rechte Seite: **Akazienzaun**
 
-## Schritt 7
-Passe die Koordinaten für den **Akazienzaun** auf **~5, ~0, ~1** und **~-5, ~4, ~20** an; und für den **Birkenzaun** auf **~5, ~0, ~1** und **~-5, ~4, ~20**.
+## 6. Seitenkoordinaten korrekt setzen
+Setze die Koordinaten:
+
+- **Birkenzaun**: von **(~ -5, ~ 0, ~ 1)** bis **(~ -5, ~ 4, ~ 20)**
+- **Akazienzaun**: von **(~ 5, ~ 0, ~ 1)** bis **(~ 5, ~ 4, ~ 20)**
 
 ### ~ tutorialhint
 ``` blocks 
 player.onTravelled(WALK, function () {
     mobs.spawn(SHEEP, pos(0, 0, 1))
 })
-player.onChat("pen", function () {
+player.onChat("stall", function () {
     blocks.fill(
     NETHER_BRICK_FENCE,
     pos(5, 0, 1),
@@ -75,12 +80,13 @@ player.onChat("pen", function () {
     )
 })
 ```
-## Schritt 8
+
+## 7. Nordwand schließen
 Schließe den Schafstall mit einem Nordzugang. **Z** sollte genau **20** Blöcke von deiner Südwand entfernt sein, weil das die Länge deiner Seitenwände ist. Probiere es in Minecraft aus und spawne so viele Schafe wie du möchtest!
 
 ### ~ tutorialhint
 ``` blocks
-player.onChat("pen", function () {
+player.onChat("stall", function () {
     blocks.fill(
     NETHER_BRICK_FENCE,
     positions.create(5, 0, -1),

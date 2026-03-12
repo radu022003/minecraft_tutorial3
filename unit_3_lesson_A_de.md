@@ -2,8 +2,17 @@
 
 # Aktivität: Erstelle einen Kompassstern
 
-## Schritt 1
-Erstelle einen neuen ``||Player: Spieler||``-Befehl. Ziehe einen ``||Player:bei Chat-Befehl||``-Block heraus und ändere den Befehl zu **"Kompassstern"**.
+## 1. Chat-Befehl anlegen
+Erstelle einen neuen ``||PLAYER:bei Chat-Befehl||``-Block und ändere den Befehl zu **"Kompassstern"**.
+
+> **Hintergrundwissen – Koordinaten und Himmelsrichtungen in Minecraft:**
+> In Minecraft entsprechen die Koordinatenwerte bestimmten Himmelsrichtungen:
+> - **X positiv (+X)** = Osten (O)
+> - **X negativ (-X)** = Westen (W)
+> - **Z positiv (+Z)** = Süden (S)
+> - **Z negativ (-Z)** = Norden (N)
+>
+> Mit `(~ -10, ~ -1, ~ 0)` setzt du also einen Block **10 Felder westlich** von dir.
 
 ### ~ tutorialhint
 ``` blocks
@@ -12,11 +21,11 @@ player.onChat("Kompassstern", function () {
 
 ```
 
-## Schritt 2
-Als Nächstes platziere einen ``||Blocks:fülle mit||``-Block innerhalb des ``||Player:bei Chat-Befehl||``-Blocks. Passe den ``||Blocks:fülle mit||``-Block von **Gras** auf das Material an, das du für die Achsen verwenden möchtest. In unserem Beispiel verwenden wir **Hellgraue Woll** für die Achsen.
+## 2. X-Achse bauen
+Platziere einen ``||BLOCKS:fülle mit||``-Block innerhalb des ``||PLAYER:bei Chat-Befehl||``-Blocks. Passe den Block von **Gras** auf das Material an, das du für die Achsen verwenden möchtest. In unserem Beispiel verwenden wir **Hellgraue Wolle**.
 
-## Schritt 3
-Setze die Werte **(~ -10 ~ -1 ~ 0)** für **von** und **(~ 10 ~ -1 ~ 0)** für **bis** ein. Dies wird eine Linie aus 21 Blöcken entlang der X-Achse erstellen. Die Linie wird unter deinen Füßen sein und du wirst genau in der Mitte stehen.
+## 3. X-Koordinaten setzen
+Setze die Werte **(~ -10, ~ -1, ~ 0)** für **von** und **(~ 10, ~ -1, ~ 0)** für **bis** ein. Dies erstellt eine Linie aus 21 Blöcken entlang der X-Achse.
 
 ### ~ tutorialhint
 ``` blocks
@@ -29,19 +38,25 @@ Setze die Werte **(~ -10 ~ -1 ~ 0)** für **von** und **(~ 10 ~ -1 ~ 0)** für *
         )
 })
 ```
-## Schritt 4
-Schreibe die Richtungen "Ost" und "West". Suche nach dem ``||Blocks:schreibe||``-Block. Dieser Block schreibt Wörter durch den von dir gewählten Block, in die von dir gewählte Richtung.
+## 4. West und Ost beschriften
+Suche nach dem ``||BLOCKS:schreibe||``-Block. Dieser Block schreibt Wörter aus Blöcken in eine Richtung.
 
-## Schritt 5
-Ziehe zwei ``||Blocks:schreibe||``-Blöcke heraus und platziere sie nach dem ``||Blocks:fülle mit||``-Block. Gib "W" im ersten ``||Blocks:schreibe||`` ein und **"O"** im zweiten ``||Blocks:schreibe||``, um West und Ost anzugeben.
+## 5. W und O setzen
+Ziehe zwei ``||BLOCKS:schreibe||``-Blöcke heraus und platziere sie nach dem ``||BLOCKS:fülle mit||``-Block. Gib **"W"** im ersten und **"O"** im zweiten Block ein.
 
-## Schritt 6
-Wähle einen Block aus, um die Buchstaben mit ``||Blocks:schreibe||`` zu platzieren. In diesem Beispiel wird **Hellgrüne Wolle** für Westen und **Gelbe Wolle** für Osten verwendet.
+**Beachte die Himmelsrichtungen:**
+- **W** (Westen) liegt in **negativer X-Richtung** (→ X-Koordinate negativ)
+- **O** (Osten) liegt in **positiver X-Richtung** (→ X-Koordinate positiv)
 
-## Schritt 7
-Im ``||Blocks:schreibe||``-Block für **W** gib die Koordinaten **(~-11 ~0 ~0)** ein.
+## 6. Farben wählen
+Wähle die Blöcke für die Buchstaben. In diesem Beispiel wird **Hellgrüne Wolle** für Westen und **Gelbe Wolle** für Osten verwendet.
 
-Im ``||Blocks:schreibe||``-Block für **O** gib die Koordinaten **(~11 ~0 ~0)** ein.
+## 7. Positionen für W und O
+Im ``||BLOCKS:schreibe||``-Block für **W** gib die Koordinaten **(~ -11, ~ 0, ~ 0)** ein.
+
+Im ``||BLOCKS:schreibe||``-Block für **O** gib die Koordinaten **(~ 11, ~ 0, ~ 0)** ein.
+
+Stelle die Schreibrichtung für **beide** Blöcke auf **Süden**, damit die Buchstaben zum Spieler zeigen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -56,38 +71,44 @@ Im ``||Blocks:schreibe||``-Block für **O** gib die Koordinaten **(~11 ~0 ~0)** 
         "W",
         LIME_WOOL,
         pos(-11, 0, 0),
-        WEST
+        SOUTH
         )
         blocks.print(
         "O",
         YELLOW_WOOL,
         pos(11, 0, 0),
-        WEST
+        SOUTH
         )
 })
 ```
 
-## Schritt 8
-Wiederhole das für Nord und Süd. Platziere einen ``||Blocks:fülle mit||``-Block in den ``||Player:Bei Chat-Befehl||``-Block.
+## 8. Z-Achse bauen
+Wiederhole das für Nord und Süd. Platziere einen ``||BLOCKS:fülle mit||``-Block in den ``||PLAYER:bei Chat-Befehl||``-Block.
 
-Passe den ``||Blocks:fülle mit||``-Block von **Gras** auf das Material an, das du für die Achse verwenden möchtest. In diesem Beispiel wird **Schwarze Wolle** für die Achse verwendet.
+Passe den ``||BLOCKS:fülle mit||``-Block von **Gras** auf das Material an, das du für die Achse verwenden möchtest. In diesem Beispiel wird **Schwarze Wolle** verwendet.
 
-## Schritt 9
-Setze die Werte **(~0 ~-1 ~-10)** für **von** und **(~0 ~-1 ~10)** für **bis** ein. Dies wird eine Linie von Blöcken entlang der **Z**-Achse erstellen.
+## 9. Z-Koordinaten setzen
+Setze die Werte **(~ 0, ~ -1, ~ -10)** für **von** und **(~ 0, ~ -1, ~ 10)** für **bis** ein. Dies erstellt eine Linie entlang der Z-Achse.
 
-## Schritt 10
-Ziehe zwei ``||Blocks:schreibe||``-Blöcke heraus und platziere sie nach dem neuesten ``||Blocks:fülle mit||``-Block.
+## 10. N und S vorbereiten
+Ziehe zwei ``||BLOCKS:schreibe||``-Blöcke heraus und platziere sie nach dem zweiten ``||BLOCKS:fülle mit||``-Block.
 
-## Schritt 11
-Gib **"N"** im ersten ``||Blocks:schreibe||``-Block ein und **"S"** im zweiten ``||Blocks:schreibe||``-Block ein, um Nord und Süd anzugeben.
+## 11. N und S setzen
+Gib **"N"** im ersten ``||BLOCKS:schreibe||``-Block ein und **"S"** im zweiten ``||BLOCKS:schreibe||``-Block ein.
 
-## Schritt 12
-Wähle einen Block aus, um die Buchstaben mit ``||Blocks:schreibe||`` zu platzieren. In diesem Beispiel wird **Blaue Wolle** für den Norden und **Rote Wolle** für den Süden verwendet.
+**Beachte die Himmelsrichtungen:**
+- **N** (Norden) liegt in **negativer Z-Richtung** (→ Z-Koordinate negativ)
+- **S** (Süden) liegt in **positiver Z-Richtung** (→ Z-Koordinate positiv)
 
-## Schritt 13
-Im ``||Blocks:schreibe||``-Block für **N** gib die Koordinaten **(~0 ~0 ~-11)** ein.
+## 12. Farben für N und S
+Wähle einen Block aus, um die Buchstaben zu platzieren. In diesem Beispiel wird **Blaue Wolle** für Norden und **Rote Wolle** für Süden verwendet.
 
-Im ``||Blocks:schreibe||``-Block für **S** gib die Koordinaten **(~0 ~0 ~11)** ein.
+## 13. Positionen für N und S
+Im ``||BLOCKS:schreibe||``-Block für **N** gib die Koordinaten **(~ 0, ~ 0, ~ -11)** ein.
+
+Im ``||BLOCKS:schreibe||``-Block für **S** gib die Koordinaten **(~ 0, ~ 0, ~ 11)** ein.
+
+Stelle auch hier die Schreibrichtung auf **Süden** für beide Blöcke.
 
 ### ~ tutorialhint
     ``` blocks
@@ -102,13 +123,13 @@ Im ``||Blocks:schreibe||``-Block für **S** gib die Koordinaten **(~0 ~0 ~11)** 
             "W",
             LIME_WOOL,
             pos(-11, 0, 0),
-            WEST
+            SOUTH
             )
             blocks.print(
             "O",
             YELLOW_WOOL,
             pos(11, 0, 0),
-            WEST
+            SOUTH
             )
             blocks.fill(
             GRAY_WOOL,
@@ -120,13 +141,13 @@ Im ``||Blocks:schreibe||``-Block für **S** gib die Koordinaten **(~0 ~0 ~11)** 
             "N",
             BLUE_WOOL,
             pos(0, 0, -11),
-            WEST
+            SOUTH
             )
             blocks.print(
             "S",
             RED_WOOL,
             pos(0, 0, 11),
-            WEST
+            SOUTH
             )
 })
 ```
