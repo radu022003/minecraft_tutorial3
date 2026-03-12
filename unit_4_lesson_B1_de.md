@@ -1,20 +1,21 @@
-### @explicitHints 1
+﻿### @explicitHints 1
 # Aktivität: Pfeilzähler
 
-## Schritt 1
-Erstelle eine neue ``||Variables:Variable||`` und nenne es **pfeil**.
+## 1. Variable erstellen
+Erstelle eine neue ``||VARIABLES:Variable||`` und nenne es **pfeil**.
 
-## Schritt 2
-Ziehe den ``||Player:bei Pfeilschuss||``-Block in den Arbeitsbereich.
+## 2. Pfeilschuss-Event hinzufügen
+Ziehe den ``||PLAYER:bei Pfeilschuss||``-Block in den Arbeitsbereich.
 
-## Schritt 3
-Ziehe die ``||Variables:ändere um||``-Variable in den ``||Player:bei Pfeilschuss||``-Block hinein.
+## 3. Zähler-Variable hinzufügen
+Ziehe den ``||VARIABLES:ändere pfeil um||``-Block in den ``||PLAYER:bei Pfeilschuss||``-Block hinein.
 
-## Schritt 4
-In ``||Variables:ändere um||``, wähle dei Variable ``||Variables:pfeil||``. Die Variable sollte jetzt ``||Variables:ändere pfeil um||`` heißen.
+## 4. Nachricht-Blöcke hinzufügen
+Ziehe den ``||PLAYER:sag||``-Block in den ``||PLAYER:bei Pfeilschuss||``-Block hinein.
 
-## Schritt 5
-Ziehe den ``||Player:sag||``-Block in den ``||Player:bei Pfeilschuss||``-Block hinein. Ziehe danach den ``||Text:verbinde||``-Block in den ``||Player:sag||``-Block hinein. 
+Ziehe danach den ``||TEXT:verbinde||``-Block in den ``||PLAYER:sag||``-Block hinein. 
+
+**Hinweis:** Der ``||TEXT:verbinde||``-Block ist ein *FORTGESCHRITTENER* Block und im entsprechenden Reiter.
 
 ### ~ tutorialhint
  ``` blocks
@@ -25,12 +26,12 @@ player.onArrowShot(function () {
 })
 ```
 
-## Schritt 6
-Ziehe die ``||Variables:pfeil||``-Variable in den ersten Slot von ``||Text:verbinde||``.
+## 5. Variable in Text einbinden
+Ziehe die ``||VARIABLES:pfeil||``-Variable in den ersten Slot von ``||TEXT:verbinde||``.
 
-## Schritt 7
-Gebe im zweiten Feld von ``||Text:verbinde||`` **"Pfeile abgeschossen"** ein. 
-
+## 6. Nachricht anpassen
+Gib im zweiten Feld von ``||TEXT:verbinde||`` **" Pfeile abgeschossen"** ein (mit einem Leerzeichen am Anfang, sodass es schön aussieht)
+.
 ### ~ tutorialhint
 ``` blocks
 let arrows = 0
@@ -40,5 +41,5 @@ player.onArrowShot(function () {
 })
 ```
 
-## Schritt 8
+## 7. Code testen
 Schieße ein paar Pfeile und schaue, ob dein Code funktioniert.

@@ -1,17 +1,17 @@
-### @explicitHints 1
-# Aktivität: Herbst liegt in der Luft
+﻿### @explicitHints 1
+# Aktivität: Freier Fall
 
-## Schritt 1
-Klicke mit der rechten Maustaste auf den ``||Player:bei Chat-Befehl||``-Block und wähle "Duplizieren". Wiederhole dies zweimal, so dass du am Ende drei ``||Player:bei Chat-Befehl||``-Blöcke hast.
+## 1. Block duplizieren
+Klicke mit der rechten Maustaste auf den ``||PLAYER:bei Chat-Befehl||``-Block und wähle "Duplizieren". Wiederhole dies zweimal, so dass du am Ende drei ``||PLAYER:bei Chat-Befehl||``-Blöcke hast.
 
-## Schritt 2
+## 2. Chat-Befehle umbenennen
 Benenne diese Befehle in **"kr"** (Kreativ), **"üb"** (Überleben) und **"an"** (Anzahl) um.
 
-## Schritt 3
-Ziehe zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Player:bei gestorbenem Spieler||``.
+## 3. Ereignis hinzufügen
+Ziehe zwei Ereignisblöcke heraus: ``||PLAYER:bei gehen Spieler||`` und ``||PLAYER:bei gestorbenem Spieler||``.
 
-## Schritt 4
-Ändere``||Player:bei gehen Spieler||`` in den Block ``||Player:bei fallen Spieler||``.
+## 4. Fall-Ereignis einstellen
+Ändere ``||PLAYER:bei gehen Spieler||`` in den Block ``||PLAYER:bei fallen Spieler||``.
 
 ### ~ tutorialhint
 ``` blocks
@@ -32,11 +32,11 @@ Ziehe zwei Ereignisblöcke heraus: ``||Player:bei gehen Spieler||`` und ``||Play
     })
 ``` 
  
-## Schritt 5
-Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "kr"||``-Block hinein.
+## 5. Spielmodus festlegen
+Ziehe den ``||GAMEPLAY:ändere Spielmodus zu||``-Block in den ``||PLAYER:bei Chat-Befehl "kr"||``-Block hinein.
 
-## Schritt 6
-In ``||Gameplay:ändere Spielmodus zu||``-Block, wähle den **Kreativ**-Modus und ändere ``||Mobs:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Kreativ setzen.
+## 6. Spielmodus festlegen
+In ``||GAMEPLAY:ändere Spielmodus zu||``-Block, wähle den **Kreativ**-Modus und ändere ``||MOBS:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Kreativ setzen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -48,11 +48,11 @@ player.onChat("kr", function () {
 })
 ```
 
-## Schritt 7
-Ziehe den ``||Gameplay:ändere Spielmodus zu||``-Block in den ``||Player:bei Chat-Befehl "üb"||``-Block.
+## 7. Spielmodus festlegen
+Ziehe den ``||GAMEPLAY:ändere Spielmodus zu||``-Block in den ``||PLAYER:bei Chat-Befehl "üb"||``-Block.
 
-## Schritt 8
-In ``||Gameplay:ändere Spielmodus zu||``, wähle den **Überleben**-Modus und ändere ``||Mobs:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Überleben setzen.
+## 8. Spielmodus festlegen
+In ``||GAMEPLAY:ändere Spielmodus zu||``, wähle den **Überleben**-Modus und ändere ``||MOBS:Ziel||`` auf dich selbst **@s**. So kannst du den Spielmodus auf Überleben setzen.
 
 ### ~ tutorialhint
 ``` blocks
@@ -64,28 +64,28 @@ player.onChat("üb", function () {
 })
 ```
 
-## Schritt 9
-In ``||Variables:VARIABLEN||``, klicke auf **Erstelle eine Variable**, und benennen Sie ``||Variables:fallen||``.
+## 9. Variable erstellen
+In ``||VARIABLES:VARIABLEN||``, klicke auf **Erstelle eine Variable**, und benenne sie ``||VARIABLES:fallen||``.
 
-## Schritt 10
-In ``||Variables:VARIABLEn||``, klicken auf **Erstelle eine Variable**, und benennen Sie ``||Variables:report||``.
+## 10. Variable erstellen
+In ``||VARIABLES:VARIABLEN||``, klicke auf **Erstelle eine Variable**, und benenne sie ``||VARIABLES:report||``.
 
-## Schritt 11
-Ziehe einen ``||Variables:ändere um||``-Block in den ``||Player:bei gestorbem Spieler||``-Block.
+## 11. Fallen mitzählen
+Ziehe einen ``||VARIABLES:ändere um||``-Block in den ``||PLAYER:bei fallen Spieler||``-Block.
 
-## Schritt 12
-In ``||Variables:ändere um||``-Block, wähle die Variable ``||Variables:fallen||``. **"ändere fallen um 1"**
+## 12. "fallen" auswählen
+In ``||VARIABLES:ändere um||``-Block, wähle die Variable ``||VARIABLES:fallen||``. **"ändere fallen um 1"**
 
-## Schritt 13
-Ziehe zwei ``||Variables:setze auf||``-Blöcke in den ``||Player:bei gestorbem Spieler||``-Block hinein.
+## 13. Variablen-Blöcke hinzufügen
+Ziehe zwei ``||VARIABLES:setze auf||``-Blöcke in den ``||PLAYER:bei gestorbem Spieler||``-Block hinein.
 
-## Schritt 14
-Im ersten ``||Variables:setze auf||``-Block, wähle die Variable ``||Variables:report||``. Dann füge in die Lücke, die ``||Variables:fallen||``-Variable hinzu.
+## 14. Variable setzen
+Im ersten ``||VARIABLES:setze auf||``-Block, wähle die Variable ``||VARIABLES:report||``. Dann füge in die Lücke, die ``||VARIABLES:fallen||``-Variable hinzu.
 
 Es sollte jetzt **setze report auf fallen** heißen. 
 
-## Schritt 15
-Im zweiten ``||Variables:setze auf||``-Block, wähle die Variable ``||Variables:fallen||``. 
+## 15. Variable setzen
+Im zweiten ``||VARIABLES:setze auf||``-Block, wähle die Variable ``||VARIABLES:fallen||``. 
 
 Es sollte jetzt **setze fallen auf 0** heißen. 
 
@@ -102,11 +102,11 @@ player.onTravelled(TravelMethod.fallen, function () {
 })
 ```
 
-## Schritt 16
-Ziehe ein ``||Player:sag||``-Block in den ``||Player:bei Chat-Befehl "an"||``-Block.
+## 16. Nachrichtenblock hinzufügen
+Ziehe ein ``||PLAYER:sag||``-Block in den ``||PLAYER:bei Chat-Befehl "an"||``-Block.
 
-## Schritt 17
-Ziehe ein ``||Text:verbinde||``-Block in den ``||PLayer:sag||``-Block und drücke auf das "+" bei ``||Text:verbinde||``-Block.
+## 17. Text-Verbindung erstellen
+Ziehe ein ``||TEXT:verbinde||``-Block in den ``||PLayer:sag||``-Block und klicke **einmal auf das "+"** bei ``||TEXT:verbinde||``-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -116,11 +116,11 @@ player.onChat("an", function () {
 })
 ```
 
-## Schritt 18
-Schreibe in die erste Lücke von ``||Text:verbinde||``-Block **"Du bist"** und die dei dritte Lücke **Blöcke gefallen**.
+## 18. Text platzieren
+Schreibe in die erste Lücke von ``||TEXT:verbinde||``-Block **"Du bist "** und in die dritte Lücke **" Blöcke gefallen"**.
 
-## Schritt 19
-Ziehe die ``||Variables:report||``-Variable in die zweite Lücke vom ``||Text:verbinde||``-Block.
+## 19. Variable in Text einbinden
+Ziehe die ``||VARIABLES:report||``-Variable in die zweite Lücke vom ``||TEXT:verbinde||``-Block.
 
 ### ~ tutorialhint
 ```blocks
@@ -129,6 +129,6 @@ player.onChat("an", function () {
     player.say("Du bist " + report + " Blöcke gefallen")
 })
 ```
-## Schritt 20
+## 20. Code testen
 Teste deinen Code aus
 

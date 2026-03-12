@@ -1,16 +1,16 @@
-### @explicitHints 1
+﻿### @explicitHints 1
 # Aktivität: Wortzauberer 
 
-## Schritt 1
-Öffne ``||Variables: VARIABLEN ||`` und erstelle 2 neue Variablen mit den Namen **Wort1** und **Wort2**. 
+## 1. Variable erstellen
+Öffne ``||VARIABLES: VARIABLEN ||`` und erstelle 2 neue Variablen mit den Namen **Wort1** und **Wort2**. 
 
-## Schritt 2
-Füge zwei ``||Variables: setze auf ||``-Blöcke in den ``|| Loops: beim Start ||``-Block hinein.
+## 2. Variablenblöcke hinzufügen
+Füge zwei ``||VARIABLES: setze auf ||``-Blöcke in den ``|| Loops: beim Start ||``-Block hinein.
 
-## Schritt 3
-Wähle im ersten ``||Variables: setze auf ||``-Block die Variable ``||Variables:Wort1||`` aus.
+## 3. Variable setzen
+Wähle im ersten ``||VARIABLES: setze auf ||``-Block die Variable ``||VARIABLES:Wort1||`` aus.
 
-Dann wähle im zweiten ``||Variables: setze auf ||``-Block die Variable ``||Variables:Wort2||`` aus.
+Dann wähle im zweiten ``||VARIABLES: setze auf ||``-Block die Variable ``||VARIABLES:Wort2||`` aus.
 
 ### ~ tutorialhint
 ``` blocks
@@ -20,8 +20,8 @@ Wort1 = ""
 Wort2 = ""
 ```
 
-## Schritt 4
-Schreibe, in die Lücke von den ``||Variables:setze Wort1/2 auf||``-Blöcken, zwei beliebige Wörter, mit Anführungszeichen(" "), hinein.0
+## 4. Variable setzen
+Schreibe, in die Lücke von den ``||VARIABLES:setze Wort1/2 auf||``-Blöcken, zwei beliebige Wörter, mit dem ``||TEXT:Anführungszeichen-Block " "||`` in *FORTGESCHRITTEN*, hinein.
 
 Zum Beispiel: **setze Wort1 auf "Schiene"** und **setze Wort2 auf "Straße"**
 
@@ -33,13 +33,13 @@ Wort1 = "Schiene"
 Wort2 = "Straße"
 ```
 
-## Schritt 5
-Ziehe ein ``||Player:bei Chat-Befehl||``-Block in die Arbeitsfläche und schreibe **mix** in die Lücke.
+## 5. Chat-Befehl anlegen
+Ziehe ein ``||PLAYER:bei Chat-Befehl||``-Block in die Arbeitsfläche und schreibe **mix** in die Lücke.
 
-Ziehen ein ``||Blocks:schreibe||``-Block in den ``||Player:bei Chat-Befehl mix||``-Block.
+Ziehen ein ``||BLOCKS:schreibe||``-Block in den ``||PLAYER:bei Chat-Befehl mix||``-Block.
 
-## Schritt 6
-Platziere die ``||Variables: Wort1 ||``-Variable in den ``||Blocks: schreibe ||``-Block.
+## 6. Text platzieren
+Platziere die ``||VARIABLES: Wort1 ||``-Variable in den ``||BLOCKS: schreibe ||``-Block.
 
 Ände das Gras zu **Redstone-Erz**.
 
@@ -56,20 +56,23 @@ player.onChat("mix", function () {
     )
 })
 Wort1 = "Schiene"
-Wort2 = "Strasse""
+Wort2 = "Strasse"
 ```
 
-##  Schritt 7
-Dupliziere den ``||Blocks:schreibe||``-Block und ersätze die ``||Variables:Wort1||``-Variable mit ``||Variables:Wort2||``-Variable.
+## 7. Block duplizieren
+Dupliziere den ``||BLOCKS:schreibe||``-Block und ersetze die ``||VARIABLES:Wort1||``-Variable mit ``||VARIABLES:Wort2||``-Variable.
 
 Dann ändere das **Redstone-Erz** in **Redstone-Lampe**.
 
-## Schritt 8
-Dupliziere den ``||Blocks:schreibe||``-Block noch einmal und ersätze die ``||Variables:Wort1||``-Variable mit dem ``||Text:verbinde||``-Block. 
+## 8. Block duplizieren
+Dupliziere den ``||BLOCKS:schreibe||``-Block noch einmal und ersetze die ``||VARIABLES:Wort1||``-Variable mit dem ``||TEXT:verbinde||``-Block. 
 
-Füge in die erste Lücke vom ``||Text:verbinde||``-Block die ``||Variables:Wort1||``-Variable und in die zweite Lücke ``||Variables:Wort2||``-Variable 
+Füge in die erste Lücke vom ``||TEXT:verbinde||``-Block die ``||VARIABLES:Wort1||``-Variable und in die zweite Lücke ``||VARIABLES:Wort2||``-Variable.
 
 Dann ändere die **Redstone-Lampe** in **Redstone-Block**.
+
+## 9. Code testen
+Teste deinen Code in Minecraft: Gib im Chat **mix** ein. Die drei Wörter (Wort1, Wort2 und die Kombination) werden in verschiedenen Höhen in der Luft geschrieben.
 
 ### ~ tutorialhint
 ```blocks
@@ -84,19 +87,19 @@ player.onChat("mix", function () {
     )
 })
 Wort1 = "Schiene"
-Wort2 = "Strasse""
+Wort2 = "Strasse"
 ```
 
-## Schritt 10
-Deine beiden Wörter werden jetzt geschrieben, aber es gibt ein kleines Problem. Wenn du dich nach dem Tippen von **mix** nicht mehr bewegst, werden die beiden Wörter nicht ausgerichtet, wenn sie gedruckt werden.
+## 10. Position speichern
+Deine beiden Wörter werden jetzt geschrieben, aber es gibt ein kleines Problem. Wenn du dich nach dem Tippen von **mix** nicht mehr bewegst, werden die Wörter möglicherweise falsch ausgerichtet.
 
-## Schritt 11
-Erstelle eine neue ``||Variables:Variable||`` und nenne es **Startposition-Welt**.
+## 11. Variable erstellen
+Erstelle eine neue ``||VARIABLES:Variable||`` und nenne sie **Startposition-Welt**.
 
-Füge ein ``||Variables:setze auf||``_block in den ``||Player:bei Chat-Befehl mix||``-Block ein. Ändere diesen Block so, dass er **Setze Startposition-Welt** heißt.
+Füge einen ``||VARIABLES:setze auf||``-Block in den ``||PLAYER:bei Chat-Befehl mix||``-Block ein. Wähle **Startposition-Welt** als Variable aus.
 
-## Schritt 12
-Platziere ein ``||Player:Position des Spieler in der Welt||``-Block in den ``||Variables:setze Startposition-Welt||``-Block.
+## 12. Spieler-Position erfassen
+Platziere einen ``||PLAYER:Position des Spielers in der Welt||``-Block in den ``||VARIABLES:setze Startposition-Welt||``-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -119,10 +122,10 @@ player.onChat("mix", function () {
     )
 })
 Wort1 = "Schiene"
-Wort2 = "Strasse""
+Wort2 = "Strasse"
 ```
 
-## Schritt 13
+## 13. Variable setzen
 Verschiebe den **setze Startposition-Welt auf**-Block ganz nach Oben.
 
 ### ~ tutorialhint
@@ -152,16 +155,16 @@ player.onChat("mix", function () {
     )
 })
 Wort1 = "Schiene"
-Wort2 = "Strasse""
+Wort2 = "Strasse"
 ```
 
 
-## Schritt 15
-Die relative **Y**-Koordinate sollte von ``Variables:Wort1||``-Variable **30**, ``Variables:Wort2||``-Variable **20** und von ``Variables:Wort1 + Wort2||``-Variable **5**, sein.
+## 15. Koordinaten setzen
+Die relative **Y**-Koordinate sollte für ``||VARIABLES:Wort1||`` **30**, für ``||VARIABLES:Wort2||`` **20** und für ``||VARIABLES:Wort1 + Wort2||`` **5** betragen.
 
-Füge für die Koordinaten den ``||positions:"+"||``-Block hinzu und setze in die ersten Lücken die ``||Variables:Startposition_Welt||``-Variable hinzu.
+Füge für die Koordinaten den ``||positions:"+"||``-Block hinzu und setze in die erste Lücke die ``||VARIABLES:Startposition_Welt||``-Variable.
 
-Dann setze für  die **Y**-Koordinaten die Werte von oben ein.
+Dann setze die **Y**-Koordinaten in der zweiten Lücke auf die Werte von oben.
 ### ~ tutorialhint
 ``` blocks
 let Wort2 = ""
@@ -198,5 +201,5 @@ player.onChat("mix", function () {
     )
 })
 Wort1 = "Schiene"
-Wort2 = "Strasse""
+Wort2 = "Strasse"
 ```
