@@ -1,6 +1,6 @@
 {
     "name": "Minecraft Tutorials",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "dependencies": {
         "core": "*",
         "builder": "*"
@@ -36,7 +36,7 @@
         "unit_9_lesson_C_de.md"
     ],
     "targetVersions": {
-        "target": "1.6.8",
+        "target": "2.1.27",
         "targetId": "minecraft"
     },
     "supportedTargets": [

@@ -21,7 +21,7 @@ Ziehe zwei Ereignisblöcke heraus: ``||PLAYER:bei gehen Spieler||`` und ``||PLAY
     player.onChat("üb", function () {
 
     })
-    player.onTravelled(TravelMethod.Walk, function () {
+    player.onTravelled(TravelMethod.Fall, function () {
 
     })
     player.onChat("an", function () {
@@ -97,7 +97,7 @@ player.onDied(function () {
     report = fallen
     fallen = 0
 })
-player.onTravelled(TravelMethod.fallen, function () {
+player.onTravelled(TravelMethod.Fall, function () {
     fallen += 1
 })
 ```

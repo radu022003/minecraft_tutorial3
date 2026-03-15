@@ -237,7 +237,7 @@ Um den Tanz auszulösen, füge außerhalb der `||LOOPS:während||`-Schleife eine
 
 > Die Verwendung von  `||PLAYER:führe Chatbefehl "dance" aus""||` ist wie ein Funktionsaufruf – du könntest auch eine Funktion verwenden.
 
-### \~ tutorialhint
+### ~ tutorialhint
 
 ```blocks
 player.onChat("mr", function () {

@@ -137,7 +137,7 @@ player.onChat("start", function () {
     start = player.position()
     player.say("Startpunkt: " + start)
 })
-player.onChat("copy", function () {
+player.onChat("kopieren", function () {
     blocks.clone(
     start,
     stop,
