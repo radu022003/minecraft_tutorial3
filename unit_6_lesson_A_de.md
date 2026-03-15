@@ -1,19 +1,19 @@
-### @explicitHints 1
+﻿### @explicitHints 1
 
-# Aktivität: Sprung des Glaubens Minispiel
+# Aktivität: Sprung ins Wasser Minispiel
 
-## Schritt 1
+## 1. Pool-Funktion erstellen
 Klicke im Werkzeugkasten auf den Reiter "Fortgeschritten", um weitere Kategorien anzuzeigen.
-Erstelle eine ``||Functions:Funktion||`` mit dem Namen **pool**. 
+Erstelle eine ``||FUNCTIONS:Funktion||`` mit dem Namen **pool**. 
 
-## Schritt 2
-Erstelle zwei weitere ``||Functions:Funktionen||`` mit den Namen **plattform** und **teleport**.
+## 2. Zusatzfunktionen erstellen
+Erstelle zwei weitere ``||FUNCTIONS:Funktionen||`` mit den Namen **plattform** und **teleport**.
 
-## Schritt 3
-Ziehe eine ``||Player:Bei Chat-Befehl||``-Block in die Arbeitsfläche. Benenne dies in **"play"** um.
+## 3. Chat-Befehl anlegen
+Ziehe eine ``||PLAYER:Bei Chat-Befehl||``-Block in die Arbeitsfläche. Benenne dies in **"play"** um.
 
-## Schritt 4
-Ziehe die drei Blöcke ``||Functions:Aufruf pool||``, ``||Functions:Aufruf platform||`` und ``||Functions:Aufruf teleport||`` in den ``||Player:bei Chat-Befehl "play"||``-Block.
+## 4. Funktionsaufrufe verbinden
+Ziehe die drei Blöcke ``||FUNCTIONS:Aufruf pool||``, ``||FUNCTIONS:Aufruf platform||`` und ``||FUNCTIONS:Aufruf teleport||`` in den ``||PLAYER:bei Chat-Befehl "play"||``-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -25,13 +25,13 @@ function platform(){}
 function teleport(){}
 ```
 
-## Schritt 5: Pool erstellen
-Ziehe einen ``||Blocks:Fülle mit||``-Block in den ``||Functions:function pool||``.
+## 5. Fläche bauen
+Ziehe einen ``||BLOCKS:Fülle mit||``-Block in den ``||FUNCTIONS:function pool||``.
 
-## Schritt 6
-Im Dropdown-Menü von ``||Blocks:Fülle mit||``-Block, wähle einen **Wasserblock**.
+## 6. Fläche bauen
+Im Dropdown-Menü von ``||BLOCKS:Fülle mit||``-Block, wähle einen **Wasserblock**.
 
-Im ``||Blocks:Fülle mit||``-Block, gebe die folgenden Werte für die Koordinaten ein: **(0, -1, 0)** und **(2, -3, 2)**.
+Im ``||BLOCKS:Fülle mit||``-Block, gebe die folgenden Werte für die Koordinaten ein: **(0, -1, 0)** und **(2, -3, 2)**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -46,10 +46,10 @@ function pool() {
 pool()
 ```
 
-## Schritt 7: Plattform bauen 
-Ziehe einen weiteren ``||Blocks:Fülle mit||``-Block in ``||Functions:function platform||``. Im Dropdown-Menü von ``||Blocks:Fülle mit||``-Block, wähle eine **Doppelte Holzstufe**. 
+## 7. Fläche bauen
+Ziehe einen weiteren ``||BLOCKS:Fülle mit||``-Block in ``||FUNCTIONS:function platform||``. Im Dropdown-Menü von ``||BLOCKS:Fülle mit||``-Block, wähle eine **Doppelte Holzstufe**. 
 
-Im ``||Blocks:Fühle mit||``-Block, gebe die folgenden Werte für die Koordinaten ein: **(1, 64, 1)** und **(3, 64, 3)**.
+Im ``||BLOCKS:Fülle mit||``-Block, gebe die folgenden Werte für die Koordinaten ein: **(1, 64, 1)** und **(3, 64, 3)**.
 
 
 
@@ -66,18 +66,18 @@ function platform() {
 platform()
 ```
 
-## Schritt 8
+## 8. Teleport einrichten
 Der letzte Schritt besteht darin, den Spieler an einen Ort knapp über der Mitte der Plattform zu teleportieren. 
 
-Ziehe einen ``||Player:teleportiere nach||`` Block in ``||Functions:function teleport||``.
+Ziehe einen ``||PLAYER:teleportiere nach||`` Block in ``||FUNCTIONS:function teleport||``.
 
-## Schritt 9
-Im ``||Player:teleportiere nach||``-Block gebe die folgenden Werte für die Koordinaten ein: **(2, 65, 2)**.
+## 9. Koordinaten setzen
+Im ``||PLAYER:teleportiere nach||``-Block gebe die folgenden Werte für die Koordinaten ein: **(2, 65, 2)**.
 
-## Schritt 10
+## 10. Spielmodus festlegen
 Setze den Spielmodus auf Überleben. 
 
-Ziehe dazu einen ``||Gameplay:ändere Spielmodus zu||``-Block in die ``||Functions:Funktion teleport||``.
+Ziehe dazu einen ``||GAMEPLAY:ändere Spielmodus zu||``-Block in die ``||FUNCTIONS:Funktion teleport||``.
 
 
 ### ~ tutorialhint
@@ -94,7 +94,7 @@ teleport()
 
 ```
 
-## Schritt 11
+## 11. Code testen
 Teste jetzt dein Minispiel, indem du play in den Chat eingibst. 
 
 ### ~ tutorialhint

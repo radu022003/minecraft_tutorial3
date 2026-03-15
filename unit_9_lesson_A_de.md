@@ -1,10 +1,9 @@
-### @explicitHints 1
+﻿### @explicitHints 1
 
 # Aktivität: Labyrinth Generierung
 
-## Schritt 1: Starter-Code verwenden
-
-Nutze den Starter-Code
+## 1. Agent-Grundbefehle verwenden
+Verwenden die Aktivität "Einfuehrung in den Agenten" als Ausgangscode.
 
 ```template
 let dirs: number[] = []
@@ -98,13 +97,13 @@ left = 1
 right = 2
 ```
 
-## Schritt 2: Materialien zum Reparieren bereitstellen
+## 2. Agent-Aktion einbauen
 
 Manchmal zerstört der Agent versehentlich einen Block der Labyrinthwand, den wir später aber brauchen. Deshalb flickt der Agent das Loch wieder.
 
-**Aufgabe:** Gib dem Agenten einige Eichenholzbretter in seinem Inventar. Lege sie in den oberen linken Slot.
+**Aufgabe:** Gib dem Agenten einige **Eichenholzbretter** in seinem Inventar. Lege sie in den **oberen linken Slot** (das ist der einzige Slot, den der Agent für das Platzieren verwendet).
 
-## Schritt 3: Programm ausprobieren
+## 3. Code testen
 
 Probiere jetzt dein Programm aus!
 
@@ -113,14 +112,14 @@ Probiere jetzt dein Programm aus!
 1. Tippe im Chat-Fenster den Befehl **laby** ein.
 2. Drücke die Leertaste zweimal schnell hintereinander, um hochzufliegen und zuzusehen.
 
-## Schritt 4: Start- und Endpunkte bauen
+## 4. Agent-Aktion einbauen
 
 Baue einen Start- und einen Endpunkt für dein Labyrinth.
 Warum? In der nächsten Aktivität soll der Agent erkennen, wann er das Labyrinth erfolgreich durchquert hat.
 
 **Aufgabe:** Bereite die Bereiche für Start und Ende vor.
 
-## Schritt 5: Spieler ausstatten
+## 5. Agent-Aktion einbauen
 
 Versorge den Spieler mit folgenden Gegenständen:
 
@@ -138,21 +137,21 @@ Versorge den Spieler mit folgenden Gegenständen:
    ```
 
 
-## Schritt 6: Start- und Endpunkt festlegen
+## 6. Schritt gezielt umsetzen
 
 Überlege dir, wo das Labyrinth beginnen und wo es enden soll. Meist liegen Start und Ende an gegenüberliegenden Enden des Felds.
 
-## Schritt 7: Blöcke zerstören und platzieren
+## 7. Agent-Aktion einbauen
 
 1. Zerstöre an der Startposition einen Block, um den Eingang freizulegen.
 2. Zerstöre an der Endposition einen Block.
 3. Platziere **unter** dem Endpunkt einen Redstone-Block, damit er gut sichtbar ist.
 
-## Schritt 8: Endpunkt im Boden markieren
+## 8. Variable konfigurieren
 
 Nachdem du den Grasblock am Ende entfernt hast, setze einen Redstone-Block in den Erdboden darunter. So erkennt der Agent das Ziel leicht.
 
-## Schritt 9: Nächste Aufgabe – Labyrinth Pathfinding
+## 9. Bedingung konfigurieren
 
 In der nächsten Aktivität lernst du, wie der Agent anhält, sobald er **Redstone** unter sich erkennt.
 **Das bedeutet:** Wenn der Agent Redstone unter seinen Füßen findet, weißt du, dass er das Labyrinth geschafft hat!

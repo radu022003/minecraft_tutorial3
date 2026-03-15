@@ -1,8 +1,8 @@
-### @explicitHints 1
+﻿### @explicitHints 1
 
 # Aktivität: Pyramide
 
-## Schritt 1
+## 1. Starter-Code kopieren
 Kopiere den Starter-Code. Kopiere den Code aus dem Hinweis.
 
 ### ~ tutorialhint
@@ -28,15 +28,17 @@ player.onChat("turn", function () {
 })
 ```
 
-## Schritt 2
+## 2. Rekursionsproblem erkennen
 Führe den Code aus und untersuche das Problem mit dem Starter-Code. Wenn du diesen Code genau so ausführst, wirst du etwas Merkwürdiges bemerken.
 
-## Schritt 3
+> **Hinweis:** Das Programm ruft sich am Ende selbst auf (`player.runChatCommand`). Das nennt man **Rekursion**. Sie ist hilfreich, kann aber zu einer Endlosschleife führen, wenn man keine Abbruchbedingung einbaut!
+
+## 3. Agent mit Blöcken ausstatten
 Rüste deinen Agenten mit einigen Blöcken aus.
 
-Gib im Chatfenster **tp** ein, um deinen Agenten in deine Nähe zu teleportieren. Möglicherweise möchtest du auch deinen Agenten mit dem Drehbefehl drehen, aber das ist eventuell nicht nötig.
+Gib im Chatfenster **tp** ein, um deinen Agenten in deine Nähe zu teleportieren. Klicke dann mit der rechten Maustaste auf den Agenten und lege die Blöcke in die **obere linke Ecke** des Agenten-Inventars.
 
-## Schritt 4
+## 4. Pyramiden-Befehl testen
 Gib **pyramid 5** im Chatfenster ein und sieh, was passiert. Dein Agent sollte die Pyramide problemlos bauen, aber er wird nicht aufhören. Der Agent baut einfach immer weiter. Dein Code ist in einer Endlosschleife! Dies passiert, weil am Ende des Codes ein Block steht, der den Code immer wieder aufruft.
 
 ### ~ tutorialhint
@@ -45,14 +47,14 @@ let BaseSize = 0
 player.runChatCommand("pyramid " + (BaseSize - 2))
 ```
 
-## Schritt 5
+## 5. If-Bedingungen zum Stoppen hinzufügen
 Füge **If-Anweisungen** hinzu. Deine Aufgabe ist es, einige **If-Anweisungen** in den Code einzufügen, um das endlose Verhalten zu stoppen!
 
 ### ~ tutorialhint
 Wenn du in einer Endlosschleife steckst, musst du deinen Code aus dem Verbindungsfenster stoppen. Klicke auf die Stopp-Taste in der unteren linken Ecke des Code-Verbindungsfensters.
 
-## Schritt 6
-Beende die Schleife. Um die Schleife zu stoppen, musst du eine Variable überprüfen und dem Code sagen, dass er die Schleife stoppen soll. Eine If-Anweisung ist in dieser Situation sehr hilfreich. Ziehe einen ``||Logic:if then else||``-Block in deinen Code, sodass die **If-Anweisung** den gesamten Code innerhalb von ``||Player:bei Chat-Befehl "pyramid"||`` umgibt.
+## 6. If-then-else-Block einwickeln
+Beende die Schleife. Um die Schleife zu stoppen, musst du eine Variable überprüfen und dem Code sagen, dass er die Schleife stoppen soll. Eine If-Anweisung ist in dieser Situation sehr hilfreich. Ziehe einen ``||LOGIC:if then else||``-Block in deinen Code, sodass die **If-Anweisung** den gesamten Code innerhalb von ``||PLAYER:bei Chat-Befehl "pyramid"||`` umgibt.
 
 ### ~ tutorialhint
 ```javascript
@@ -73,7 +75,7 @@ player.onChat("pyramid", function (BaseSize) {
 })
 ```
 
-## Schritt 7
+## 7. Abbruchbedingung planen
 Jetzt fügen wir die Bedingung hinzu. Du möchtest, dass die Schleife stoppt, wenn die **Größe** unter **null** geht. Der Benutzer gibt eine Größe ein, und nach jedem Durchlauf des Codes wird die Größe um **2** verringert. Genau hier passiert das.
 
 ```javascript
@@ -81,8 +83,8 @@ let BaseSize = 0
 player.runChatCommand("pyramid " + (BaseSize - 2))
 ```
 
-## Schritt 8
-Greife einen der Befehle ``||Logic:0 = 0"||`` oder ``||Logic:0 < 0"||`` und platziere ihn in deiner ``||Logic:if then else||``.
+## 8. Größen-Vergleichsblock einfügen
+Greife einen der Befehle ``||LOGIC:0 = 0"||`` oder ``||LOGIC:0 < 0"||`` und platziere ihn in deiner ``||LOGIC:if then else||``.
 
 ### ~ tutorialhint
 ```javascript
@@ -107,7 +109,7 @@ player.onChat("pyramid", function (BaseSize) {
 })
 ```
 
-## Schritt 9
+## 9. Benutzermeldung im Else-Zweig
 Du möchtest, dass der Vergleich **'BaseSize > 0'** lautet. Wenn die Größe größer als null ist, bauen wir etwas, aber wenn nicht, gibst du dem Benutzer eine Nachricht.
 
 ### ~ tutorialhint
@@ -133,10 +135,10 @@ player.onChat("pyramid", function (BaseSize) {
 })
 ```
 
-## Schritt 10
-Mit dieser If-Anweisung hast du die Schleife gestoppt! Wie könntest du diesen Code noch verbessern? Es gibt zwei Situationen, in denen die Größe null wird. Wenn der Agent gerade eine Pyramide gebaut hat oder der Benutzer vergessen hat, eine Größe für die Pyramide einzugeben. Der Code wird zum Else-Punkt im ``||Logic: If Then||``-Block gehen, wenn dies passiert.
+## 10. Variable-Überprüfung planen
+Mit dieser If-Anweisung hast du die Schleife gestoppt! Wie könntest du diesen Code noch verbessern? Es gibt zwei Situationen, in denen die Größe null wird. Wenn der Agent gerade eine Pyramide gebaut hat oder der Benutzer vergessen hat, eine Größe für die Pyramide einzugeben. Der Code wird zum Else-Punkt im ``||LOGIC: If Then||``-Block gehen, wenn dies passiert.
 
-## Schritt 11
+## 11. MadePyramid-Variable prüfen
 Kannst du eine Möglichkeit finden, diese beiden Bedingungen (A und B) zu überprüfen? Du würdest dies im Else-Zweig überprüfen. Schau dir unseren finalen Code genau an, bevor du die Herausforderungen angehst. Es gibt einen Hinweis, wie du dieses Puzzle lösen kannst. Hast du den neuen Befehl bemerkt?
 
 ### ~ tutorialhint
@@ -172,5 +174,5 @@ player.onChat("pyramid", function (BaseSize) {
 })
 ```
 
-## Schritt 12
-Versuche, diese Variable und eine ``||Logic:if||``-Anweisung zu verwenden, um die Herausforderungen zu lösen!
+## 12. Code mit Variablen testen
+Versuche, diese Variable und eine ``||LOGIC:if||``-Anweisung zu verwenden, um die Herausforderungen zu lösen!

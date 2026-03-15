@@ -1,24 +1,24 @@
-### @explicitHints 1
-# Aktivität: Burger 
+﻿### @explicitHints 1
+# Aktivität: Riesenburger bauen
 
-## Schritt 1: Buregerzutaten
+## 1. Burger-Schicht-Funktionen erstellen
 Erstelle fünf Funktionen mit den Namen **unteresBrotchen**, **Fleisch**, **Salat**, **Tomate** und **oberesBrotchen**.
 
-## Schritt 2
-Ziehe einen ``||Player:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und benenne es **"burger"**.
+## 2. Burger-Chat-Befehl erstellen
+Ziehe einen ``||PLAYER:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und benenne ihn **"burger"**.
 
-## Schritt 3
-Füge die folgenden Blöcke in den ``||Player:Bei Chat-Befehl "burger"||``-Block hinzu:
+## 3. Funktionsaufrufe in Reihenfolge
+Füge die folgenden Blöcke in den ``||PLAYER:Bei Chat-Befehl "burger"||``-Block hinzu:
 
- ``||Functions:aufruf unteresBrotchen||``, 
+ ``||FUNCTIONS:aufruf unteresBrotchen||``, 
 
- ``||Functions:aufruf fleisch||``, 
+ ``||FUNCTIONS:aufruf fleisch||``, 
 
- ``||Functions:aufruf salat||``, 
+ ``||FUNCTIONS:aufruf salat||``, 
 
- ``||Functions:aufruf tomate||`` und 
+ ``||FUNCTIONS:aufruf tomate||`` und 
 
- ``||Functions:aufruf oberesBrotchen||``
+ ``||FUNCTIONS:aufruf oberesBrotchen||``
 
 **HINWEIS**: Die Reihenfolge dieser Funktionsaufrufe ist wichtig.
 
@@ -48,8 +48,8 @@ function tomate()  {
 }
 ```
 
-## Schritt 4: unteresBrotchen
-Ziehen Sie einen ``||Blocks:Fülle mit||`` Block in ``||Functions:function unteresBrotchen||``. 
+## 4. Fläche bauen
+Ziehe einen ``||BLOCKS:Fülle mit||``-Block in ``||FUNCTIONS:function unteresBrotchen||``.
 
 Ändere den Block, indem du **Eichenholzbretter** aus dem Dropdown-Menü auswählst.
 
@@ -85,8 +85,8 @@ function tomate() {
 }
 ```
 
-## Schritt 5: Fleisch
-Ziehe einen ``||Blocks:Fülle mit||``-Block in ``||Functions:function Fleisch||``. 
+## 5. Fläche bauen
+Ziehe einen ``||BLOCKS:Fülle mit||``-Block in ``||FUNCTIONS:function Fleisch||``. 
 
 Ändere den Block, indem du **Braune Terrakotta** aus dem Dropdown-Menü auswählst.
 
@@ -128,8 +128,8 @@ function tomate() {
 
 }
 ```
-## Schritt 6: Salat
-Ziehe einen ``||Blocks:Fülle mit||``-Block in ``||Functions:function Salat||``. 
+## 6. Fläche bauen
+Ziehe einen ``||BLOCKS:Fülle mit||``-Block in ``||FUNCTIONS:function Salat||``. 
 
 Ändere den Block, indem du **Lime Concrete** aus dem Dropdown-Menü auswählst.
 
@@ -176,8 +176,8 @@ function tomate() {
 }
 ```
 
-## Schritt 7: Tomate 
-Ziehe einen ``||Blocks:Fülle mit||``-Block in ``||Functions:function Tomate||``. 
+## 7. Fläche bauen
+Ziehe einen ``||BLOCKS:Fülle mit||``-Block in ``||FUNCTIONS:function Tomate||``. 
 
 Ändere den Block, indem du **Roter Beton** aus dem Dropdown-Menü auswählst.
 
@@ -196,16 +196,16 @@ function tomate() {
 tomate()
 ```
 
-## Schritt 8: oberesBrotchen
-Ziehe zwei ``||Blocks:Fülle mit||``-Blöcke in ``||Functions:function oberesBrotchen||``. 
+## 8. Fläche bauen
+Ziehe zwei ``||BLOCKS:Fülle mit||``-Blöcke in ``||FUNCTIONS:function oberesBrotchen||``. 
 
 Ändere den Block, indem du **Eichenholzbretter** aus dem Dropdown-Menü auswählst.
 
-## Schritt 9
-Gebe folgende Koordinaten für den ersten ``||Blocks:Fülle mit||``-Block: von **(~3, ~4, ~3)** nach **(~8, ~4, ~8)**.
+## 9. Koordinaten setzen
+Gebe folgende Koordinaten für den ersten ``||BLOCKS:Fülle mit||``-Block: von **(~3, ~4, ~3)** nach **(~8, ~4, ~8)**.
 
-## Schritt 10
-Gebe folgende Koordinaten für den zweiten ``||Blocks:Fülle mit||``-Block: von **(~4, ~5, ~4)** nach **(~7, ~5, ~7)**.
+## 10. Koordinaten setzen
+Gebe folgende Koordinaten für den zweiten ``||BLOCKS:Fülle mit||``-Block: von **(~4, ~5, ~4)** nach **(~7, ~5, ~7)**.
 
 ### ~ tutorialhint
 ``` blocks
@@ -226,7 +226,7 @@ function oberesBrotchen() {
 oberesBrotchen()
 ```
 
-## Schritt 11
+## 11. Code testen
 
 Teste deinen Code, indem du **Burger** im Chat eingibst.
 

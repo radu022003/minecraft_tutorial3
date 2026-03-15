@@ -1,65 +1,65 @@
-
+﻿
 ### @explicitHints 1
 
 # Aktivität: Wir bauen einen Zoo
 
-## Schritt 1
+## 1. Variable erstellen
 Erstelle eine neue Variable und nenne sie **animalarray**.
 
-Ziehe den ``||Variables:setze animalarray auf||``-Block in den ``||Loops:beim Start||``-Block.
+Ziehe den ``||VARIABLES:setze animalarray auf||``-Block in den ``||LOOPS:beim Start||``-Block.
 
-## Schritt 2
-Ziehe einen ``||Arrays:leeres Array||``-Block in den ``||Variables:setze animalarray auf||``-Block.
+## 2. Variable setzen
+Ziehe einen ``||ARRAYS:leeres Array||``-Block in den ``||VARIABLES:setze animalarray auf||``-Block.
 
-## Schritt 3
+## 3. Array aufbauen
 Füge Tiere zum Array hinzu. 
 
-Klicke 7 mal auf das Pluszeichen **(+)** auf ``||Arrays:leeres Array||``. 
+Klicke 7 mal auf das Pluszeichen **(+)** auf ``||ARRAYS:leeres Array||``. 
 
 Die Gesamtlänge des Arrays sollte **7** sein.
 
-## Schritt 4
-Fülle alle Slots des Arrays mit  ``||Mobs:Tier||``-Blöcken.
+## 4. Array aufbauen
+Fülle alle Slots des Arrays mit  ``||MOBS:Tier||``-Blöcken.
 
-## Schritt 5
+## 5. Auswahl treffen
 Wähle 7 verschiedene Tiere aus. 
 
 So kannst du einen Zoo mit **7** verschiedenen Arten von Tieren erstellen. Beachte, dass bestimmte Tiere andere Tiere fressen! Zum Beispiel verstehen sich Ozelote und Hühner nicht sehr gut. Überlege dir, welche Art von Zoo du möchtest, und plane Sie entsprechend. 
 
-## Schritt 6
+## 6. Agent-Aktion einbauen
 Lass uns ein Tiergehege bauen. 
 
-Jetzt, da dein Tier-Array eingerichtet ist, arbeiten wir daran, ein eingezäuntes Gehege für deinen Zoo zu erstellen. Hierfür verwende die ``||Builder:BAUMEISTER||``-Blöcke. Der Baumeister ist wie ein unsichtbarer Cursor im Spiel, der sehr schnell Blöcke entlang eines Pfads platzieren kann. 
+Jetzt, da dein Tier-Array eingerichtet ist, arbeiten wir daran, ein eingezäuntes Gehege für deinen Zoo zu erstellen. Hierfür verwende die ``||BUILDER:BAUMEISTER||``-Blöcke. Der Baumeister ist wie ein unsichtbarer Cursor im Spiel, der sehr schnell Blöcke entlang eines Pfads platzieren kann. 
 
-## Schritt 7
-Ziehe einen ``||Player:Bei Chat-Befehl||``-Block in die Arbeitsfläche. Benenne den Befehl in "Stift" um.
+## 7. Chat-Befehl anlegen
+Ziehe einen ``||PLAYER:Bei Chat-Befehl||``-Block in die Arbeitsfläche. Benenne den Befehl in "Stift" um.
 
-Ziehe einen ``||Builder:Baumeister, teleportiere nach||``-Block in den ``||PLayer:Bei Chat-Befehl "Stift"||``-Block.
+Ziehe einen ``||BUILDER:Baumeister, teleportiere nach||``-Block in den ``||PLAYER:Bei Chat-Befehl "Stift"||``-Block.
 
-## Schritt 8
-In ``||Builder:Baumeister, teleportiere nach||``, ändere die Positionswerte auf **(~5, ~0, ~-5)**.
+## 8. Teleport einrichten
+In ``||BUILDER:Baumeister, teleportiere nach||``, ändere die Positionswerte auf **(~5, ~0, ~-5)**.
 
-## Schritt 9
-Ziehe den Block ``||Builder:Baumeister, schaue nach||`` heraus und platziere es unter ``||Builder:Baumeister, teleportiere nach||``. Die Standardeinstellung "nach Westen schauen" ist in Ordnung.
+## 9. Teleport einrichten
+Ziehe den Block ``||BUILDER:Baumeister, schaue nach||`` heraus und platziere es unter ``||BUILDER:Baumeister, teleportiere nach||``. Die Standardeinstellung "nach Westen schauen" ist in Ordnung.
 
-## Schritt 10
-Nehme einen ``||Builder:Baumeister, plaziere Markierung||``-Block und setze es nach dem ``||Builder:schaue nach||``-Block ein.
+## 10. Variable konfigurieren
+Nehme einen ``||BUILDER:Baumeister, plaziere Markierung||``-Block und setze es nach dem ``||BUILDER:schaue nach||``-Block ein.
 
 Zeichne die Umrisse des Stifts. Jetzt lasse den Baumeister einfach ein Quadrat zeichnen.
 
-## Schritt 11
-Ziehe eine ``||Loops:-mal wiederholen Schleife||`` und platziere sie nach dem ``||Builder:Baumeister, plaziere Markierung||``-Block. Ein Quadrat hat **vier** Seiten, also ist das Wiederholen **viermal** eine gute Idee.
+## 11. Bedingung konfigurieren
+Ziehe eine ``||LOOPS:-mal wiederholen Schleife||`` und platziere sie nach dem ``||BUILDER:Baumeister, plaziere Markierung||``-Block. Ein Quadrat hat **vier** Seiten, also ist das Wiederholen **viermal** eine gute Idee.
 
-## Schritt 12
-Von ``||Builder:BAUMEISTER||``, ziehe ein ``||Builder:Baumeister, bewege dich||``-Block in die ``||Loops:4 -mal wiederholen||``-Schleife.
+## 12. Bedingung konfigurieren
+Von ``||BUILDER:BAUMEISTER||``, ziehe ein ``||BUILDER:Baumeister, bewege dich||``-Block in die ``||LOOPS:4 -mal wiederholen||``-Schleife.
 
-Gebe **10** in den ``||Builder:Baumeister, bewege dich vorwärts||``-Block ein, um die Seiten deines Stifts auf **10** Blöcke zu machen.
+Gebe **10** in den ``||BUILDER:Baumeister, bewege dich vorwärts||``-Block ein, um die Seiten deines Stifts auf **10** Blöcke zu machen.
 
-## Schritt 13
-Ziehe einen ``||Builder:Baumeister, drehe dich nach||``-Block nach dem Block ``||Builder:Baumeister, bewege dich||``-Block.
+## 13. Drehung einrichten
+Ziehe einen ``||BUILDER:Baumeister, drehe dich nach||``-Block nach dem Block ``||BUILDER:Baumeister, bewege dich||``-Block.
 
-## Schritt 14
-Platziere einen ``||Builder:Baumeister, zeichne einen Weg von der Markierung mit||``-Block nach der ``||Loops:-mal wiederholen||``-Schleife. Wähle aus dem Dropdown-Menü einen Eichenzaun aus.
+## 14. Chat-Befehl erstellen
+Platziere einen ``||BUILDER:Baumeister, zeichne einen Weg von der Markierung mit||``-Block nach der ``||LOOPS:-mal wiederholen||``-Schleife. Wähle aus dem Dropdown-Menü einen Eichenzaun aus.
 
 ### ~ tutorialhint
 ``` blocks
@@ -76,28 +76,28 @@ player.onChat("pen", function () {
 
 ```
 
-## Schritt 15
+## 15. Code testen
 "Teste den Befehl "Stift"."
 
-## Schritt 16
-Ziehe einen ``||Player:Bei Chat-Befehl||``-Block in den Programmierbereich und benenne es in „zoo“ um.
+## 16. Chat-Befehl anlegen
+Ziehe einen ``||PLAYER:Bei Chat-Befehl||``-Block in den Programmierbereich und benenne es in „zoo“ um.
 
-Ziehe einen ``||Loops:für Element||``-Block in den ``||Player:Bei Chat-Befehl "zoo"||``-Block.
+Ziehe einen ``||LOOPS:für Element||``-Block in den ``||PLAYER:Bei Chat-Befehl "zoo"||``-Block.
 
-## Schritt 17
-Wähle im **2. Slot** des ``||Loops:für Element||``-Blocks **animalarray** aus.
+## 17. Schleife konfigurieren
+Wähle im **2. Slot** des ``||LOOPS:für Element||``-Blocks **animalarray** aus.
 
-## Schritt 18
-Ziehe aus ``||Mobs:MOBS||`` einen ``||Mobs:spawne Tier bei||``-Block und platziere es in ``||Loops:für Element||``-Block.
+## 18. Spawn konfigurieren
+Ziehe aus ``||MOBS:MOBS||`` einen ``||MOBS:spawne Tier bei||``-Block und platziere es in ``||LOOPS:für Element||``-Block.
 
-## Schritt 19
-Ziehe aus ``||Variables:VARIABLEN||`` die ``||Variables:Wert||``-Variable in den ``||Mobs:spawne Tier bei||``-Block. 
-Es sollte jetzt **spawne Wert bei** heißen. 
+## 19. Spawn konfigurieren
+Ziehe aus ``||VARIABLES:VARIABLEN||`` die ``||VARIABLES:Wert||``-Variable in den ``||MOBS:spawne Tier bei||``-Block.
+Es sollte jetzt **spawne Wert bei** heißen.
 
-Passen Sie die Koordinaten in ``||Mobs:spawn Wert bei||`` auf **(~3, ~0, ~0)** an, sodass die Tiere ein paar Blocks vom Spieler entfernt spawnen.
+Passe die Koordinaten in ``||MOBS:spawn Wert bei||`` auf **(~3, ~0, ~0)** an, sodass die Tiere ein paar Blöcke vom Spieler entfernt spawnen.
 
-## Schritt 20
-Um Tierpaare zu erstellen, klicke mit der rechten Maustaste auf den ``||Mobs:spawne Wert bei||``-Block, um ihn zu duplizieren. Wenn du möchtest, kannst du hier auch eine Schleife verwenden.
+## 20. Block duplizieren
+Um Tierpaare zu erstellen, klicke mit der rechten Maustaste auf den ``||MOBS:spawne Wert bei||``-Block, um ihn zu duplizieren. Wenn du möchtest, kannst du hier auch eine Schleife verwenden.
 
 ### ~ tutorialhint
 ``` blocks
@@ -110,7 +110,7 @@ player.onChat("zoo", function () {
 })
 ```
 
-## Schritt 21 
+## 21. Chat-Befehl erstellen
 Gebe den Befehl „zoo“ in das Chatfenster ein und beobachte, wie die Tiere erscheinen!
 
 ### ~ tutorialhint

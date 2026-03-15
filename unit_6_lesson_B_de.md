@@ -1,18 +1,18 @@
-### @explicitHints 1
+﻿### @explicitHints 1
 
-# Aktivität: Zombie Schwein 
+# Aktivität: Blitzschwein-Arena
 
-## Schritt 1
-Erstelle eine ``||Functions:Funktion||`` mit dem Namen **zombiepig**.
+## 1. Zombie-Schwein-Funktion erstellen
+Erstelle eine ``||FUNCTIONS:Funktion||`` mit dem Namen **zombiepig**.
 
-## Schritt 2
-Erstelle zwei weitere ``||Functions:Funktionen||`` mit den Namen **atmosphere** und **setup**.
+## 2. Setup- und Atmosphäre-Funktionen erstellen
+Erstelle zwei weitere ``||FUNCTIONS:Funktionen||`` mit den Namen **atmosphere** und **setup**.
 
-## Schritt 3
-Ziehe einen ``||Player:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und benenne es zum **"play"**.
+## 3. Chat-Befehl anlegen
+Ziehe einen ``||PLAYER:Bei Chat-Befehl||``-Block auf die Arbeitsfläche und benenne ihn zu **"play"**.
 
-## Schritt 4
-Ziehe die drei Blöcke ``||Functions:aufruf setup||``, ``||Functions:aufruf atmosphere||`` und ``||Functions:aufruf zombiepig||`` in den **bei Chat-Befehl "play"**-Block.
+## 4. Alle Funktionen aufrufen verbinden
+Ziehe die drei Blöcke ``||FUNCTIONS:aufruf setup||``, ``||FUNCTIONS:aufruf atmosphere||`` und ``||FUNCTIONS:aufruf zombiepig||`` in den **bei Chat-Befehl "play"**-Block.
 
 ### ~ tutorialhint
 ``` blocks
@@ -32,14 +32,14 @@ function setup()  {
 }
 ```
 
-## Schritt 5: Zombie-Schwein erstellen
-Ziehe einen ``||Mobs:spawne Tier||`` Block in ``||Functions:function zombie pig||``. 
+## 5. Spawn konfigurieren
+Ziehe einen ``||MOBS:spawne Tier||`` Block in ``||FUNCTIONS:function zombie pig||``. 
 
 Ändere das Tier zum **Schwein**. 
 
 
-## Schritt 6
-Ziehe noch einen ``||Mobs:spawne Tier||`` Block in ``||Functions:function zombie pig||`` und ersetze **Tier** mit ``||Mobs:Projektil Blitz||``.
+## 6. Blitzeffekt mit Schwein kombinieren
+Ziehe noch einen ``||MOBS:spawne Tier||`` Block in ``||FUNCTIONS:function zombie pig||`` und ersetze **Tier** mit ``||MOBS:Projektil Blitz||``.
 
 Dann setze beide Koordinaten auf **(~0, ~0, ~-5)**.
 
@@ -62,31 +62,31 @@ function atmosphere()  {
 }
 ```
 
-## Schritt 7
+## 7. Schwierigkeit einstellen
 Du möchtest, dass das Spiel automatisch funktioniert. Nachdem du "play" eingibst, soll das Spiel mit allem eingerichtet werden, sodass du ein paar verrückte Zombie-Schweine-Menschen bekämpfen kannst. Das erste Problem ist der Schwierigkeitsgrad des Spiels. Das Schwein wird sich nicht in ein Zombie-Schwein verwandeln, wenn das Spiel auf Friedlich eingestellt ist.
 
-## Schritt 8
-Ziehe einen ``||Gameplay:Stelle Schwierigkeit ein auf||`` Block in ``||Functions:setup||``.
+## 8. Schwierigkeit einstellen
+Ziehe einen ``||GAMEPLAY:Stelle Schwierigkeit ein auf||`` Block in ``||FUNCTIONS:setup||``.
 
-Passe diesen neuen Block so an, dass er ``||Gameplay:stelle Schwierigkeit ein auf 'normal'||`` lautet.
+Passe diesen neuen Block so an, dass er ``||GAMEPLAY:stelle Schwierigkeit ein auf 'normal'||`` lautet.
 
-## Schritt 9
-Als nächstes möchtest du den Spielmodus für den Spieler ändern. Durch Einstellen des Spielmodus auf Überlebensmodus wird sichergestellt, dass der Schweinemensch dich angreicht! 
+## 9. Spielmodus festlegen
+Als Nächstes möchtest du den Spielmodus für den Spieler ändern. Durch Einstellen des Spielmodus auf Überleben wird sichergestellt, dass der Schweinemensch dich angreift!
 
-Ziehe einen ``||Gameplay:Ändere Spielmodus zu||``-Block in ``||Functions:Setup||``.
+Ziehe einen ``||GAMEPLAY:Ändere Spielmodus zu||``-Block in ``||FUNCTIONS:Setup||``.
 
-Passe diesen neuen Block so an, dass er ``||Gameplay:ändere Spielmodus zu 'Überleben'||`` lautet.
+Passe diesen neuen Block so an, dass er ``||GAMEPLAY:ändere Spielmodus zu 'Überleben'||`` lautet.
 
 Ändere auch das Ziel, sodass es **"du selbst"** lautet.
 
-## Schritt 10
+## 10. Diamantschwert austeilen
 Schließlich wird es sehr schwierig sein zu kämpfen, ohne eine Waffe zu haben. Du kannst dir selber eine Waffe geben, um das Spiel für deinen Spieler vernünftiger zu gestalten. 
 
-Ziehe einen ``||Mobs:Gib||``-Block und platziere ihn als letzten Block in die ``||Functions:function Setup||``.
+Ziehe einen ``||MOBS:Gib||``-Block und platziere ihn als letzten Block in die ``||FUNCTIONS:function Setup||``.
 
-## Schritt 11
+## 11. Auswahl treffen
 Du musst dich selber als Ziel wählen und dir selber ein Schwert oder eine andere Waffe geben. Z.B. ein **Diamantschwert**.
-Dazu brauchst du ein ``||Mobs:gib Block oder Element||``-Block und ein ``||Blocks:Element||``-Block. 
+Dazu brauchst du ein ``||MOBS:gib Block oder Element||``-Block und ein ``||BLOCKS:Element||``-Block. 
 
 ### ~ tutorialhint
 ``` blocks
@@ -117,10 +117,10 @@ player.onChat("play", function () {
 ```
 
 
-## Schritt 12
-Ziehe einen ``||Gameplay:Zeiteinstellung||``-Block in ``||Functions:function atmosphere||``.
+## 12. Mitternacht-Atmosphäre setzen
+Ziehe einen ``||GAMEPLAY:Zeiteinstellung||``-Block in ``||FUNCTIONS:function atmosphere||``.
 
-Passe dies so an, dass es ``||Gameplay:Zeiteinstellung 'Mitternacht'||`` lautet. 
+Passe dies so an, dass es ``||GAMEPLAY:Zeiteinstellung 'Mitternacht'||`` lautet. 
 
 Jetzt kannst du **play** in den Chat eingeben und deinen Code testen. 
 
@@ -152,16 +152,16 @@ player.onChat("play", function () {
 })
 ```
 
-## Schritt 13
+## 13. Respawn-Event vorbereiten
 Nachdem ein Schweinemensch besiegt wurde, möchtest du, dass ein weiterer Schweinemensch erscheint. 
 
-## Schritt 14
-Ziehe einen ``||Mobs:wenn getötet||``-Block.
+## 14. Mob-Filter einstellen
+Ziehe einen ``||MOBS:wenn getötet||``-Block.
 
-Passe diesen Block so an, dass es ``||Mobs:wenn Monster Zombie-Pigman getötet||`` lautet.
+Passe diesen Block so an, dass es ``||MOBS:wenn Monster Zombie-Pigman getötet||`` lautet.
 
-## Schritt 15
-Ziehe einen ``||Functions:aufruf zombiepig||``-Block zu diesem neuen Ereignis hinzu.
+## 15. Zombiepig erneut aufrufen
+Ziehe einen ``||FUNCTIONS:aufruf zombiepig||``-Block zu diesem neuen Ereignis hinzu.
 
 Jetzt kannst du **play** in den Chat eingeben und deinen Code testen. 
 

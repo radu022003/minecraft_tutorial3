@@ -1,21 +1,21 @@
-### @explicitHints 1  
+﻿### @explicitHints 1  
 
 # Aktivität: Agent-Baumfäller  
 
-## Schritt 1  
-Benenne den vorhandenen ``||Player:bei Chat-Befehl||``-Block in **"tp"** um. Ziehe einen ``||Agent:Agent teleportiere dich zu Spieler||``-Block in den ``||Player:bei Chat-Befehl "tp"||``-Block.  
+## 1. Chat-Befehl anlegen
+Benenne den vorhandenen ``||PLAYER:bei Chat-Befehl||``-Block in **"tp"** um. Ziehe einen ``||AGENT:Agent teleportiere dich zu Spieler||``-Block in den ``||PLAYER:bei Chat-Befehl "tp"||``-Block.  
 
 ---
 
-## Schritt 2  
-Erstelle nun einen Befehl, um den Agenten zu drehen. Du kannst den vorhandenen ``||Player:bei Chat-Befehl "tp"||``-Block mit Rechtsklick **duplizieren**.  
+## 2. Block duplizieren
+Erstelle nun einen Befehl, um den Agenten zu drehen. Du kannst den vorhandenen ``||PLAYER:bei Chat-Befehl "tp"||``-Block mit Rechtsklick **duplizieren**.  
 
 Benenne die Kopie in **"lt"** um.  
 
 ---
 
-## Schritt 3  
-Entferne den Inhalt des duplizierten Blocks und ersetze ``||Agent:Agent teleportiere zu Spieler||`` durch ``||Agent:Agent drehe dich nach 'links'||``.  
+## 3. Block duplizieren
+Entferne den Inhalt des duplizierten Blocks und ersetze ``||AGENT:Agent teleportiere zu Spieler||`` durch ``||AGENT:Agent drehe dich nach 'links'||``.  
 
 ### ~ tutorialhint  
 ```blocks  
@@ -29,16 +29,16 @@ player.onChat("lt", function () {
 
 ---
 
-## Schritt 4  
-Erstelle die Höhen-Variable. Ziehe einen neuen ``||Player:bei Chat-Befehl||``-Block in den Arbeitsbereich und benenne ihn in **"chop"** um.  
+## 4. Chat-Befehl anlegen
+Erstelle die Höhen-Variable. Ziehe einen neuen ``||PLAYER:bei Chat-Befehl||``-Block in den Arbeitsbereich und benenne ihn in **"chop"** um.  
 
-Du wirst eine Variable verwenden, um die Höhe des Baums zu verfolgen. Öffne das ``||Variables:Variablen||``-Werkzeugmenü und klicke auf **Variable erstellen**. Nenne die neue Variable **höhe**.  
+Du wirst eine Variable verwenden, um die Höhe des Baums zu verfolgen. Öffne das ``||VARIABLES:Variablen||``-Werkzeugmenü und klicke auf **Variable erstellen**. Nenne die neue Variable **höhe**.  
 
 ---
 
-## Schritt 5  
-Ziehe einen ``||Variables:setze||``-Block in den ``||Player:bei Chat-Befehl "chop"||``-Block.  
-Wähle im ``||Variables:setze||``-Block im Dropdown-Menü die Variable **höhe** und setze sie auf **0**.
+## 5. Höhe initialisieren
+Ziehe einen ``||VARIABLES:setze||``-Block in den ``||PLAYER:bei Chat-Befehl "chop"||``-Block.  
+Wähle im ``||VARIABLES:setze||``-Block im Dropdown-Menü die Variable **höhe** und setze sie auf **0**.
 
 ### ~ tutorialhint  
 ```blocks  
@@ -56,20 +56,20 @@ player.onChat("chop", function () {
 
 ---
 
-## Schritt 6 
-Beginne am Fuß eines Baums. Gehe davon aus, dass der Agent auf den Baumstamm zeigt, wenn der **"chop"**-Befehl gegeben wird. Nutze die Befehle **"tp"** und **"lt"**, um deinen Agenten auszurichten, und führe anschließend **"chop"** aus.  
+## 6. Bedingung konfigurieren
+Beginne am Fuß eines Baums. Gehe davon aus, dass der Agent auf den Baumstamm zeigt, wenn der **"chop"**-Befehl gegeben wird. Nutze die Befehle **"tp"** und **"lt"**, um deinen Agenten auszurichten, und führe anschließend **"chop"** aus.
 
-Verwende eine ``||Loops:während||``-Schleife, die den Code wiederholt, solange ein Block vor dem Agenten ist.  
-
----
-
-## Schritt 7 
-Ziehe eine ``||Loops:während||``-Schleife und lege sie unter den ``||Variables:setze 'höhe'||``-Block im ``||Player:bei Chat-Befehl "chop"||``-Block.  
+Verwende eine ``||LOOPS:während||``-Schleife, die den Code wiederholt, solange ein Block vor dem Agenten ist.  
 
 ---
 
-## Schritt 8 
-Ziehe einen ``||Agent:Agent erkenne 'Block' 'vorwärts'||``-Block in die Bedingung der ``||Loops:während||``-Schleife, um **falsch** zu ersetzen.  
+## 7. Während-Schleife einfügen
+Ziehe eine ``||LOOPS:während||``-Schleife und lege sie unter den ``||VARIABLES:setze 'höhe'||``-Block im ``||PLAYER:bei Chat-Befehl "chop"||``-Block.  
+
+---
+
+## 8. Blockerkennung einfügen
+Ziehe einen ``||AGENT:Agent erkenne 'Block' 'vorwärts'||``-Block in die Bedingung der ``||LOOPS:während||``-Schleife, um **falsch** zu ersetzen.  
 
 ### ~ tutorialhint  
 ```blocks  
@@ -90,18 +90,18 @@ player.onChat("chop", function () {
 
 ---
 
-## Schritt 9 
-Bewege dich den Baum hinauf. Ziehe einen ``||Variables:ändere||``-Block in die ``||Loops:während||``-Schleife und stelle ein, dass **höhe** um **1** erhöht wird.  
+## 9. Variable konfigurieren
+Bewege dich den Baum hinauf. Ziehe einen ``||VARIABLES:ändere||``-Block in die ``||LOOPS:während||``-Schleife und stelle ein, dass **höhe** um **1** erhöht wird.  
 
 ---
 
-## Schritt 10 
-Falls Blätter oder Äste über dem Agenten sind, müssen sie zerstört werden. Platziere einen ``||Agent:Agent zerstöre||``-Block direkt unter dem ``||Variables:ändere 'höhe' um 1||``-Block. Wähle **oben** aus dem Dropdown-Menü.  
+## 10. Oberen Block zerstören
+Falls Blätter oder Äste über dem Agenten sind, müssen sie zerstört werden. Platziere einen ``||AGENT:Agent zerstöre||``-Block direkt unter dem ``||VARIABLES:ändere 'höhe' um 1||``-Block. Wähle **oben** aus dem Dropdown-Menü.  
 
 ---
 
-## Schritt 11
-Lass den Agenten aufsteigen. Füge einen ``||Agent:Agent bewege||``-Block hinzu und wähle im Dropdown-Menü **oben** als Richtung.  
+## 11. Nach oben bewegen
+Lass den Agenten aufsteigen. Füge einen ``||AGENT:Agent bewege||``-Block hinzu und wähle im Dropdown-Menü **oben** als Richtung.  
 
 ### ~ tutorialhint  
 ```blocks  
@@ -124,13 +124,13 @@ player.onChat("chop", function () {
 
 ---
 
-## Schritt 12 
-Lass den Agenten wieder herunterkommen. Ziehe eine ``||Loops:wiederhole||``-Schleife unter die ``||Loops:während||``-Schleife.  
+## 12. Abstiegsschleife einfügen
+Lass den Agenten wieder herunterkommen. Ziehe eine ``||LOOPS:wiederhole||``-Schleife unter die ``||LOOPS:während||``-Schleife.  
 
 ---
 
-## Schritt 13 
-Ziehe die Variable ``||Variables:höhe||``  in die ``||Loops:wiederhole||``-Schleife, um die Zahl **4** zu ersetzen.  
+## 13. Höhe als Schleifenwert nutzen
+Ziehe die Variable ``||VARIABLES:höhe||``  in die ``||LOOPS:wiederhole||``-Schleife, um die Zahl **4** zu ersetzen.  
 
 ### ~ tutorialhint  
 ```blocks  
@@ -156,18 +156,18 @@ player.onChat("chop", function () {
 
 ---
 
-## Schritt 14  
-Fälle während des Abstiegs. Füge innerhalb der ``||Loops:wiederhole||``-Schleife einen ``||Agent:Agent bewege||``-Block hinzu, gefolgt von einem ``||Agent:Agent zerstöre||``-Block.  
+## 14. Abstiegscode ergänzen
+Fälle während des Abstiegs. Füge innerhalb der ``||LOOPS:wiederhole||``-Schleife einen ``||AGENT:Agent bewege||``-Block hinzu, gefolgt von einem ``||AGENT:Agent zerstöre||``-Block.  
 
 ---
 
-## Schritt 15  
-Stelle sicher, dass der Agent nach unten geht und die Blöcke vor sich zerstört. Im ``||Agent:Agent bewege||``-Block wähle **unten** als Richtung.  
+## 15. Auswahl treffen
+Stelle sicher, dass der Agent nach unten geht und die Blöcke vor sich zerstört. Im ``||AGENT:Agent bewege||``-Block wähle **unten** als Richtung.  
 
 ---
 
-## Schritt 16 
-Sammle alles Holz ein. Füge am Ende des ``||Player:bei Chat-Befehl "chop"||``-Blocks einen ``||Agent:Agent sammle alles ein||``-Block hinzu.  
+## 16. Holz einsammeln
+Sammle alles Holz ein. Füge am Ende des ``||PLAYER:bei Chat-Befehl "chop"||``-Blocks einen ``||AGENT:Agent sammle alles ein||``-Block hinzu.  
 
 ### ~ tutorialhint  
 ```blocks  
