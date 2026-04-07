@@ -1,5 +1,4 @@
-﻿
-### @explicitHints 1
+﻿### @explicitHints 1
 
 # Aktivität: Wir bauen einen Zoo
 

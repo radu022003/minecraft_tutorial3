@@ -43,7 +43,7 @@ player.onChat("stall", function () {
 ```
 
 ## 5. Seiten mit zwei Zauntypen bauen
-Klicke mit der rechten Maustaste auf den ``||Blocks:fülle mit||``-Block, der deine Südwand erstellt, und dupliziere ihn **zweimal**. Diese neuen Duplikate werden deine Seitenwände sein.
+Klicke mit der rechten Maustaste auf den ``||BLOCKS:fülle mit||``-Block, der deine Südwand erstellt, und dupliziere ihn **zweimal**. Diese neuen Duplikate werden deine Seitenwände sein.
 
 - Linke Seite: **Birkenzaun**
 - Rechte Seite: **Akazienzaun**
