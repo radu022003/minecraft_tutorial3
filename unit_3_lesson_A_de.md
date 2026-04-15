@@ -83,7 +83,7 @@ Stelle die Schreibrichtung für **beide** Blöcke auf **Süden**, damit die Buch
 ```
 
 ## 8. Z-Achse bauen
-Wiederhole das für Nord und Süd. Platziere einen ``||BLOCKS:fülle mit||``-Block in den ``||PLAYER:bei Chat-Befehl||``-Block.
+Platziere einen ``||BLOCKS:fülle mit||``-Block in den ``||PLAYER:bei Chat-Befehl||``-Block.
 
 Passe den ``||BLOCKS:fülle mit||``-Block von **Gras** auf das Material an, das du für die Achse verwenden möchtest. In diesem Beispiel wird **Schwarze Wolle** verwendet.
 
@@ -91,6 +91,7 @@ Passe den ``||BLOCKS:fülle mit||``-Block von **Gras** auf das Material an, das 
 Setze die Werte **(~ 0, ~ -1, ~ -10)** für **von** und **(~ 0, ~ -1, ~ 10)** für **bis** ein. Dies erstellt eine Linie entlang der Z-Achse.
 
 ## 10. N und S vorbereiten
+Als nächstes erstellen wir die fehlenden zwei Achsen. 
 Ziehe zwei ``||BLOCKS:schreibe||``-Blöcke heraus und platziere sie nach dem zweiten ``||BLOCKS:fülle mit||``-Block.
 
 ## 11. N und S setzen
